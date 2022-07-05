@@ -4,6 +4,7 @@
   "description": "A simple customer support chat system.",
   "main": "index.js",
   "scripts": {
+    "gulp": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/mcapan-leapbit/Leapbit-Chat/issues"
   },
-  "homepage": "https://github.com/mcapan-leapbit/Leapbit-Chat#readme"
+  "homepage": "https://github.com/mcapan-leapbit/Leapbit-Chat#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.53.0"
+  }
 }
