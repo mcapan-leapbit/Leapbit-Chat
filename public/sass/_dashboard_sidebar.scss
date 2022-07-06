@@ -27,14 +27,15 @@
 
 .nav-item{
   display: flex;
-  flex-direction: row;
   align-items: center;
   margin-bottom: 1rem;
+  align-items: center;
 
   &:hover{
     transition: .2s;
-    opacity: .4;
     cursor: pointer;
+    color: $brand_primary;
+    font-weight: bold;
   }
 
   img{
@@ -43,14 +44,16 @@
   
   p{
     margin-bottom: 0;
-    color: $primary_text;
-    font-weight: 300;
+    //font-weight: 300;
   }
 }
 
 .navigation{
   width: 100%;
   padding: 0 2rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 .avatar-img{
   border-radius: 100%;
