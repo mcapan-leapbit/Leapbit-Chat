@@ -7,34 +7,37 @@
         <link rel="stylesheet" href="/public/styles/index.css" />
     </head>
     <body>
-    <div class="col-md-10">
-    <div class="row">
-        <div class="col-md-12 vh-header">
-            <div class="col-md-4">
-                <div class="title-new">
-                    <h2>Messages</h2>
-                </div>
-
-                <div class="chats-list">
-                        <div class="chat-single">
-                            <div class="chat-top">
-                                <div class="chat-sender">
-                                    <img src="../../public/assets/images/avatar.png" class="avatar-img">
-                                    <div class="name-mail">
-                                        <h3>Sara Gonzalez</h3>
-                                        <h4>sara.gonzalez@leapbit.com</h4>
-                                    </div>
-                                </div>
-                                <p class="time">July 10, 2022 | 10:21</p>
-                            </div>
-                            <div class="chat-bottom">
-                                <p class="message-preview">Donec ultrices hendrerit orci, nec ultricies mauris. Phasellus tincidunt ac nunc et posuere. Sed malesuada quis massa non…</p>
-                            </div>
-                        </div>
+        <div class="chats-list">
+            <div class="chats-top-left"> 
+                <label class="search-label">Search for chat</label>
+                <input class="search-box" type="text" placeholder="Search"/>
+            </div>
+            <div class="chats-top-right"> 
+                <label class="status-label">Status</label>
+                <div class="status-box">
+                    <div class="status-icon"></div>
+                    <div class="status-placeholder">Active</div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+            <div class="status-divider"></div>
+            <div class="message-box">
+                <div class="chat-top">
+                    <div class="chat-sender">
+                        <div class="profile-bg"></div>
+                        <div class="profile-initials"></div>
+                        <div class="notif-bg"></div>
+                        <div class="notif-number"></div>
+                        <div class="name-mail">
+                            <label class="profil-name">Sara Gonzalez</label>
+                            <label class="profil-email">sara.gonzalez@leapbit.com</>
+                        </div>
+                    </div>
+                    <p class="message-timestamp">July 10, 2022 | 10:21</p>
+                </div>
+                <div class="chat-bottom">
+                    <p class="message-text">Donec ultrices hendrerit orci, nec ultricies mauris. Phasellus tincidunt ac nunc et posuere. Sed malesuada quis massa non…</p>
+                </div>
+            </div>
+        </div>                    
 </body>
 </html>
