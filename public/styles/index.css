@@ -20,78 +20,69 @@
 }
 
 .sidebar {
+  width: 10%;
+  height: 100%;
+  padding: 100px 86px 32px 85px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 .sidebar .admin {
   align-items: center;
   display: flex;
   flex-direction: column;
   padding-top: 3rem;
-  width: 100%;
 }
 .sidebar .admin img {
-  width: 4rem;
+  border-radius: 100%;
+  width: 6rem;
+  margin-bottom: 2rem;
+}
+.sidebar .admin .username {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.5rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #2c2c2c;
   margin-bottom: 1rem;
 }
-.sidebar .admin h5, .sidebar .admin h6 {
+.sidebar .admin .email {
+  font-family: "Rubik", sans-serif;
+  font-size: 0.875rem;
+  text-align: center;
   color: #2c2c2c;
 }
-
-.nav-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  align-items: center;
-}
-.nav-item:hover {
-  transition: 0.2s;
-  cursor: pointer;
-  color: #004b65;
-  font-weight: bold;
-}
-.nav-item img {
-  margin-right: 0.5rem;
-}
-.nav-item p {
-  margin-bottom: 0;
-}
-
-.navigation {
-  width: 100%;
-  padding: 0 2rem;
+.sidebar .navigation {
   align-items: center;
   display: flex;
   flex-direction: column;
+  margin-top: 75%;
 }
-
-.avatar-img {
-  border-radius: 100%;
-  width: 2rem;
-}
-
-.header {
+.sidebar .navigation .nav-item {
   display: flex;
-  justify-content: space-between;
-}
-
-.admin-name {
-  display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  margin-bottom: 2rem;
 }
-.admin-name img {
-  width: 2rem;
-  margin-right: 0.5rem;
+.sidebar .navigation .nav-item:hover {
+  color: #004b65;
+  font-weight: bolder;
 }
-.admin-name p {
-  margin-bottom: 0;
+.sidebar .navigation .nav-item img {
+  width: 1.2rem;
+}
+.sidebar .navigation .nav-item p {
+  margin: 0.25rem 0 0.188rem 0.75rem;
+  font-family: "Rubik", sans-serif;
+  font-size: 0.875rem;
+}
+.sidebar .navigation .bottom-nav {
+  font-family: "Rubik", sans-serif;
+  font-size: 0.875rem;
+  color: #2c2c2c;
+  margin-top: 100%;
 }
 
 .Mask {

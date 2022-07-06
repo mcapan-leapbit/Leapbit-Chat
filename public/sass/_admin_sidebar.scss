@@ -1,0 +1,65 @@
+.sidebar{
+  width: 10%;
+  height: 100%;
+  padding: 100px 86px 32px 85px; //transform
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  background-color: $background;
+  .admin{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    img{
+      border-radius: 100%;
+      width: 6rem;
+      margin-bottom: 2rem;
+    }
+    .username{
+      font-family: $std_font;
+      font-size: 1.5rem;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: $primary_text;
+      margin-bottom: 1rem;
+    }
+    .email{
+      font-family: $std_font;
+      font-size: 0.875rem;
+      text-align: center;
+      color: $primary_text;
+    }
+  }
+  .navigation{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 75%;
+    .nav-item{
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+      &:hover{
+        color: $brand_primary; //not working for svg
+        font-weight: bolder;
+      }
+      img{
+        width: 1.2rem;
+      }
+      p{
+        margin: 0.25rem 0 0.188rem 0.75rem;
+        font-family: $std_font;
+        font-size: 0.875rem;
+      }
+    }
+    .bottom-nav{
+      font-family: $std_font;
+      font-size: 0.875rem;
+      color: $primary_text;
+      margin-top: 100%;
+    }
+  }
+}
