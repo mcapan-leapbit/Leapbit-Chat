@@ -1,0 +1,131 @@
+
+@import '_colors';
+@import '_fonts';
+@import "_chat_admin";
+
+body {
+    background-color: $background_dark;
+    font-family: $std_font;
+    min-height: 70vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+    .main_title {
+        max-width: 40%;
+        min-width: fit-content;
+        align-self: center;
+        text-align: center;
+
+        .gradient_text {
+            background-image: $coming_soon_grad;
+
+            background-clip: text;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+        }
+
+        .huge {
+            font-size: 550%;
+        }
+
+        .description {
+            padding-left: 10%;
+            padding-right: 10%;
+            font-size: small;
+        }
+
+        .negative {
+            color: $negative_text;
+        }
+
+    }
+
+    .floating_chatbox {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        background-color: $chatbox_primary;
+        color: $negative_text;
+        position: fixed;
+        bottom: 2.5%;
+        right: 2.5%;
+        width: 20%;
+        border-radius: 12px;
+        min-width: fit-content;
+
+        .closer {
+            margin: 2px;
+            width: 15px;
+            height: 15px;
+
+            background-color: #833434;
+            position: absolute;
+            top: -7px;
+            right: -7px;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: row;
+            font-size: small;
+            padding: 5%;
+            justify-content: space-between;
+            height: fit-content;
+
+            .subtitle {
+                font-size: smaller;
+                color: $secondary_text;
+            }
+            .avatar {
+                position: relative;
+                display: inline-block;
+
+                .status{
+                    width: 10px;
+                    height: 10px;
+                    border-top-left-radius: 50% 50%;
+                    border-top-right-radius: 50% 50%;
+                    border-bottom-right-radius: 50% 50%;
+                    border-bottom-left-radius: 50% 50%;
+
+                    bottom: 1px;
+                    right: 1px;
+                    
+                    background-color: #30de2f;
+              
+                    position: absolute;
+                  }
+            }
+        }
+        
+        .line {
+            border-color: $primary_text;
+            justify-self: center;
+            align-self: center;
+            margin: 0;
+            width: 80%;
+        }
+        .open_button {
+            font-size: small;
+            padding-block: 5%;
+            text-align: center;
+            color: $brand_secondary;
+            transition-duration: 0.4s;
+            cursor: pointer;
+
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+
+            &:hover {
+                background-color: $chatbox_secondary;
+            }
+        }
+    }
+}
+

@@ -1,38 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
-.-Dashboard-01-Inactive {
-  width: 1440px;
-  height: 1080px;
-  padding: 0 30px 0 0;
-  background-color: #f6f6f6;
-}
-.-Dashboard-01-Inactive .Messages {
-  width: 167px;
-  height: 38px;
-  margin: 32px 6px 24px 32px;
-  font-family: Rubik;
-  font-size: 32px;
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: 3px;
-  color: #2c2c2c;
-}
-
-.sidebar {
-  background-color: #000;
-  width: 20%;
-  height: 100%;
-  margin: 0 30% 0 0;
-  box-shadow: 0 0 11px 0 #000;
-}
-
-.user_logo {
-  width: 80%;
-  height: 80%;
-  margin: 0 45% 25%;
-}
-
 .Mask {
   width: 720px;
   height: 800px;
@@ -196,4 +162,108 @@
 
 .is-full {
   opacity: 1;
+}
+
+body {
+  background-color: #141414;
+  font-family: "Rubik", sans-serif;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .main_title {
+  max-width: 40%;
+  min-width: fit-content;
+  align-self: center;
+  text-align: center;
+}
+body .main_title .gradient_text {
+  background-image: linear-gradient(to right, #ff4e57 0%, #ff2a97 49%, #0096db);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+body .main_title .huge {
+  font-size: 550%;
+}
+body .main_title .description {
+  padding-left: 10%;
+  padding-right: 10%;
+  font-size: small;
+}
+body .main_title .negative {
+  color: #ffffff;
+}
+body .floating_chatbox {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  position: fixed;
+  bottom: 2.5%;
+  right: 2.5%;
+  width: 20%;
+  border-radius: 12px;
+  min-width: fit-content;
+}
+body .floating_chatbox .closer {
+  margin: 2px;
+  width: 15px;
+  height: 15px;
+  background-color: #833434;
+  position: absolute;
+  top: -7px;
+  right: -7px;
+}
+body .floating_chatbox .header {
+  display: flex;
+  flex-direction: row;
+  font-size: small;
+  padding: 5%;
+  justify-content: space-between;
+  height: fit-content;
+}
+body .floating_chatbox .header .subtitle {
+  font-size: smaller;
+  color: #7a7a7a;
+}
+body .floating_chatbox .header .avatar {
+  position: relative;
+  display: inline-block;
+}
+body .floating_chatbox .header .avatar .status {
+  width: 10px;
+  height: 10px;
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+  bottom: 1px;
+  right: 1px;
+  background-color: #30de2f;
+  position: absolute;
+}
+body .floating_chatbox .line {
+  border-color: #2c2c2c;
+  justify-self: center;
+  align-self: center;
+  margin: 0;
+  width: 80%;
+}
+body .floating_chatbox .open_button {
+  font-size: small;
+  padding-block: 5%;
+  text-align: center;
+  color: #fee289;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+body .floating_chatbox .open_button:hover {
+  background-color: #1f1f1f;
 }
