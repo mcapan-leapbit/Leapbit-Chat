@@ -1,3 +1,6 @@
-@import '_dashboard_sidebar';
-@import '_fonts';
-@import '_colors';
+@import "colors";
+@import "fonts";
+
+@import "admin_body";
+@import "_dashboard_sidebar";
+@import "chat_admin";
