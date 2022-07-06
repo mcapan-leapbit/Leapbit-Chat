@@ -1,112 +1,77 @@
-.sidebar
-  background-color: $background
-  width: 20%
-  height: 100vh
-  justify-content: space-between
-  align-items: center
-  box-shadow: 0 0 1% 0 $shadow
-  font-family: Rubik
-  font-weight: normal
-  font-stretch: normal
-  font-style: normal
-  line-height: normal
-  letter-spacing: normal
-  text-align: center
-  color: $primary_text
-  display: flex
-  flex-direction: column
+.sidebar{
+  background-color: $background;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 
-.sidebar_user_logo
-  border-radius: 100%
-  width: 2rem
+  .admin{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    width: 100%;
 
-.sidebar_username
-  font-size: 1.5rem
+    img{
+      width: 4rem;
+      margin-bottom: 1rem;
+    }
 
-.sidebar_email
-  font-size: 0.875rem
+    h5, h6{
+      color: $primary_text;
+    }
+  }
+}
 
-.sidebar
-  background-color: $background
-  display: flex
-  flex-direction: column
-  height: 100vh
-  align-items: center
-  justify-content: space-between
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1)
+.nav-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
 
-  .admin
-    align-items: center
-    display: flex
-    flex-direction: column
-    padding-top: 3rem
-    width: 100%
+  &:hover{
+    transition: .2s;
+    opacity: .4;
+    cursor: pointer;
+  }
 
-    img
-      width: 4rem
-      margin-bottom: 1rem
+  img{
+    margin-right: .5rem;
+  }
+  
+  p{
+    margin-bottom: 0;
+    color: $primary_text;
+    font-weight: 300;
+  }
+}
 
-    h5, h6
-      color: $primary_text
+.navigation{
+  width: 100%;
+  padding: 0 2rem;
+}
+.avatar-img{
+  border-radius: 100%;
+  width: 2rem;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+.admin-name{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 
-.nav-item
-  display: flex
-  flex-direction: row
-  align-items: center
-  margin-bottom: 1rem
+  img{
+    width: 2rem;
+    margin-right: .5rem;
+  }
 
-  &:hover
-    transition: .2s
-    opacity: .4
-    cursor: pointer
-
-  img
-    margin-right: .5rem
-
-  p
-    margin-bottom: 0
-    color: $primary_text
-    font-weight: 300
-
-.navigation
-  width: 100%
-  padding: 0 2rem
-
-.avatar-img
-  border-radius: 100%
-  width: 2rem
-
-.header
-  display: flex
-  justify-content: space-between
-
-.admin-name
-  display: flex
-  flex-direction: row
-  align-items: center
-  justify-content: center
-
-  img
-    width: 2rem
-    margin-right: .5rem
-
-  p
-    margin-bottom: 0
-
-.chats-list
-  background-color: $background
-  border-radius: .5rem
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1)
-  padding: 1.5rem 0rem
-  height: calc(100vh - 80px)
-  overflow: auto
-
-.chat-top
-  display: flex
-  align-items: center
-  justify-content: space-between
-  margin-bottom: 1rem
-
-.chat-sender
-  display: flex
-  align-items: center
+  p{
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,18 @@
+.chats-list{
+  background-color: $background;
+  border-radius: .5rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 0rem;
+  height: calc(100vh - 80px);
+  overflow: auto;
+}
+.chat-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.chat-sender{
+  display: flex;
+  align-items: center;
+}
