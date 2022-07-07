@@ -1,134 +1,164 @@
 .chats-list {
-	width: 350px;
-	height: 956px;
-	margin: 24px 30px 30px;
-	padding: 24px 0 409px;
-	border-radius: 12px;
-	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-	background-color: $background;
+  width: 350px;
+  height: 956px;
+  margin: 24px 30px 30px;
+  padding: 24px 0 409px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  background-color: $background;
+}
+
+.search-label {
+  width: 73px;
+  height: 12px;
+  margin-bottom: 7px;
+  font-family: $std_font;
+  font-size: 10px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $primary_text;
+}
+
+.search-box {
+  width: 80%;
+  height: 32px;
+
+  border-radius: 6px;
+  border: solid 1px #eee;
+}
+
+.search-box::placeholder {
+  width: 40px;
+  height: 14px;
+  font-family: $std_font;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $tertiary_text;
+}
+
+.search-icon {
+  width: 10px;
+  height: 10px;
+  margin: 2px 8px 2px 0;
+  font-size: 10px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $tertiary_text;
+}
+
+.status-label {
+  width: 31px;
+  height: 12px;
+  margin-bottom: 7px;
+  font-family: $std_font;
+  font-size: 10px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $primary_text;
+}
+
+.status-box {
+  display: flex;
+  width: 100%;
+  height: 32px;
+  border-radius: 6px;
+  border: solid 1px #eee;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-icon {
+  width: 8px;
+  height: 8px;
+  margin: 3px 8px 3px 0;
+  background-color: $new_text;
+}
+
+.status-placeholder {
+  width: 36px;
+  height: 14px;
+  font-family: $std_font;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $primary_text;
+}
+
+.status-divider {
+  width: 350px;
+  height: 1px;
+  margin: 0 0 14px;
+  background-color: $background-message;
+}
+
+.message-box {
+  width: 100%;
+  background-color: $background;
+
+  &:hover {
+    background-color: $background-message;
   }
 
-  .search-label {
-	width: 73px;
-	height: 12px;
-	margin: 0 109px 4px 0;
-	font-family: $std_font;
-	font-size: 10px;
-	font-weight: normal;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: normal;
-	color: $primary_text;
-  }
+  padding: 1rem 0 1rem 0;
+}
 
-  .search-box {
-	width: 182px;
-	height: 32px;
-	margin: 4px 0 0;
-	padding: 9px 112px 9px 12px;
-	border-radius: 6px;
-	border: solid 1px #eee;
-	background-size: 1rem;
-	background-image: url("../../public/assets/images/icon-search.svg");
-	background-position: 0.5rem 0.5rem;
-	background-repeat: no-repeat;
-  }
+.message-timestamp {
+  float: right;
+  font-family: $std_font;
+  font-size: 8px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: $tertiary_text;
+}
 
-  .search-box::placeholder {
-	width: 40px;
-	height: 14px;
-	margin: 0 0 10px 8px;
-	font-family: $std_font;
-	font-size: 12px;
-	font-weight: normal;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: normal;
-	color: $tertiary_text;
-  }
+.profile-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+  margin-left: 10px;
+  padding: 5px 5px 5px 5px;
+  background-color: #ececec;
+  text-align: center;
+}
 
-  .search-icon {
-	width: 10px;
-	height: 10px;
-	margin: 2px 8px 2px 0;
-	font-size: 10px;
-	font-weight: normal;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: normal;
-	color: $tertiary_text;
-  }
+.profile-initials {
+  width: 17px;
+  height: 14px;
+  font-family: $std_font;
+  font-size: 12px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $brand_primary;
+  padding: 9px 7px 9px 8px;
+}
 
-  .status-label {
-	width: 31px;
-	height: 12px;
-	margin: 0 89px 4px 0;
-	font-family: $std_font;
-	font-size: 10px;
-	font-weight: normal;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: normal;
-	color: $primary_text;
-  }
-
-  .status-box {
-	width: 120px;
-	height: 32px;
-	margin: 4px 0 0;
-	padding: 9px 12px;
-	border-radius: 6px;
-	border: solid 1px #eee;
-	background-size: 1rem;
-	background-image: url("../../public/assets/images/chevron-down.svg");
-	background-position: 0.5rem 0.5rem;
-	background-repeat: no-repeat;
-  }
-
-  .status-icon {
-	width: 8px;
-	height: 8px;
-	margin: 3px 8px 3px 0;
-	background-color: $new_text;
-  }
-
-  .status-placeholder {
-	width: 36px;
-	height: 14px;
-	margin: 0 35px 0 8px;
-	font-family: $std_font;
-	font-size: 12px;
-	font-weight: normal;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: normal;
-	color: $primary_text;
-  }
-
-  .status-divider {
-	width: 350px;
-	height: 1px;
-	margin: 0 0 14px;
-	background-color: $background-message;
-  }
-
-  .message-box {
-	width: 100%;
-	background-color: $background;
-
-	&:hover {
-	  background-color: $background-message;
-	}
-
-	padding: 1rem 0 1rem 0;
-
-  }
-
+<<<<<<< HEAD
   .message-timestamp {
 	margin-right: 1rem;
 	font-family: $std_font;
@@ -142,123 +172,110 @@
 	color: $tertiary_text;
 	float: right;
   }
+=======
+.profile-name {
+  width: 111px;
+  height: 19px;
+  font-family: $std_font;
+  font-size: 16px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $primary_text;
+}
+>>>>>>> 4a0ee7563b0d4e44af0205900cc5a04e319cf2b7
 
-  .profile-bg {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 100%;
-	width: 32px;
-	height: 32px;
-	margin-left: 10px;
-	padding: 5px 5px 5px 5px;
-	background-color: #ECECEC;
-	text-align: center;
-  }
+.profile-email {
+  width: 127px;
+  height: 12px;
+  font-family: $std_font;
+  font-size: 10px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $tertiary_text;
+}
 
-  .profile-initials {
-	width: 17px;
-	height: 14px;
-	font-family: $std_font;
-	font-size: 12px;
-	font-weight: 600;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: normal;
-	color: $brand_primary;
-	padding: 9px 7px 9px 8px;
-  }
+.message-text {
+  width: 318px;
+  height: 32px;
+  margin: 7px 16px 16px;
+  font-family: $std_font;
+  font-size: 10px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.7;
+  letter-spacing: normal;
+  color: $secondary_text;
+}
 
-  .profile-name {
-	width: 111px;
-	height: 19px;
-	font-family: $std_font;
-	font-size: 16px;
-	font-weight: 600;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: normal;
-	color: $primary_text;
-  }
+.notif-bg {
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  width: 8px;
+  height: 8px;
+  margin-left: 0.85rem;
+  padding: 5px 5px 5px 5px;
+  background-color: $new_background;
+  text-align: center;
+}
 
-  .profile-email {
-	width: 127px;
-	height: 12px;
-	font-family: $std_font;
-	font-size: 10px;
-	font-weight: normal;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: normal;
-	color: $tertiary_text;
-  }
+.notif-number {
+  width: 7px;
+  font-family: $std_font;
+  font-size: 10px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $new_text;
+}
 
-  .message-text {
-	width: 318px;
-	height: 32px;
-	margin: 7px 16px 16px;
-	font-family: $std_font;
-	font-size: 10px;
-	font-weight: normal;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: 1.7;
-	letter-spacing: normal;
-	color: $secondary_text;
-  }
+.chats-top {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
 
-  .notif-bg {
-	font-size: 0.75rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 100%;
-	width: 8px;
-	height: 8px;
-	margin-left: 0.85rem;
-	padding: 5px 5px 5px 5px;
-	background-color: $new_background;
-	text-align: center;
-  }
+.left,
+.right {
+  flex-grow: 1;
+}
 
-  .notif-number {
-	width: 7px;
-	font-family: $std_font;
-	font-size: 10px;
-	font-weight: 600;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: normal;
-	color: $new_text;
-  }
+.chat-sender {
+  display: grid;
+  grid-template-columns: 13% 83%;
+}
 
-  .chats-top {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr;
-	gap: 0px 0px;
-	grid-template-areas: ". .";
-  }
+.sender-details {
+  margin-left: 10px;
+  width: 100%;
+}
 
-  .left,
-  .right {
-	flex-grow: 1;
-  }
+.chat-bottom {
+  margin-top: 1rem;
+}
 
-  .chat-sender {
-	display: grid;
-	grid-template-columns: 13% 83%;
-  }
+.search-pack {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+}
 
-  .sender-details {
-	margin-left: 10px;
-	width: 100%;
-  }
+.search-pack-left {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-left: 15px;
+}
 
-  .chat-bottom {
-	margin-top: 1rem;
-  }
+.active-box {
+  margin-right: 15px;
+}
