@@ -367,6 +367,10 @@
   padding: 9px 12px;
   border-radius: 6px;
   border: solid 1px #eee;
+  background-size: 1rem;
+  background-image: url("../../public/assets/images/chevron-down.svg");
+  background-position: 0.5rem 0.5rem;
+  background-repeat: no-repeat;
 }
 
 .status-icon {
@@ -407,7 +411,7 @@
 }
 
 .message-timestamp {
-  margin-left: 6rem;
+  margin-right: 1rem;
   font-family: "Rubik", sans-serif;
   font-size: 8px;
   font-weight: normal;
@@ -417,6 +421,7 @@
   letter-spacing: normal;
   text-align: left;
   color: #b8b8b8;
+  float: right;
 }
 
 .profile-bg {
