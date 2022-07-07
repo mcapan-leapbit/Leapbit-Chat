@@ -299,7 +299,7 @@
 .search-label {
   width: 73px;
   height: 12px;
-  margin-bottom: 7px;
+  margin: 0 109px 4px 0;
   font-family: "Rubik", sans-serif;
   font-size: 10px;
   font-weight: normal;
@@ -311,15 +311,22 @@
 }
 
 .search-box {
-  width: 80%;
+  width: 182px;
   height: 32px;
+  margin: 4px 0 0;
+  padding: 9px 112px 9px 12px;
   border-radius: 6px;
   border: solid 1px #eee;
+  background-size: 1rem;
+  background-image: url("../../public/assets/images/icon-search.svg");
+  background-position: 0.5rem 0.5rem;
+  background-repeat: no-repeat;
 }
 
 .search-box::placeholder {
   width: 40px;
   height: 14px;
+  margin: 0 0 10px 8px;
   font-family: "Rubik", sans-serif;
   font-size: 12px;
   font-weight: normal;
@@ -346,7 +353,7 @@
 .status-label {
   width: 31px;
   height: 12px;
-  margin-bottom: 7px;
+  margin: 0 89px 4px 0;
   font-family: "Rubik", sans-serif;
   font-size: 10px;
   font-weight: normal;
@@ -358,13 +365,12 @@
 }
 
 .status-box {
-  display: flex;
-  width: 100%;
+  width: 120px;
   height: 32px;
+  margin: 4px 0 0;
+  padding: 9px 12px;
   border-radius: 6px;
   border: solid 1px #eee;
-  align-items: center;
-  justify-content: center;
 }
 
 .status-icon {
@@ -377,6 +383,7 @@
 .status-placeholder {
   width: 36px;
   height: 14px;
+  margin: 0 35px 0 8px;
   font-family: "Rubik", sans-serif;
   font-size: 12px;
   font-weight: normal;
@@ -401,46 +408,6 @@
 }
 .message-box:hover {
   background-color: #f6f6f6;
-}
-
-.message-timestamp {
-  float: right;
-  font-family: "Rubik", sans-serif;
-  font-size: 8px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
-  color: #b8b8b8;
-}
-
-.profile-bg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100%;
-  width: 32px;
-  height: 32px;
-  margin-left: 10px;
-  padding: 5px 5px 5px 5px;
-  background-color: #ececec;
-  text-align: center;
-}
-
-.profile-initials {
-  width: 17px;
-  height: 14px;
-  font-family: "Rubik", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #004b65;
-  padding: 9px 7px 9px 8px;
 }
 
 .message-timestamp {
@@ -470,6 +437,46 @@
   color: #2c2c2c;
 }
 
+.profile-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+  margin-left: 10px;
+  padding: 5px 5px 5px 5px;
+  background-color: #ECECEC;
+  text-align: center;
+}
+
+.profile-initials {
+  width: 17px;
+  height: 14px;
+  font-family: "Rubik", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #004b65;
+  padding: 9px 7px 9px 8px;
+}
+
+.profile-name {
+  width: 111px;
+  height: 19px;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #2c2c2c;
+}
+
 .profile-email {
   width: 127px;
   height: 12px;
@@ -481,6 +488,12 @@
   line-height: normal;
   letter-spacing: normal;
   color: #b8b8b8;
+}
+
+.chats-top {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  margin-bottom: 2rem;
 }
 
 .message-text {
@@ -525,7 +538,10 @@
 
 .chats-top {
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: ". .";
 }
 
 .left,
@@ -545,20 +561,4 @@
 
 .chat-bottom {
   margin-top: 1rem;
-}
-
-.search-pack {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-.search-pack-left {
-  display: grid;
-  grid-template-columns: 1fr;
-  margin-left: 15px;
-}
-
-.active-box {
-  margin-right: 15px;
 }
