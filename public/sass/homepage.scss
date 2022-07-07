@@ -1,7 +1,11 @@
-
 @import '_colors';
 @import '_fonts';
 @import "_chat_admin";
+
+.chat-body-rectangle,
+.chat-body-user {
+    font-size: smaller;
+}
 
 body {
     background-color: $background_dark;
@@ -11,8 +15,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    
+
+
     .main_title {
         max-width: 40%;
         min-width: fit-content;
@@ -52,14 +56,18 @@ body {
         cursor: pointer;
         background-color: $chatbox_primary;
         color: $negative_text;
-        position: fixed;
+        position: absolute;
         bottom: 2.5%;
         right: 2.5%;
-        width: 20%;
+        
         border-radius: 12px;
-        min-width: fit-content;
+
+        max-height: 70%;
+        width: 30%;
 
         .closer {
+            display: none;
+
             margin: 2px;
             width: 15px;
             height: 15px;
@@ -71,6 +79,7 @@ body {
         }
 
         .header {
+            box-shadow: inset;
             display: flex;
             flex-direction: row;
             font-size: small;
@@ -82,11 +91,12 @@ body {
                 font-size: smaller;
                 color: $secondary_text;
             }
+
             .avatar {
                 position: relative;
                 display: inline-block;
 
-                .status{
+                .status {
                     width: 10px;
                     height: 10px;
                     border-top-left-radius: 50% 50%;
@@ -96,14 +106,106 @@ body {
 
                     bottom: 1px;
                     right: 1px;
-                    
+
                     background-color: #30de2f;
-              
+
                     position: absolute;
-                  }
+                }
             }
         }
-        
+
+        .signup_box {
+            background-color: $chatbox_secondary;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+
+            .input_box {
+                padding: 3%;
+                margin-block: 2.5%;
+                background-color: $chatbox_secondary;
+                border-color: $chatbox_primary;
+                color: $tertiary_text;
+                width: 80%;
+                border-color: $chatbox_primary;
+                border-radius: 12px;
+            }
+
+            .start_button {
+                font-size: small;
+                padding: 3%;
+                margin-block: 2.5%;
+                background-color: $brand_secondary;
+                color: $primary_text;
+                text-align: center;
+                width: 80%;
+                border-radius: 12px;
+            }
+        }
+
+        .messages_box {
+            display: none;
+            flex-direction: column;
+            background-color: $chatbox_secondary;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            align-items: center;
+
+            .chat-body {
+                width: 100%;
+                overflow-y: auto;
+                max-height: 400px;
+
+                &::-webkit-scrollbar {
+                    background-color: $chatbox_primary;
+                    border-radius: 10px;
+                    width: 7px;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background: $tertiary_text;
+                    border-radius: 10px;
+                }
+
+                .chat-body-client {
+                    .chat-body-rectangle {
+                        background-image: $message_grad_dark;
+                    }
+                }
+
+            }
+
+            .user_chat_entry {
+                width: 90%;
+                margin-top: 5%;
+                border-radius: 12px;
+                border: solid 1px $chatbox_primary;
+                align-items: center;
+
+                font-size: small;
+                padding: 2.5%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .user_chat_entry_text {
+                    padding-block: 2.5%;
+                    color: $negative_text;
+                    width: 80%;
+                    border: 0;
+                    background-color: $chatbox_secondary;
+                }
+
+                .user_chat_entry_image {
+                    border-radius: 10px;
+                    padding: 3%;
+                    background-color: $brand_primary;
+                }
+
+            }
+        }
+
         .line {
             border-color: $primary_text;
             justify-self: center;
@@ -111,6 +213,7 @@ body {
             margin: 0;
             width: 80%;
         }
+
         .open_button {
             font-size: small;
             padding-block: 5%;
@@ -128,4 +231,3 @@ body {
         }
     }
 }
-
