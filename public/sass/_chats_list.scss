@@ -158,21 +158,20 @@
   padding: 9px 7px 9px 8px;
 }
 
-<<<<<<< HEAD
-  .message-timestamp {
-	margin-right: 1rem;
-	font-family: $std_font;
-	font-size: 8px;
-	font-weight: normal;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: normal;
-	text-align: left;
-	color: $tertiary_text;
-	float: right;
-  }
-=======
+.message-timestamp {
+  margin-right: 1rem;
+  font-family: $std_font;
+  font-size: 8px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: $tertiary_text;
+  float: right;
+}
+
 .profile-name {
   width: 111px;
   height: 19px;
@@ -185,7 +184,6 @@
   letter-spacing: normal;
   color: $primary_text;
 }
->>>>>>> 4a0ee7563b0d4e44af0205900cc5a04e319cf2b7
 
 .profile-email {
   width: 127px;
