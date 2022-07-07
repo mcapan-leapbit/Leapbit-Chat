@@ -411,7 +411,7 @@
 }
 
 .message-timestamp {
-  margin-left: 6rem;
+  margin-right: 1rem;
   font-family: "Rubik", sans-serif;
   font-size: 8px;
   font-weight: normal;
@@ -421,6 +421,20 @@
   letter-spacing: normal;
   text-align: left;
   color: #b8b8b8;
+  float: right;
+}
+
+.profile-name {
+  width: 111px;
+  height: 19px;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #2c2c2c;
 }
 
 .profile-bg {
@@ -450,20 +464,6 @@
   padding: 9px 7px 9px 8px;
 }
 
-.message-timestamp {
-  margin-right: 1rem;
-  font-family: "Rubik", sans-serif;
-  font-size: 8px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
-  color: #b8b8b8;
-  float: right;
-}
-
 .profile-name {
   width: 111px;
   height: 19px;
@@ -488,6 +488,12 @@
   line-height: normal;
   letter-spacing: normal;
   color: #b8b8b8;
+}
+
+.chats-top {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  margin-bottom: 2rem;
 }
 
 .message-text {
@@ -532,15 +538,10 @@
 
 .chats-top {
   display: grid;
-<<<<<<< HEAD
-  grid-template-columns: 60% 40%;
-  margin-bottom: 2rem;
-=======
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0px 0px;
   grid-template-areas: ". .";
->>>>>>> parent of 4a0ee75... improvement top bar
 }
 
 .left,
