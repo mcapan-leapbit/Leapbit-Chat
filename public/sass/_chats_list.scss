@@ -125,18 +125,32 @@
 
   }
 
-  .message-timestamp {
-	margin-left: 6rem;
-	font-family: $std_font;
-	font-size: 8px;
-	font-weight: normal;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: normal;
-	text-align: left;
-	color: $tertiary_text;
-  }
+.message-timestamp {
+  margin-right: 1rem;
+  font-family: $std_font;
+  font-size: 8px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: $tertiary_text;
+  float: right;
+}
+
+.profile-name {
+  width: 111px;
+  height: 19px;
+  font-family: $std_font;
+  font-size: 16px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $primary_text;
+}
 
   .profile-bg {
 	display: flex;
