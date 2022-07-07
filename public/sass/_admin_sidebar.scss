@@ -2,6 +2,7 @@
   overflow: hidden;
   margin: 0;
 }
+
 .sidebar{
   width: 10%;
   height: calc(100vh - 4rem);
@@ -13,11 +14,13 @@
     display: flex;
     flex-direction: column;
     padding-top: 4rem;
+
     img{
       border-radius: 100%;
       width: 6rem;
       margin-bottom: 2rem;
     }
+
     .username{
       font-family: $std_font;
       font-size: 1.5rem;
@@ -30,41 +33,56 @@
       color: $primary_text;
       margin-bottom: 1rem;
     }
+
     .email{
       font-family: $std_font;
       font-size: 0.875rem;
       text-align: center;
       color: $primary_text;
     }
+
   }
+
   .navigation{
     align-items: center;
     display: flex;
     flex-direction: column;
     padding-top: 100%;
-    margin-top: 4rem;
+    margin-top: 2rem;
+
     .nav-item{
       display: flex;
       align-items: center;
       margin-bottom: 2rem;
-      &:hover{
-        color: $brand_primary; //not working for svg images
-        font-weight: bolder;
-      }
+      
       img{
         width: 1.2rem;
       }
+
+      &:hover{
+        filter: invert(19%) sepia(42%) saturate(2468%) hue-rotate(167deg) brightness(100%) contrast(101%);
+      }
+
       p{
         margin: 0.25rem 0 0.188rem 0.75rem;
         font-family: $std_font;
         font-size: 0.875rem;
       }
+
+      &:hover{
+        font-weight: bolder;
+      }
+
     }
+
     .bottom-nav{
       font-family: $std_font;
       font-size: 0.875rem;
       color: $primary_text;
-      margin-top: 100%;
+      margin-top: 75%;
     }
+
   }
+
 }
+

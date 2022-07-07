@@ -8,7 +8,7 @@
   background-color: #f6f6f6;
 
   .Messages {
-    width: 167px;
+    width: 100%;
 
     height: 38px;
 
@@ -28,6 +28,53 @@
 
     letter-spacing: 3px;
 
+    display: flex;
+
     color: #2c2c2c;
+  }
+  .Rectangle {
+
+    width: 46px;
+  
+    height: 20px;
+  
+    margin: 7px 0px 0px 30px;
+
+    padding: 4px 8px;
+  
+    border-radius: 4px;
+  
+    background-color: #edfdf3;
+
+    display: flex;
+
+    justify-content: center;
+    
+    align-items: center;
+
+  
+  }
+  .-new {
+
+    width: 30px;
+  
+    height: 12px;
+  
+    font-family: Rubik;
+  
+    font-size: 10px;
+  
+    font-weight: bold;
+  
+    font-stretch: normal;
+  
+    font-style: normal;
+  
+    line-height: normal;
+  
+    letter-spacing: normal;
+  
+    color: #3e7a60;
+  
   }
 }

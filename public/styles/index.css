@@ -6,7 +6,7 @@
   background-color: #f6f6f6;
 }
 .-Dashboard-01-Inactive .Messages {
-  width: 167px;
+  width: 100%;
   height: 38px;
   margin: 32px 6px 24px 32px;
   font-family: Rubik;
@@ -16,7 +16,31 @@
   font-style: normal;
   line-height: normal;
   letter-spacing: 3px;
+  display: flex;
   color: #2c2c2c;
+}
+.-Dashboard-01-Inactive .Rectangle {
+  width: 46px;
+  height: 20px;
+  margin: 7px 0px 0px 30px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: #edfdf3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.-Dashboard-01-Inactive .-new {
+  width: 30px;
+  height: 12px;
+  font-family: Rubik;
+  font-size: 10px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #3e7a60;
 }
 
 .html {
@@ -65,30 +89,32 @@
   display: flex;
   flex-direction: column;
   padding-top: 100%;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 .sidebar .navigation .nav-item {
   display: flex;
   align-items: center;
   margin-bottom: 2rem;
 }
-.sidebar .navigation .nav-item:hover {
-  color: #004b65;
-  font-weight: bolder;
-}
 .sidebar .navigation .nav-item img {
   width: 1.2rem;
+}
+.sidebar .navigation .nav-item:hover {
+  filter: invert(19%) sepia(42%) saturate(2468%) hue-rotate(167deg) brightness(100%) contrast(101%);
 }
 .sidebar .navigation .nav-item p {
   margin: 0.25rem 0 0.188rem 0.75rem;
   font-family: "Rubik", sans-serif;
   font-size: 0.875rem;
 }
+.sidebar .navigation .nav-item:hover {
+  font-weight: bolder;
+}
 .sidebar .navigation .bottom-nav {
   font-family: "Rubik", sans-serif;
   font-size: 0.875rem;
   color: #2c2c2c;
-  margin-top: 100%;
+  margin-top: 75%;
 }
 
 .Mask {
@@ -372,16 +398,16 @@
 }
 
 .message-box {
-  width: 350px;
-  height: 110px;
-  margin: 110px 0 17px;
+  width: 100%;
   background-color: #ffffff;
+  padding: 1rem 0 1rem 0;
 }
 .message-box:hover {
   background-color: #f6f6f6;
 }
 
 .message-timestamp {
+  margin-left: 6rem;
   font-family: "Rubik", sans-serif;
   font-size: 8px;
   font-weight: normal;
@@ -400,9 +426,9 @@
   border-radius: 100%;
   width: 32px;
   height: 32px;
-  margin: 0 0 0 0;
+  margin-left: 10px;
   padding: 5px 5px 5px 5px;
-  background-color: #ececec;
+  background-color: #ECECEC;
   text-align: center;
 }
 
@@ -423,7 +449,6 @@
 .profile-name {
   width: 111px;
   height: 19px;
-  margin: 14px 92px 2px 3px;
   font-family: "Rubik", sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -437,7 +462,6 @@
 .profile-email {
   width: 127px;
   height: 12px;
-  margin: 1px 76px 13px 3px;
   font-family: "Rubik", sans-serif;
   font-size: 10px;
   font-weight: normal;
@@ -463,13 +487,14 @@
 }
 
 .notif-bg {
+  font-size: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 100%;
-  width: 16px;
-  height: 16px;
-  margin: 0 0 0 0;
+  width: 8px;
+  height: 8px;
+  margin-left: 0.85rem;
   padding: 5px 5px 5px 5px;
   background-color: #edfdf3;
   text-align: center;
@@ -495,11 +520,21 @@
   grid-template-areas: ". .";
 }
 
-.left, .right {
+.left,
+.right {
   flex-grow: 1;
 }
 
 .chat-sender {
   display: grid;
-  grid-template-columns: 13% 77% 10%;
+  grid-template-columns: 13% 83%;
+}
+
+.sender-details {
+  margin-left: 10px;
+  width: 100%;
+}
+
+.chat-bottom {
+  margin-top: 1rem;
 }
