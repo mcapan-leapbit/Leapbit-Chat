@@ -35,7 +35,7 @@
 .search-box::placeholder {
 	width: 40px;
 	height: 14px;
-	margin: 0 0 0 8px;
+	margin: 0 0 10px 8px;
 	font-family: $std_font;
 	font-size: 12px;
 	font-weight: normal;
@@ -72,15 +72,10 @@
 }
 .status-box {
 	width: 120px;
-
 	height: 32px;
-  
 	margin: 4px 0 0;
-  
 	padding: 9px 12px;
-  
-	border-radius: 6px;
-  
+	border-radius: 6px;  
 	border: solid 1px #eee;
 }
 .status-icon {
@@ -118,9 +113,9 @@
 	}
 }
 .message-timestamp {
-	width: 75px;
-	height: 9px;
-	margin: 25px 16px 1px 76px;
+	//width: 75px;
+	//height: 9px;
+	//margin: 25px 16px 1px 76px;
 	font-family: $std_font;
 	font-size: 8px;
 	font-weight: normal;
@@ -128,15 +123,20 @@
 	font-style: normal;
 	line-height: normal;
 	letter-spacing: normal;
-	text-align: right;
+	text-align: left;
 	color: $tertiary_text;
 }
 .profile-bg {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 100%;
 	width: 32px;
 	height: 32px;
-	margin: 16px 8px 12px 16px;
-	padding: 9px 7px 9px 8px;
-	background-color: $new_background;
+	margin: 0 0 0 0;
+	padding: 5px 5px 5px 5px;
+	background-color: #ececec;
+	text-align: center;
 }
 .profile-initials {
 	width: 17px;
@@ -149,6 +149,7 @@
 	line-height: normal;
 	letter-spacing: normal;
 	color: $brand_primary;
+	padding: 9px 7px 9px 8px;
 }
 .profile-name {
 	width: 111px;
@@ -190,16 +191,20 @@
 	color: $secondary_text;
 }
 .notif-bg {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 100%;
 	width: 16px;
 	height: 16px;
-	margin: 3px 3px 7px 37px;
-	padding: 2px 4px 2px 5px;
-	border: solid 1px #fff;
+	margin: 0 0 0 0;
+	padding: 5px 5px 5px 5px;
 	background-color: $new_background;
+	text-align: center;
 }
 .notif-number {
 	width: 7px;
-	height: 12px;
+	//height: 12px;
 	font-family: $std_font;
 	font-size: 10px;
 	font-weight: 600;
@@ -210,4 +215,20 @@
 	color: $new_text;
 }
 
+.chats-top{
+	display: grid; 
+	grid-template-columns: 1fr 1fr; 
+	grid-template-rows: 1fr; 
+	gap: 0px 0px; 
+	grid-template-areas: 
+		". ."; 
+}
 
+.left,.right {
+  	flex-grow: 1;
+}
+
+.chat-sender{
+	display: grid;
+	grid-template-columns: 13% 77% 10%;
+}

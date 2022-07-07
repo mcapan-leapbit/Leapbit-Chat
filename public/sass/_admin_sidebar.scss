@@ -1,14 +1,18 @@
+.html{
+  overflow: hidden;
+  margin: 0;
+}
 .sidebar{
   width: 10%;
-  height: 100%;
-  padding: 100px 86px 32px 85px; //transform
+  height: calc(100vh - 4rem);
+  padding: 0 86px 32px 85px; //transform to rem
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   background-color: $background;
   .admin{
     align-items: center;
     display: flex;
     flex-direction: column;
-    padding-top: 3rem;
+    padding-top: 4rem;
     img{
       border-radius: 100%;
       width: 6rem;
@@ -37,13 +41,14 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin-top: 75%;
+    padding-top: 100%;
+    margin-top: 4rem;
     .nav-item{
       display: flex;
       align-items: center;
       margin-bottom: 2rem;
       &:hover{
-        color: $brand_primary; //not working for svg
+        color: $brand_primary; //not working for svg images
         font-weight: bolder;
       }
       img{
