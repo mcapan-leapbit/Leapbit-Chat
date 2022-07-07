@@ -295,7 +295,7 @@
 .search-label {
   width: 73px;
   height: 12px;
-  margin-bottom: 7px;
+  margin: 0 109px 4px 0;
   font-family: "Rubik", sans-serif;
   font-size: 10px;
   font-weight: normal;
@@ -307,15 +307,22 @@
 }
 
 .search-box {
-  width: 80%;
+  width: 182px;
   height: 32px;
+  margin: 4px 0 0;
+  padding: 9px 112px 9px 12px;
   border-radius: 6px;
   border: solid 1px #eee;
+  background-size: 1rem;
+  background-image: url("../../public/assets/images/icon-search.svg");
+  background-position: 0.5rem 0.5rem;
+  background-repeat: no-repeat;
 }
 
 .search-box::placeholder {
   width: 40px;
   height: 14px;
+  margin: 0 0 10px 8px;
   font-family: "Rubik", sans-serif;
   font-size: 12px;
   font-weight: normal;
@@ -342,7 +349,7 @@
 .status-label {
   width: 31px;
   height: 12px;
-  margin-bottom: 7px;
+  margin: 0 89px 4px 0;
   font-family: "Rubik", sans-serif;
   font-size: 10px;
   font-weight: normal;
@@ -354,13 +361,12 @@
 }
 
 .status-box {
-  display: flex;
-  width: 100%;
+  width: 120px;
   height: 32px;
+  margin: 4px 0 0;
+  padding: 9px 12px;
   border-radius: 6px;
   border: solid 1px #eee;
-  align-items: center;
-  justify-content: center;
 }
 
 .status-icon {
@@ -373,6 +379,7 @@
 .status-placeholder {
   width: 36px;
   height: 14px;
+  margin: 0 35px 0 8px;
   font-family: "Rubik", sans-serif;
   font-size: 12px;
   font-weight: normal;
@@ -400,7 +407,7 @@
 }
 
 .message-timestamp {
-  float: right;
+  margin-left: 6rem;
   font-family: "Rubik", sans-serif;
   font-size: 8px;
   font-weight: normal;
@@ -421,7 +428,7 @@
   height: 32px;
   margin-left: 10px;
   padding: 5px 5px 5px 5px;
-  background-color: #ececec;
+  background-color: #ECECEC;
   text-align: center;
 }
 
@@ -507,8 +514,15 @@
 
 .chats-top {
   display: grid;
+<<<<<<< HEAD
   grid-template-columns: 60% 40%;
   margin-bottom: 2rem;
+=======
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: ". .";
+>>>>>>> parent of 4a0ee75... improvement top bar
 }
 
 .left,
@@ -528,20 +542,4 @@
 
 .chat-bottom {
   margin-top: 1rem;
-}
-
-.search-pack {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-.search-pack-left {
-  display: grid;
-  grid-template-columns: 1fr;
-  margin-left: 15px;
-}
-
-.active-box {
-  margin-right: 15px;
 }
