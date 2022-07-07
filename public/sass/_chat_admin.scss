@@ -1,7 +1,9 @@
 .Mask {
+  display: flex;
+  flex-direction: column;
   width: 720px;
 
-  height: 800px;
+  height: 100%;
 
   margin: 24px 0 30px 30px;
 
@@ -20,6 +22,7 @@
 
 .chat-header {
   display: flex;
+  flex-grow: 0;
   width: 205px; /* check what else is this width */
 
   height: 82px;
@@ -106,8 +109,10 @@
 }
 
 .chat-body {
+  flex-grow: 1;
   height: fit-content;
   overflow: auto;
+  height: 800px; // testing
 }
 
 .chat-body-client {
@@ -196,8 +201,6 @@
   border-radius: 12px;
 
   border: solid 1px rgb(230, 229, 229);
-
-  position: absolute;
   bottom: 17px;
 
   display: flex;
