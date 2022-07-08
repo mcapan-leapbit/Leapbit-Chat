@@ -2,7 +2,6 @@
 @import '_chat_user';
 
 
-
 .floating_chatbox {
     display: flex;
     flex-direction: column;
@@ -15,7 +14,7 @@
 
     border-radius: 12px;
     width: 25%;
-    max-height: 100vh;
+    max-height: 100rem;
 
     .closer {
         display: none;
@@ -78,11 +77,11 @@
             padding: 3%;
             margin-block: 2.5%;
             background-color: $chatbox_secondary;
-            border-color: $chatbox_primary;
             color: $tertiary_text;
             width: 80%;
             border-color: $chatbox_primary;
             border-radius: 12px;
+            border-style: solid;
         }
 
         .start_button {
