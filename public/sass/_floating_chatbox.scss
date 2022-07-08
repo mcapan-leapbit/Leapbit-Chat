@@ -22,7 +22,6 @@
         margin: 2px;
         width: 15px;
         height: 15px;
-
         background-color: #833434;
         position: absolute;
         top: -7px;
@@ -54,9 +53,7 @@
 
                 bottom: 1px;
                 right: 1px;
-
-                background-color: #30de2f;
-
+                background-color: $green;
                 position: absolute;
             }
         }
@@ -165,8 +162,6 @@
                     min-width: 32px;
                 }
             }
-
-
         }
 
         .user_chat_entry {
@@ -195,7 +190,6 @@
                 padding: 3%;
                 background-color: $brand_primary;
             }
-
         }
     }
 

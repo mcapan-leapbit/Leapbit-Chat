@@ -6,7 +6,7 @@
   width: 100vw;
   overflow: hidden;
   height: 100vh;
-  background-color: #f6f6f6;
+  background-color: $background-message;
 
   .messages {
     margin-bottom: 20px;
@@ -22,7 +22,7 @@
     line-height: normal;
     letter-spacing: 3px;
     display: flex;
-    color: #2c2c2c;
+    color: $primary_text;
   }
   .rectangle {
     width: 46px;
@@ -30,7 +30,7 @@
     margin: 7px 0px 0px 30px;
     padding: 4px 8px;
     border-radius: 4px;
-    background-color: #edfdf3;
+    background-color: $new_background;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,14 +38,14 @@
   .-new {
     width: 30px;
     height: 12px;
-    font-family: Rubik;
+    font-family: $std_font;
     font-size: 10px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: #3e7a60;
+    color: $new_text;
   }
 
   .msg-row {
