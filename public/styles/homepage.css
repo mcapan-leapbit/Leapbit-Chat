@@ -2,9 +2,9 @@
 .mask-cbox {
   display: flex;
   flex-direction: column;
-  width: 720px;
+  width: 45rem;
   height: 100%;
-  margin: 24px 0 30px 30px;
+  margin: 1.5rem 0 1.875rem 1.875rem;
   padding: 0 0 17px;
   border-radius: 12px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
@@ -15,7 +15,7 @@
 .mask-cbox .chat-header {
   display: flex;
   flex-grow: 0;
-  width: 205px; /* check what else is this width */
+  width: 28.5%; /* check what else is this width */
   height: 82px;
   padding: 12px 491px 12px 24px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
@@ -60,7 +60,6 @@
 .mask-cbox .chat-header-info .header-usermail {
   width: 120px;
   height: 12px;
-  margin: 2px 0 1px 8px;
   font-family: "Rubik", sans-serif;
   font-size: 10px;
   color: #b8b8b8;

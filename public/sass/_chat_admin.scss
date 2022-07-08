@@ -1,11 +1,11 @@
 .mask-cbox {
   display: flex;
   flex-direction: column;
-  width: 720px;
+  width: 45rem;
 
   height: 100%;
 
-  margin: 24px 0 30px 30px;
+  margin: 1.5rem 0 1.875rem 1.875rem;
 
   padding: 0 0 17px;
 
@@ -22,7 +22,7 @@
   .chat-header {
     display: flex;
     flex-grow: 0;
-    width: 205px; /* check what else is this width */
+    width: 28.5%; /* check what else is this width */
 
     height: 82px;
 
@@ -83,8 +83,6 @@
 
       height: 19px;
 
-      //  margin: 0 22px 2px 8px;
-
       font-family: $std_font;
 
       font-size: 16px;
@@ -98,8 +96,6 @@
       width: 120px;
 
       height: 12px;
-
-      margin: 2px 0 1px 8px;
 
       font-family: $std_font;
 
