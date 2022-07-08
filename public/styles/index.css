@@ -287,6 +287,10 @@
   opacity: 1;
 }
 
+.remove-marg {
+  margin: 0;
+}
+
 .chats-list {
   width: 350px;
   height: 956px;

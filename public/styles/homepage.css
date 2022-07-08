@@ -169,36 +169,10 @@
   opacity: 1;
 }
 
-<<<<<<< HEAD
-=======
-.send-msg {
-  padding-top: 15px;
+.remove-marg {
+  margin: 0;
 }
 
-.chat-body-msg {
-  display: flex;
-  flex-direction: column;
-  margin: 0 0 4px 12px;
-}
-
-.chat-body-timestamp {
-  padding-top: 3px;
-  width: auto;
-  height: 9px;
-  font-family: Rubik;
-  font-size: 12px;
-  color: #b8b8b8;
-}
-
-.chat-body-msg-user {
-  margin: 0 12px 4px 0;
-}
-
-.user-timestamp {
-  float: right;
-}
-
->>>>>>> 795239e38fac5dfeccfe446bc3f40083a134833f
 .chat-body-rectangle,
 .chat-body-user {
   font-size: smaller;
