@@ -5,10 +5,9 @@
 
 .sidebar {
   height: 100%;
-  //padding: 0 86px 0px 85px; //transform to rem
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   background-color: $background;
-  
+
   .admin {
     align-items: center;
     display: flex;
@@ -46,8 +45,8 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    padding-top: 100%;
-    margin-top: 2rem;
+    padding-top: 50%;
+    padding-bottom: 50%;
 
     .nav-item {
       display: flex;
@@ -73,12 +72,45 @@
         font-weight: bolder;
       }
     }
+  }
 
-    .bottom-nav {
+.bottom-nav {
+      padding-top: 4rem;
       font-family: $std_font;
       font-size: .875rem;
       color: $primary_text;
-      margin-top: 75%;
+      align-items: center;
+      flex-direction: column;
+      display: flex;
+      float: bottom;
+      position: fixed;
+      bottom: 5%;
+      margin-left: 5%;
+
+      .nav-item {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        align-items: flex-end;
+
+        img {
+          width: 1.2rem;
+        }
+  
+        &:hover {
+          filter: invert(19%) sepia(42%) saturate(2468%) hue-rotate(167deg)
+            brightness(100%) contrast(101%);
+        }
+  
+        p {
+          margin: .25rem 0 0.188rem 0.75rem;
+          font-family: $std_font;
+          font-size:.875rem;
+        }
+  
+        &:hover {
+          font-weight: bold;
+        }
     }
   }
 }

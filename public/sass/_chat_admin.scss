@@ -1,8 +1,7 @@
 .mask-cbox {
   display: flex;
   flex-direction: column;
-  width: 50%;
-
+  width: 80%;
   padding: 0 0 17px;
   margin-bottom: 30px;
   border-radius: 12px;
@@ -15,9 +14,7 @@
     display: flex;
     flex-grow: 0;
     width: 100%; /* check what else is this width */
-
-    height: 82px;
-
+    min-height: 82px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     background-color: $background;
     border-radius: 12px;
