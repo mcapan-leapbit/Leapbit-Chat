@@ -7,11 +7,9 @@ body {
     background-color: $background_dark;
     font-family: $std_font;
     min-height: 500px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
 
     .main_title {
         max-width: 40%;
@@ -21,11 +19,9 @@ body {
 
         .gradient_text {
             background-image: $coming_soon_grad;
-
             background-clip: text;
             -webkit-background-clip: text;
             -moz-background-clip: text;
-
             -webkit-text-fill-color: transparent;
             -moz-text-fill-color: transparent;
         }
