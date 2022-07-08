@@ -1,6 +1,7 @@
 @import '_colors';
 @import '_chat_user';
 
+
 .floating_chatbox {
     display: flex;
     flex-direction: column;
@@ -10,16 +11,18 @@
     position: fixed;
     bottom: 2.5%;
     right: 2.5%;
+
     border-radius: 12px;
     width: 25%;
-    max-height: 100rem;
+    max-height: 40rem;
 
     .closer {
         display: none;
+
         margin: 2px;
         width: 15px;
         height: 15px;
-        background-color: $red;
+        background-color: #833434;
         position: absolute;
         top: -7px;
         right: -7px;
@@ -46,13 +49,17 @@
             .status {
                 width: 10px;
                 height: 10px;
-                border-top-left-radius: 50% 50%;
-                border-top-right-radius: 50% 50%;
-                border-bottom-right-radius: 50% 50%;
-                border-bottom-left-radius: 50% 50%;
+                border-radius: 50%;
+
                 bottom: 1px;
                 right: 1px;
+<<<<<<< HEAD
                 background-color: $green;
+=======
+
+                background-color: #30de2f;
+
+>>>>>>> f347a1b33c1f88e000279d0defc3cc9ae2325e6f
                 position: absolute;
             }
         }
@@ -100,7 +107,7 @@
         .chat-body {
             width: 100%;
             overflow-y: auto;
-            max-height: 400px;
+            max-height: 40vh;
 
             &::-webkit-scrollbar {
                 background-color: $chatbox_primary;
@@ -126,11 +133,12 @@
                     .chat-body-rectangle {
                         width: fit-content;
                         font-size: smaller;
+
                         background-image: $message_grad_dark;
                     }
                 }
 
-                .Bitmap {
+                .bitmap {
                     min-width: 32px;
                     min-height: 32px;
                 }
@@ -168,8 +176,9 @@
             border-radius: 12px;
             border: solid 1px $chatbox_primary;
             align-items: center;
+
             font-size: small;
-            padding: 2.5%;
+            padding: 2%;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -205,6 +214,7 @@
         color: $brand_secondary;
         transition-duration: 0.4s;
         cursor: pointer;
+
         border-bottom-left-radius: 12px;
         border-bottom-right-radius: 12px;
 

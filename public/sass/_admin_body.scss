@@ -10,6 +10,7 @@
 
   .messages {
     margin-bottom: 20px;
+    width: 80vw;
     height: 38px;
     padding-left: 30px;
     padding-top: 2%;
@@ -53,10 +54,15 @@
     height: 100%;
   }
 
+  .dashboard-left-menu {
+    width: 100%;
+  }
+
   .right-col {
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 100%;
   }
   
 }
