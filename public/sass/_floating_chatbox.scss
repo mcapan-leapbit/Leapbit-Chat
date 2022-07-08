@@ -12,7 +12,7 @@
     right: 2.5%;
     border-radius: 12px;
     width: 25%;
-    max-height: 100rem;
+    max-height: 40rem;
 
     .closer {
         display: none;
@@ -100,7 +100,7 @@
         .chat-body {
             width: 100%;
             overflow-y: auto;
-            max-height: 400px;
+            max-height: 20rem;
 
             &::-webkit-scrollbar {
                 background-color: $chatbox_primary;
@@ -130,7 +130,7 @@
                     }
                 }
 
-                .Bitmap {
+                .bitmap {
                     min-width: 32px;
                     min-height: 32px;
                 }
@@ -171,7 +171,7 @@
             border: solid 1px $chatbox_primary;
             align-items: center;
             font-size: small;
-            padding: 2.5%;
+            padding: 2%;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
