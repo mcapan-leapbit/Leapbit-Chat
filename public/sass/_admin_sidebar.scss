@@ -1,27 +1,26 @@
-.html{
+.html {
   overflow: hidden;
   margin: 0;
 }
 
-.sidebar{
-  width: 10%;
-  height: calc(100vh - 4rem);
-  padding: 0 86px 32px 85px; //transform to rem
+.sidebar {
+  height: 100%;
+  padding: 0 86px 0px 85px; //transform to rem
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   background-color: $background;
-  .admin{
+  .admin {
     align-items: center;
     display: flex;
     flex-direction: column;
     padding-top: 4rem;
 
-    img{
+    img {
       border-radius: 100%;
       width: 6rem;
       margin-bottom: 2rem;
     }
 
-    .username{
+    .username {
       font-family: $std_font;
       font-size: 1.5rem;
       font-weight: normal;
@@ -34,55 +33,51 @@
       margin-bottom: 1rem;
     }
 
-    .email{
+    .email {
       font-family: $std_font;
       font-size: 0.875rem;
       text-align: center;
       color: $primary_text;
     }
-
   }
 
-  .navigation{
+  .navigation {
     align-items: center;
     display: flex;
     flex-direction: column;
     padding-top: 100%;
     margin-top: 2rem;
 
-    .nav-item{
+    .nav-item {
       display: flex;
       align-items: center;
       margin-bottom: 2rem;
-      
-      img{
+
+      img {
         width: 1.2rem;
       }
 
-      &:hover{
-        filter: invert(19%) sepia(42%) saturate(2468%) hue-rotate(167deg) brightness(100%) contrast(101%);
+      &:hover {
+        filter: invert(19%) sepia(42%) saturate(2468%) hue-rotate(167deg)
+          brightness(100%) contrast(101%);
       }
 
-      p{
+      p {
         margin: 0.25rem 0 0.188rem 0.75rem;
         font-family: $std_font;
         font-size: 0.875rem;
       }
 
-      &:hover{
+      &:hover {
         font-weight: bolder;
       }
-
     }
 
-    .bottom-nav{
+    .bottom-nav {
       font-family: $std_font;
       font-size: 0.875rem;
       color: $primary_text;
       margin-top: 75%;
     }
-
   }
-
 }
-

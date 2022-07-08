@@ -68,7 +68,7 @@
   flex-grow: 1;
   width: 100%;
   overflow: auto;
-  height: 800px;
+  height: 100%;
 }
 .mask-cbox .chat-body .chat-body-client {
   display: flex;
