@@ -1,37 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap");
-.Mask {
-  display: flex;
-  flex-direction: column;
-  width: 720px;
-  height: 100%;
-  margin: 24px 0 30px 30px;
-  padding: 0 0 17px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  position: relative;
-  align-items: center;
-}
-
-.chat-header {
-  display: flex;
-  flex-grow: 0;
-  width: 205px; /* check what else is this width */
-  height: 82px;
-  padding: 12px 491px 12px 24px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  border-radius: 12px;
-  align-items: center;
-  justify-content: center;
-}
-
-.chat-header-contents {
-  width: 200px;
-  display: grid;
-  grid-template-columns: 27% 73%;
-}
-
 .user-circle {
   display: flex;
   align-items: center;
@@ -45,31 +12,11 @@
   text-align: center;
 }
 
-.AW {
-  width: 19px;
-  height: 14px;
-  font-family: Rubik;
-  font-size: 12px;
+.initials {
+  font-family: "Rubik", sans-serif;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #004b65;
-}
-
-.Austin-Wade {
-  width: 98px;
-  height: 19px;
-  font-family: Rubik;
-  font-size: 16px;
-  font-weight: 600;
-  color: #2c2c2c;
-}
-
-.austinwadeleapbit {
-  width: 120px;
-  height: 12px;
-  margin: 2px 0 1px 8px;
-  font-family: Rubik;
-  font-size: 10px;
-  color: #b8b8b8;
 }
 
 .chat-body {
@@ -99,7 +46,7 @@
   background-image: linear-gradient(79deg, #f5f5f5 0%, #e8e8e8);
   border-top-left-radius: 0;
   align-items: center;
-  font-family: Rubik;
+  font-family: "Rubik", sans-serif;
 }
 
 .Bitmap {
@@ -124,7 +71,7 @@
   background: rgb(254, 254, 254);
   background: linear-gradient(117deg, rgb(0, 94, 120) 0%, rgb(0, 77, 106) 90%);
   border-top-right-radius: 0;
-  font-family: Rubik;
+  font-family: "Rubik", sans-serif;
 }
 
 .chat-entry {
@@ -181,7 +128,7 @@
   padding-top: 3px;
   width: auto;
   height: 9px;
-  font-family: Rubik;
+  font-family: "Rubik", sans-serif;
   font-size: 12px;
   color: #b8b8b8;
 }
@@ -194,39 +141,6 @@
   float: right;
 }
 
-.Mask {
-  display: flex;
-  flex-direction: column;
-  width: 720px;
-  height: 100%;
-  margin: 24px 0 30px 30px;
-  padding: 0 0 17px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  position: relative;
-  align-items: center;
-}
-
-.chat-header {
-  display: flex;
-  flex-grow: 0;
-  width: 205px; /* check what else is this width */
-  height: 82px;
-  padding: 12px 491px 12px 24px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  border-radius: 12px;
-  align-items: center;
-  justify-content: center;
-}
-
-.chat-header-contents {
-  width: 200px;
-  display: grid;
-  grid-template-columns: 27% 73%;
-}
-
 .user-circle {
   display: flex;
   align-items: center;
@@ -240,31 +154,11 @@
   text-align: center;
 }
 
-.AW {
-  width: 19px;
-  height: 14px;
-  font-family: Rubik;
-  font-size: 12px;
+.initials {
+  font-family: "Rubik", sans-serif;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #004b65;
-}
-
-.Austin-Wade {
-  width: 98px;
-  height: 19px;
-  font-family: Rubik;
-  font-size: 16px;
-  font-weight: 600;
-  color: #2c2c2c;
-}
-
-.austinwadeleapbit {
-  width: 120px;
-  height: 12px;
-  margin: 2px 0 1px 8px;
-  font-family: Rubik;
-  font-size: 10px;
-  color: #b8b8b8;
 }
 
 .chat-body {
@@ -294,7 +188,7 @@
   background-image: linear-gradient(79deg, #f5f5f5 0%, #e8e8e8);
   border-top-left-radius: 0;
   align-items: center;
-  font-family: Rubik;
+  font-family: "Rubik", sans-serif;
 }
 
 .Bitmap {
@@ -319,7 +213,7 @@
   background: rgb(254, 254, 254);
   background: linear-gradient(117deg, rgb(0, 94, 120) 0%, rgb(0, 77, 106) 90%);
   border-top-right-radius: 0;
-  font-family: Rubik;
+  font-family: "Rubik", sans-serif;
 }
 
 .chat-entry {
@@ -376,7 +270,7 @@
   padding-top: 3px;
   width: auto;
   height: 9px;
-  font-family: Rubik;
+  font-family: "Rubik", sans-serif;
   font-size: 12px;
   color: #b8b8b8;
 }
@@ -400,7 +294,7 @@
   right: 2.5%;
   border-radius: 12px;
   width: 25%;
-  max-height: 100vh;
+  max-height: 100rem;
 }
 .floating_chatbox .closer {
   display: none;
@@ -453,11 +347,11 @@
   padding: 3%;
   margin-block: 2.5%;
   background-color: #1f1f1f;
-  border-color: #2a2a2a;
   color: #b8b8b8;
   width: 80%;
   border-color: #2a2a2a;
   border-radius: 12px;
+  border-style: solid;
 }
 .floating_chatbox .signup_box .start_button {
   font-size: small;

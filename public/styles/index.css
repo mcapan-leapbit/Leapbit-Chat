@@ -11,6 +11,7 @@
 }
 .dash .messages {
   margin-bottom: 20px;
+  width: 80vw;
   height: 38px;
   padding-left: 30px;
   padding-top: 2%;
@@ -52,10 +53,14 @@
   flex-direction: row;
   height: 100%;
 }
+.dash .dashboard-left-menu {
+  width: 100%;
+}
 .dash .right-col {
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
 }
 
 .html {
@@ -134,7 +139,7 @@
 .mask-cbox {
   display: flex;
   flex-direction: column;
-  width: 45rem;
+  width: 50%;
   padding: 0 0 17px;
   margin-bottom: 30px;
   border-radius: 12px;
@@ -146,19 +151,18 @@
 .mask-cbox .chat-header {
   display: flex;
   flex-grow: 0;
-  width: 28.5%; /* check what else is this width */
+  width: 100%; /* check what else is this width */
   height: 82px;
-  padding: 12px 491px 12px 24px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   border-radius: 12px;
   align-items: center;
-  justify-content: center;
 }
 .mask-cbox .chat-header .chat-header-contents {
   width: 200px;
   display: grid;
   grid-template-columns: 27% 73%;
+  margin-left: 10px;
 }
 .mask-cbox .user-circle {
   display: flex;
@@ -204,15 +208,17 @@
 .mask-cbox .chat-body .chat-body-client {
   display: flex;
   margin: 24px;
+  max-width: 100%;
 }
 .mask-cbox .chat-body .chat-body-client .chat-body-msg {
   display: flex;
   flex-direction: column;
   margin: 0 0 4px 12px;
+  width: 100%;
 }
 .mask-cbox .chat-body .chat-body-client .chat-body-rectangle {
   position: relative;
-  width: 469px;
+  max-width: 100%;
   min-height: 20px;
   padding: 20px;
   border-radius: 12px;
@@ -227,22 +233,24 @@
   margin: 24px;
 }
 .mask-cbox .chat-body .chat-body-user .chat-user-logo {
-  width: 42px;
-  height: 42px;
   border-radius: 50%;
+  height: 38px;
+  width: 42px;
+  display: flex;
+  padding: 5px;
   overflow: hidden;
 }
 .mask-cbox .chat-body .chat-body-user .chat-user-logo .chat-body-logo {
-  width: 100%;
-  height: 100%;
+  border-radius: 50%;
   object-fit: contain;
 }
 .mask-cbox .chat-body .chat-body-user .chat-body-msg-user {
-  margin: 0 12px 4px 0;
+  width: 100%;
+  margin: 0 0px 4px 0;
 }
 .mask-cbox .chat-body .chat-body-user .chat-body-msg-user .chat-body-rectangle-user {
   color: white;
-  width: 469px;
+  max-width: 100%;
   min-height: 20px;
   padding: 20px;
   border-radius: 12px;
@@ -264,12 +272,13 @@
 }
 
 .send-msg {
+  width: 90%;
   padding-top: 15px;
 }
 .send-msg .chat-entry {
-  width: 627px;
+  width: 100%;
   height: 48px;
-  margin-left: 30px;
+  max-width: 100%;
   border-radius: 12px;
   border: solid 1px rgb(230, 229, 229);
   bottom: 17px;
