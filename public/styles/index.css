@@ -302,9 +302,8 @@
 }
 
 .search-label {
-  width: 73px;
   height: 12px;
-  margin-bottom: 7px;
+  padding-bottom: 0.5rem;
   font-family: "Rubik", sans-serif;
   font-size: 10px;
   font-weight: normal;
@@ -320,6 +319,12 @@
   height: 32px;
   border-radius: 6px;
   border: solid 1px #eee;
+  padding-left: 1.5rem;
+  box-sizing: border-box;
+  background: url("/public/assets/images/icon-search.svg");
+  background-size: 0.5rem;
+  background-repeat: no-repeat;
+  background-position: 0.5rem;
 }
 
 .search-box::placeholder {
@@ -349,9 +354,8 @@
 }
 
 .status-label {
-  width: 31px;
   height: 12px;
-  margin-bottom: 7px;
+  padding-bottom: 0.5rem;
   font-family: "Rubik", sans-serif;
   font-size: 10px;
   font-weight: normal;
@@ -368,15 +372,25 @@
   height: 32px;
   border-radius: 6px;
   border: solid 1px #eee;
+  justify-content: left;
   align-items: center;
-  justify-content: center;
 }
 
 .status-icon {
   width: 8px;
   height: 8px;
-  margin: 3px 8px 3px 0;
+  border-radius: 100%;
+  margin: 0.1rem 0.5rem 0.1rem 0;
   background-color: #3e7a60;
+  margin-left: 0.5rem;
+}
+
+.status-chevron {
+  width: 9px;
+  height: 10px;
+  margin-right: 0.5rem;
+  background-position: right;
+  margin-left: 3rem;
 }
 
 .status-placeholder {
@@ -531,6 +545,7 @@
 .chats-top {
   display: grid;
   grid-template-columns: 60% 40%;
+  margin-bottom: 2rem;
 }
 
 .left,
@@ -565,5 +580,7 @@
 }
 
 .active-box {
-  margin-right: 15px;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-right: 1rem;
 }
