@@ -2,38 +2,24 @@
   display: flex;
   flex-direction: column;
   width: 45rem;
-
   height: 100%;
-
   margin: 1.5rem 0 1.875rem 1.875rem;
-
   padding: 0 0 17px;
-
   border-radius: 12px;
-
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-
   background-color: $background;
-
   position: relative;
-
   align-items: center;
 
   .chat-header {
     display: flex;
     flex-grow: 0;
     width: 28.5%; /* check what else is this width */
-
     height: 82px;
-
     padding: 12px 491px 12px 24px;
-
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-
     background-color: $background;
-
     border-radius: 12px;
-
     align-items: center;
     justify-content: center;
 
@@ -42,6 +28,7 @@
       display: grid;
       grid-template-columns: 27% 73%;
     }
+
   }
 
   .user-circle {
@@ -49,60 +36,43 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-
     width: 32px;
-
     height: 32px;
-
     margin: 0 0 0 0;
-
     padding: 5px 5px 5px 5px;
-
     background-color: #ececec;
-
     text-align: center;
 
     .user-initials {
       width: 19px;
-
       height: 14px;
-
       font-family: $std_font;
-
       font-size: 12px;
-
       font-weight: 600;
-
       color: $brand_primary;
     }
+
   }
 
   .chat-header-info {
+
     .chat-header-uname {
       width: 98px;
-
       height: 19px;
-
       font-family: $std_font;
-
       font-size: 16px;
-
       font-weight: 600;
-
       color: $primary_text;
     }
 
     .header-usermail {
       width: 120px;
-
       height: 12px;
-
       font-family: $std_font;
-
       font-size: 10px;
-
       color: #b8b8b8;
     }
+
   }
 
   .chat-body {
@@ -110,11 +80,11 @@
     width: 100%;
     overflow: auto;
     height: 100%; // testing
-
+    
     .chat-body-client {
       display: flex;
       margin: 24px;
-
+      
       .chat-body-msg {
         display: flex;
         flex-direction: column;
@@ -124,106 +94,80 @@
       .chat-body-rectangle {
         position: relative;
         width: 469px;
-
         min-height: 20px;
-
         padding: 20px;
-
         border-radius: 12px;
-
         background-image: $message_grad;
         border-top-left-radius: 0;
-
         align-items: center;
-
         font-family: $std_font;
       }
+
     }
 
     .chat-body-user {
       display: flex;
       flex-direction: row-reverse;
       margin: 24px;
-
+      
       .chat-user-logo {
         width: 42px;
-
         height: 42px;
-
         border-radius: 50%;
-
         overflow: hidden;
-
+      
         .chat-body-logo {
           width: 100%;
           height: 100%;
           object-fit: contain;
         }
+    
       }
-
       .chat-body-msg-user {
         margin: 0 12px 4px 0;
-
         .chat-body-rectangle-user {
           color: white;
           width: 469px;
-
           min-height: 20px;
-
           padding: 20px;
-
           border-radius: 12px;
-
           background: rgb(254, 254, 254);
           background: $my_message_grad;
-
           border-top-right-radius: 0;
-
           font-family: $std_font;
         }
-
         .user-timestamp {
           float: right;
         }
+
       }
+
     }
 
     .chat-body-timestamp {
       padding-top: 3px;
       width: auto;
-
       height: 9px;
-
       font-family: $std_font;
-
       font-size: 12px;
-
       color: $tertiary_text;
     }
+
   }
+
 }
 
 .send-msg {
   padding-top: 15px;
-
+  
   .chat-entry {
     width: 627px;
-
     height: 48px;
-
-    // margin: 235px 24px 0;
-
-    // padding: 4px 4px 4px 16px;
-
     margin-left: 30px;
-
     border-radius: 12px;
-
     border: solid 1px rgb(230, 229, 229);
     bottom: 17px;
-
     display: flex;
-
     align-items: center;
 
     .chat-entry-text {
@@ -237,22 +181,17 @@
 
     .chat-send-icon {
       width: 25px;
-
       height: 25px;
-
       padding: 8px;
-
       margin-left: 10px;
-
       opacity: 0.5;
-
       border-radius: 10px;
-
       background-color: $brand_primary;
-
       object-fit: cover;
     }
+
   }
+
 }
 
 .is-full {
