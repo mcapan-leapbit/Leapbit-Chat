@@ -169,6 +169,36 @@
   opacity: 1;
 }
 
+<<<<<<< HEAD
+=======
+.send-msg {
+  padding-top: 15px;
+}
+
+.chat-body-msg {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 4px 12px;
+}
+
+.chat-body-timestamp {
+  padding-top: 3px;
+  width: auto;
+  height: 9px;
+  font-family: Rubik;
+  font-size: 12px;
+  color: #b8b8b8;
+}
+
+.chat-body-msg-user {
+  margin: 0 12px 4px 0;
+}
+
+.user-timestamp {
+  float: right;
+}
+
+>>>>>>> 795239e38fac5dfeccfe446bc3f40083a134833f
 .chat-body-rectangle,
 .chat-body-user {
   font-size: smaller;
@@ -218,7 +248,7 @@ body .floating_chatbox {
   right: 2.5%;
   border-radius: 12px;
   max-height: 70%;
-  width: 30%;
+  width: 25%;
 }
 body .floating_chatbox .closer {
   display: none;
@@ -309,8 +339,42 @@ body .floating_chatbox .messages_box .chat-body::-webkit-scrollbar-thumb {
   background: #b8b8b8;
   border-radius: 10px;
 }
-body .floating_chatbox .messages_box .chat-body .chat-body-client .chat-body-rectangle {
+body .floating_chatbox .messages_box .chat-body .chat-body-client {
+  flex-direction: row;
+  justify-content: left;
+}
+body .floating_chatbox .messages_box .chat-body .chat-body-client .chat-body-msg {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 10px;
+  max-width: 65%;
+}
+body .floating_chatbox .messages_box .chat-body .chat-body-client .chat-body-msg .chat-body-rectangle {
+  width: fit-content;
   background-image: linear-gradient(71deg, #454545 0%, #2a2a2a);
+}
+body .floating_chatbox .messages_box .chat-body .chat-body-client .Bitmap {
+  min-width: 32px;
+  min-height: 32px;
+}
+body .floating_chatbox .messages_box .chat-body .chat-body-user {
+  flex-direction: row-reverse;
+  justify-content: right;
+}
+body .floating_chatbox .messages_box .chat-body .chat-body-user .chat-body-msg {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px 0 0;
+  max-width: 65%;
+}
+body .floating_chatbox .messages_box .chat-body .chat-body-user .chat-body-msg .chat-body-rectangle-user {
+  width: fit-content;
+}
+body .floating_chatbox .messages_box .chat-body .chat-body-user .chat-body-msg .chat-body-timestamp {
+  text-align: right;
+}
+body .floating_chatbox .messages_box .chat-body .chat-body-user .user-circle {
+  min-width: 32px;
 }
 body .floating_chatbox .messages_box .user_chat_entry {
   width: 90%;
