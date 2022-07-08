@@ -9,18 +9,17 @@
   margin: 0 0 0 0;
   padding: 5px 5px 5px 5px;
 
-  background-color: #ececec;
+  background-color: $background;
   text-align: center;
+  color: $brand_primary;
 
-.initials {
-  font-family: $std_font;
-  font-size: .8rem;
-  font-weight: 600;
-  color: #004b65;
-}
-
-    color: #004b65;
+  .initials {
+    font-family: $std_font;
+    font-size: .8rem;
+    font-weight: 600;
+    color: $brand_primary;
   }
+}
 
 
 
@@ -47,7 +46,7 @@
   font-family: $std_font;
   font-size: 12px;
 
-  color: #b8b8b8;
+  color: $tertiary_text;
 }
 
 .chat-body {
@@ -78,7 +77,6 @@
 
 
     .chat-body-rectangle-user {
-      color: white;
       padding: 10px;
       background: $my_message_grad;
       border-radius: 12px;
@@ -106,7 +104,7 @@
     padding-left: 5px;
     font-size: 1.25rem;
 
-    &:active{
+    &:active {
       border: none;
       outline: none;
     }
