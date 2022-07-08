@@ -1,8 +1,7 @@
 .chats-list {
   width: 350px;
-  height: 956px;
   margin: 24px 30px 30px;
-  padding: 24px 0 409px;
+  padding: 24px 0 0;
   border-radius: 12px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   background-color: $background;
@@ -10,7 +9,7 @@
 
 .search-label {
   height: 12px;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
   font-family: $std_font;
   font-size: 10px;
   font-weight: normal;
@@ -62,7 +61,7 @@
 
 .status-label {
   height: 12px;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
   font-family: $std_font;
   font-size: 10px;
   font-weight: normal;
@@ -93,12 +92,12 @@
 }
 
 .status-chevron {
-	width: 9px;
-	height: 10px;
-	margin-right: 0.5rem;
-	background-position: right;
-	margin-left: 3rem;
-  }
+  width: 9px;
+  height: 10px;
+  margin-right: 0.5rem;
+  background-position: right;
+  margin-left: 3rem;
+}
 
 .status-placeholder {
   width: 36px;
@@ -128,7 +127,6 @@
   &:hover {
     background-color: $background-message;
   }
-  
 }
 
 .message-timestamp {

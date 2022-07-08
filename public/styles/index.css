@@ -1,11 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
-.-dashboard-01-Inactive {
-  width: 100%;
-  height: 100%;
-  padding: 0 30px 0 0;
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap");
+.dash {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
   background-color: #f6f6f6;
 }
-.-dashboard-01-Inactive .messages {
+.dash .messages {
   width: 80%;
   height: 38px;
   padding-left: 30%;
@@ -20,7 +23,7 @@
   display: flex;
   color: #2c2c2c;
 }
-.-dashboard-01-Inactive .rectangle {
+.dash .rectangle {
   width: 46px;
   height: 20px;
   margin: 7px 0px 0px 30px;
@@ -31,7 +34,7 @@
   justify-content: center;
   align-items: center;
 }
-.-dashboard-01-Inactive .-new {
+.dash .-new {
   width: 30px;
   height: 12px;
   font-family: Rubik;
@@ -43,6 +46,13 @@
   letter-spacing: normal;
   color: #3e7a60;
 }
+.dash .msg-row {
+  display: flex;
+  flex-direction: row;
+}
+.dash .right-col {
+  height: 100%;
+}
 
 .html {
   overflow: hidden;
@@ -50,9 +60,8 @@
 }
 
 .sidebar {
-  width: 10%;
-  height: calc(100vh - 4rem);
-  padding: 0 86px 32px 85px;
+  height: 100%;
+  padding: 0 86px 0px 85px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
 }
@@ -187,7 +196,7 @@
   flex-grow: 1;
   width: 100%;
   overflow: auto;
-  height: 800px;
+  height: 100%;
 }
 .mask-cbox .chat-body .chat-body-client {
   display: flex;
@@ -293,9 +302,8 @@
 
 .chats-list {
   width: 350px;
-  height: 956px;
   margin: 24px 30px 30px;
-  padding: 24px 0 409px;
+  padding: 24px 0 0;
   border-radius: 12px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
