@@ -1,5 +1,5 @@
 @import '_colors';
-@import '_chat_admin_old';
+@import '_chat_user';
 
 
 
@@ -15,6 +15,7 @@
 
     border-radius: 12px;
     width: 25%;
+    max-height: 100vh;
 
     .closer {
         display: none;

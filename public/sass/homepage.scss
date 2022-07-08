@@ -1,6 +1,6 @@
 @import '_colors';
 @import '_fonts';
-@import "_chat_admin_old";
+@import "_chat_user";
 @import '_floating_chatbox';
 
 body {
@@ -32,6 +32,7 @@ body {
 
         .huge {
             font-size: 550%;
+            font-weight: 600; // semibold
         }
 
         .description {
