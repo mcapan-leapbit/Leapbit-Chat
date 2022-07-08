@@ -367,15 +367,25 @@
   height: 32px;
   border-radius: 6px;
   border: solid 1px #eee;
+  justify-content: left;
   align-items: center;
-  justify-content: center;
 }
 
 .status-icon {
   width: 8px;
   height: 8px;
-  margin: 3px 8px 3px 0;
+  border-radius: 100%;
+  margin: 0.1rem 0.5rem 0.1rem 0;
   background-color: #3e7a60;
+  margin-left: 0.5rem;
+}
+
+.status-chevron {
+  width: 9px;
+  height: 10px;
+  margin-right: 0.5rem;
+  background-position: right;
+  margin-left: 3rem;
 }
 
 .status-placeholder {
