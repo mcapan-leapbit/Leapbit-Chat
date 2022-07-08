@@ -1,81 +1,58 @@
 .chats-list {
-  width: 350px;
-  margin: 0px 30px 30px;
-  padding: 24px 0 0;
+  width: 100%;
+  margin: 0 2% 3% 2%;
+  padding: 3% 0 0;
   border-radius: 12px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   background-color: $background;
 }
 
 .search-label {
-  height: 12px;
-  padding-bottom: 0.5rem;
+  padding-bottom: .5rem;
   font-family: $std_font;
-  font-size: 10px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  font-size: .625rem;
   color: $primary_text;
 }
 
 .search-box {
   width: 80%;
-  height: 32px;
+  height: 2rem; 
   border-radius: 6px;
-  border: solid 1px #eee;
+  border: solid 1px $user-circle;
   padding-left: 1.5rem;
   box-sizing: border-box;
   background: url("/public/assets/images/icon-search.svg");
-  background-size: 0.5rem;
+  background-size: .5rem;
   background-repeat: no-repeat;
-  background-position: 0.5rem;
+  background-position: .5rem;
 }
 
 .search-box::placeholder {
-  width: 40px;
-  height: 14px;
   font-family: $std_font;
-  font-size: 12px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  font-size: .75rem;
   color: $tertiary_text;
 }
 
 .search-icon {
-  width: 10px;
-  height: 10px;
-  margin: 2px 8px 2px 0;
-  font-size: 10px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  width: .5rem;
+  height: .5rem;
+  margin: .125rem 5rem .125rem 0;
+  font-size: .625rem;
   color: $tertiary_text;
 }
 
 .status-label {
-  height: 12px;
-  padding-bottom: 0.5rem;
+  height: .75rem;
+  padding-bottom: .5rem;
   font-family: $std_font;
-  font-size: 10px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  font-size: .625rem;
   color: $primary_text;
 }
 
 .status-box {
   display: flex;
   width: 100%;
-  height: 32px;
+  height: 2rem; 
   border-radius: 6px;
   border: solid 1px #eee;
   justify-content: left;
@@ -83,39 +60,34 @@
 }
 
 .status-icon {
-  width: 8px;
-  height: 8px;
+  width: .5rem;
+  height: .5rem;
   border-radius: 100%;
-  margin: 0.1rem 0.5rem 0.1rem 0;
+  margin: .1rem .5rem .1rem 0;
   background-color: $new_text;
-  margin-left: 0.5rem;
+  margin-left: .5rem;
 }
 
 .status-chevron {
   width: 9px;
   height: 10px;
-  margin-right: 0.5rem;
+  margin-right: .5rem;
   background-position: right;
   margin-left: 3rem;
 }
 
 .status-placeholder {
-  width: 36px;
-  height: 14px;
+  width: .625rem;
+  height: .625rem;
   font-family: $std_font;
-  font-size: 12px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  font-size: .75rem;
   color: $primary_text;
 }
 
 .status-divider {
-  width: 350px;
-  height: 1px;
-  margin: 0 0 14px;
+  width: 100%;
+  height: .1rem;
+  margin: 0 0 .875rem;
   background-color: $background-message;
 }
 
@@ -133,12 +105,7 @@
 .message-timestamp {
   float: right;
   font-family: $std_font;
-  font-size: 8px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  font-size: .5rem;
   text-align: left;
   color: $tertiary_text;
 }
@@ -148,92 +115,67 @@
   align-items: center;
   justify-content: center;
   border-radius: 100%;
-  width: 32px;
-  height: 32px;
-  margin-left: 10px;
-  padding: 5px 5px 5px 5px;
-  background-color: #ececec;
+  width: 2rem;
+  height: 2rem;
+  margin-left: .625rem;
+  padding: .3rem .3rem .3rem .3rem;
+  background-color: $user-circle;
   text-align: center;
 }
 
 .profile-initials {
-  width: 17px;
-  height: 14px;
+  width: 1rem;
+  height: 1rem;
   font-family: $std_font;
-  font-size: 12px;
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  font-size: .75rem;
+  font-weight: bold;
   color: $brand_primary;
-  padding: 9px 7px 9px 8px;
+  padding: .5rem .4rem .5rem .5rem;
 }
 
 .message-timestamp {
   margin-right: 1rem;
   font-family: $std_font;
-  font-size: 8px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  font-size: .5rem;
   text-align: left;
   color: $tertiary_text;
   float: right;
 }
 
 .profile-name {
-  width: 111px;
-  height: 19px;
   font-family: $std_font;
-  font-size: 16px;
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  font-size: 1rem;
+  font-weight: bold;
   color: $primary_text;
 }
 
 .profile-email {
-  width: 127px;
-  height: 12px;
   font-family: $std_font;
-  font-size: 10px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  font-size: .625rem;
   color: $tertiary_text;
 }
 
 .message-text {
-  width: 318px;
-  height: 32px;
-  margin: 7px 16px 16px;
+  width: 90%;
+  height: 2rem;
+  margin: .5rem 1rem 1rem;
   font-family: $std_font;
-  font-size: 10px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
+  font-size: .625rem;
   line-height: 1.7;
   letter-spacing: normal;
   color: $secondary_text;
 }
 
 .notif-bg {
-  font-size: 0.75rem;
+  font-size: .75rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 100%;
-  width: 8px;
-  height: 8px;
-  margin-left: 0.85rem;
-  padding: 5px 5px 5px 5px;
+  width: .5rem;
+  height: .5rem;
+  margin-left: .85rem;
+  padding: 30% 30% 30% 30%;
   background-color: $new_background;
   text-align: center;
 }
@@ -241,12 +183,8 @@
 .notif-number {
   width: 7px;
   font-family: $std_font;
-  font-size: 10px;
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  font-size: .625rem;
+  font-weight: bold;
   color: $new_text;
 }
 
@@ -267,7 +205,7 @@
 }
 
 .sender-details {
-  margin-left: 10px;
+  margin-left: -.5rem;
   width: 100%;
 }
 
@@ -284,7 +222,7 @@
 .search-pack-left {
   display: grid;
   grid-template-columns: 1fr;
-  margin-left: 15px;
+  margin-left: 1rem;
 }
 
 .active-box {

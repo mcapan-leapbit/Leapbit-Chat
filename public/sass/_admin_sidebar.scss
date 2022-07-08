@@ -5,7 +5,7 @@
 
 .sidebar {
   height: 100%;
-  padding: 0 86px 0px 85px; //transform to rem
+  //padding: 0 86px 0px 85px; //transform to rem
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   background-color: $background;
   
@@ -36,7 +36,7 @@
 
     .email {
       font-family: $std_font;
-      font-size: 0.875rem;
+      font-size: .875rem;
       text-align: center;
       color: $primary_text;
     }
@@ -64,9 +64,9 @@
       }
 
       p {
-        margin: 0.25rem 0 0.188rem 0.75rem;
+        margin: .25rem 0 0.188rem 0.75rem;
         font-family: $std_font;
-        font-size: 0.875rem;
+        font-size:.875rem;
       }
 
       &:hover {
@@ -76,7 +76,7 @@
 
     .bottom-nav {
       font-family: $std_font;
-      font-size: 0.875rem;
+      font-size: .875rem;
       color: $primary_text;
       margin-top: 75%;
     }
