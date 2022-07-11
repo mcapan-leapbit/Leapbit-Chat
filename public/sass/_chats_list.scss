@@ -7,6 +7,24 @@
   background-color: $background;
 }
 
+.scrollable-messages{
+    flex-grow: 1;
+    width: 100%;
+    overflow: auto;
+    height: 100%;
+
+  &::-webkit-scrollbar {
+      background-color: $chatbox_primary;
+      border-radius: 10px;
+      width: 7px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background: $tertiary_text;
+      border-radius: 10px;
+  }
+}
+
 .search-label {
   padding-bottom: .5rem;
   font-family: $std_font;
