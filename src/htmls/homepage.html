@@ -30,11 +30,11 @@
             </div>
         </div>
 
-        <form id="signup_box" class="signup_box">
+        <form id="signup_box" class="signup_box"  onsubmit="open_messages_box(); return false;">
             <br />
             <input class="input_box" type="text" placeholder="Your name" name="name" required>
             <input class="input_box" type="text" placeholder="Your e-mail" name="email" required>
-            <div class="start_button" onclick="open_messages_box()"><b>START CHAT</b></div>
+            <input class="start_button" type="submit" value="START CHAT">
             <br />
         </form>
         <div id="messages_box" class="messages_box">
