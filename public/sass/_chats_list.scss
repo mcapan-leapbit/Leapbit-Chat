@@ -17,7 +17,7 @@
     height: 100%;
 
   &::-webkit-scrollbar {
-      background-color: $chatbox_primary;
+      //background-color: $chatbox_primary;
       border-radius: 10px;
       width: 7px;
   }
@@ -26,6 +26,7 @@
       background: $tertiary_text;
       border-radius: 10px;
   }
+  
 }
 
 .search-label {
