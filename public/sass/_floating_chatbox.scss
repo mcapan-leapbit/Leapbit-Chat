@@ -80,6 +80,7 @@
 
         .start_button {
             cursor: pointer;
+            font-weight: 600;
             font-size: small;
             padding: 3%;
             margin-block: 2.5%;
@@ -88,6 +89,7 @@
             text-align: center;
             width: 80%;
             border-radius: 12px;
+            border: none;
         }
     }
 
