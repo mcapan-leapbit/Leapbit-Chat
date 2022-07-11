@@ -7,6 +7,7 @@
   height: 100%;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   background-color: $background;
+  display: grid;
 
   .admin {
     align-items: center;
@@ -79,14 +80,10 @@
       font-family: $std_font;
       font-size: .875rem;
       color: $primary_text;
-      align-items: center;
-      flex-direction: column;
-      display: flex;
-      float: bottom;
-      position: fixed;
-      bottom: 5%;
-      margin-left: 5%;
-
+      justify-self: center;
+      align-self: center;
+      padding-bottom: 5%;
+      
       .nav-item {
         display: flex;
         align-items: center;
