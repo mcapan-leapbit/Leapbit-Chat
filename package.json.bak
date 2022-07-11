@@ -6,16 +6,6 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mcapan-leapbit/Leapbit-Chat.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mcapan-leapbit/Leapbit-Chat/issues"
-  },
-  "homepage": "https://github.com/mcapan-leapbit/Leapbit-Chat#readme",
   "dependencies": {
     "core-js": "^2.6.12",
     "vue": "^3.0.0",

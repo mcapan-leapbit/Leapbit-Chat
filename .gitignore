@@ -108,3 +108,18 @@ dist
 
 #Generated CSS
 public/styles/
+
+.DS_Store
+
+
+# local env files
+.env.local
+.env.*.local
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

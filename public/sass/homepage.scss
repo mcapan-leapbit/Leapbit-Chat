@@ -3,10 +3,10 @@
 @import "_chat_user";
 @import '_floating_chatbox';
 
-body {
+.home {
     background-color: $background_dark;
     font-family: $std_font;
-    min-height: 500px;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +28,7 @@ body {
 
         .huge {
             font-size: 550%;
-            font-weight: 600; // semibold
+            font-weight: 600; 
         }
 
         .description {
