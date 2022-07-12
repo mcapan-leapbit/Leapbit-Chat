@@ -21,9 +21,9 @@ export default {
       initials: "AW",
       fullName: "Austin Wade",
       mail: "austin.wade@leapbit.com",
+      //dummy data
     };
   },
   mounted() {},
-  //destructure userData
 };
 </script>

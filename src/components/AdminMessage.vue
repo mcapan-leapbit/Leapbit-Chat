@@ -38,13 +38,10 @@ export default {
   props: ["messageData"],
   data() {
     return {
-      admin: false,
       initials: "AW",
-      message: "The quick brown fox jumps over the lazy dog",
-      timestamp: "July 10, 2022 | 10:10",
+      //get this in lifecycle method
     };
   },
   mounted() {},
-  //destructure messageData and
 };
 </script>
