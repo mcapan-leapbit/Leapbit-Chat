@@ -3,24 +3,22 @@
               <div class="">
                 <div class="chat-sender">
                   <span class="profile-bg"
-                    ><span class="profile-initials">AW</span></span
+                    ><span class="profile-initials">{{message.initials}}}</span></span
                   >
                   <div class="sender-details">
                     <div class="profile-name">
-                      Austin Wade
+                      {{message.full_name}}
                       <span class="message-timestamp"
-                        >July 10, 2022 | 08:45</span
+                        >{{message.timestamp}}}</span
                       >
                     </div>
-                    <span class="profile-email">austin.wade@leapbit.com</span>
+                    <span class="profile-email">{{message.email}}</span>
                   </div>
                 </div>
               </div>
               <div class="chat-bottom">
                 <p class="message-text">
-                  Vivamus vel gravida urna, in hendrerit est. Nunc suscipit
-                  lectus eget nibh convallis malesuada. Fusce ultrices ultricies
-                  pulvinar…
+                  {{message.message}}
                 </p>
               </div>
             </div>
@@ -28,7 +26,10 @@
 
 <script>
 export default {
-    name: "Sidebar",
+    name: "ChatsListMessage",
+    data(){
+
+    },
 }
 </script>
 

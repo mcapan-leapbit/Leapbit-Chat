@@ -18,13 +18,24 @@
           </div>
           <div class="status-divider"></div>
           <div class="scrollable-messages">
-            
+            <!-- <component
+                :is="type == 'EmailMessage' ? 'email-queue-item' : 'queue-item'"
+                v-for="item in queue"
+                :key="item.id"
+                :item="item"
+            /> -->
+            <ChatsListMessage />
           </div>
         </div>
 </template>
 
 <script>
-export default {
-    name: "Sidebar",
-}
+    import ChatsListMessage from "../../src/components/ChatsListMessage.vue";
+
+    export default {
+        name: "ChatsList",
+        components: {
+            ChatsListMessage,
+        },
+    };
 </script>
