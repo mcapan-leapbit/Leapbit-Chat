@@ -2,23 +2,24 @@
   <div class="message-box">
               <div class="">
                 <div class="chat-sender">
-                  <span class="profile-bg"
-                    ><span class="profile-initials">{{message.initials}}}</span></span
-                  >
+                  <span class="profile-bg">
+                    <span class="profile-initials">{{initials}}
+                    <span v-if="isValid" class="notif-bg">{{notif_number}}</span>
+                    </span>
+                  </span>
                   <div class="sender-details">
                     <div class="profile-name">
-                      {{message.full_name}}
+                      {{full_name}}
                       <span class="message-timestamp"
-                        >{{message.timestamp}}}</span
-                      >
+                        >{{timestamp}}</span>
                     </div>
-                    <span class="profile-email">{{message.email}}</span>
+                    <span class="profile-email">{{email}}</span>
                   </div>
                 </div>
               </div>
               <div class="chat-bottom">
                 <p class="message-text">
-                  {{message.message}}
+                  {{message}}
                 </p>
               </div>
             </div>
@@ -27,9 +28,12 @@
 <script>
 export default {
     name: "ChatsListMessage",
-    data(){
-
-    },
+    props: ['initials','full_name','timestamp','email','message','notif_number'],
+    computed: {
+        isValid() {      
+            return (this.notif_number !== null)  && (this.notif_number !== '') && (+this.notif_number > 0);      
+        }
+    }
 }
 </script>
 
