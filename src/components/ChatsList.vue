@@ -18,13 +18,33 @@
           </div>
           <div class="status-divider"></div>
           <div class="scrollable-messages">
-            
-          </div>
+            <ChatsListMessage 
+                v-for="admin_message in admin_messages"
+                :key="admin_message.id"
+                :initials="admin_message.initials"
+                :full_name="admin_message.full_name"
+                :timestamp="admin_message.timestamp"
+                :email="admin_message.email"
+                :message="admin_message.message_text"
+                :notif_number="admin_message.new_message"
+            />
+     </div>
         </div>
 </template>
 
 <script>
-export default {
-    name: "Sidebar",
-}
+    import ChatsListMessage from "../../src/components/ChatsListMessage.vue";
+    import admin_messages from "../../src/assets/admin_messages.json";
+
+    export default {
+        name: "ChatsList",
+        components: {
+            ChatsListMessage,
+        },
+        data(){
+            return{
+                admin_messages: admin_messages
+            };
+        },
+    };
 </script>

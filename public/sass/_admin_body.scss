@@ -9,12 +9,12 @@
   background-color: $background-message;
 
   .messages {
-    margin-bottom: 20px;
+    margin-bottom: 2%;
     width: 80vw;
-    padding-left: 30px;
+    padding-left: 3%;
     padding-top: 2%;
     font-family: $std_font;
-    font-size: 32px;
+    font-size: 2rem;
     letter-spacing: 3px;
     display: flex;
     color: $primary_text;
@@ -31,10 +31,8 @@
     align-items: center;
   }
   .-new {
-    width: 30px;
-    height: 12px;
     font-family: $std_font;
-    font-size: 10px;
+    font-size: .7rem;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;

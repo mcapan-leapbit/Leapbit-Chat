@@ -2,25 +2,24 @@
   <div class="message-box">
               <div class="">
                 <div class="chat-sender">
-                  <span class="profile-bg"
-                    ><span class="profile-initials">AW</span></span
-                  >
+                  <span class="profile-bg">
+                    <span class="profile-initials">{{initials}}
+                    <span v-if="isValid" class="notif-bg">{{notif_number}}</span>
+                    </span>
+                  </span>
                   <div class="sender-details">
                     <div class="profile-name">
-                      Austin Wade
+                      {{full_name}}
                       <span class="message-timestamp"
-                        >July 10, 2022 | 08:45</span
-                      >
+                        >{{timestamp}}</span>
                     </div>
-                    <span class="profile-email">austin.wade@leapbit.com</span>
+                    <span class="profile-email">{{email}}</span>
                   </div>
                 </div>
               </div>
               <div class="chat-bottom">
                 <p class="message-text">
-                  Vivamus vel gravida urna, in hendrerit est. Nunc suscipit
-                  lectus eget nibh convallis malesuada. Fusce ultrices ultricies
-                  pulvinar…
+                  {{message}}
                 </p>
               </div>
             </div>
@@ -28,7 +27,13 @@
 
 <script>
 export default {
-    name: "Sidebar",
+    name: "ChatsListMessage",
+    props: ['initials','full_name','timestamp','email','message','notif_number'],
+    computed: {
+        isValid() {      
+            return (this.notif_number !== null)  && (this.notif_number !== '') && (+this.notif_number > 0);      
+        }
+    }
 }
 </script>
 
