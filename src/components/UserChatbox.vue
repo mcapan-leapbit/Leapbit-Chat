@@ -1,5 +1,5 @@
 <template>
-  <div id="messages_box" class="messages_box">
+  <div class="messages_box">
     <br />
     <div class="user-chat-body">
       <div class="user-chat-body-client">
@@ -59,27 +59,19 @@
       </div>
     </div>
 
-    <form action="post" class="user_chat_entry">
-      <input
-        type="text"
-        class="user_chat_entry_text"
-        placeholder="Enter you message..."
-      />
-      <input
-        type="image"
-        class="user_chat_entry_image"
-        name="submit"
-        :src="require('../../public/assets/images/icon-send.svg')"
-        alt="send"
-      />
-    </form>
+    <UserInput />
 
     <br />
   </div>
 </template>
 
 <script>
+import UserInput from "../../src/components/UserInput.vue";
+
 export default {
   name: "UserChatbox",
+  components: {
+    UserInput,
+  },
 };
 </script>
