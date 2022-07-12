@@ -5,13 +5,20 @@
         type="text"
         class="chat-entry-text"
         placeholder="Upišite svoju poruku..."
+        id="chat-input-text"
       />
-      <input
+      <!-- <input
         type="image"
         name="submit"
         src="../../public/assets/images/icon-send.svg"
         class="chat-send-icon"
         alt="send message"
+      /> -->
+      <img
+        src="../../public/assets/images/icon-send.svg"
+        alt="nema slike"
+        class="chat-send-icon"
+        id="admin-chat-icon"
       />
     </form>
   </div>
@@ -26,9 +33,10 @@ export default {
     };
   },
   mounted() {
-    const textForm = document.querySelector(".chat-entry-text");
+    console.log("montirano");
+    const textForm = document.getElementById("chat-input-text");
 
-    const sendImg = document.querySelector(".chat-send-icon");
+    const sendImg = document.querySelectorAll("admin-chat-icon");
 
     if (textForm.value) sendImg.classList.add("is-full");
 
@@ -42,7 +50,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-@import "/public/sass/homepage.scss";
-</style>

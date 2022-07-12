@@ -18,8 +18,7 @@
           </div>
           <div class="status-divider"></div>
           <div class="scrollable-messages">
-   
-        
+            
           </div>
         </div>
 </template>

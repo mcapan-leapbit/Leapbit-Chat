@@ -46,7 +46,3 @@ export default {
   //destructure messageData and
 };
 </script>
-
-<style lang="scss">
-@import "/public/sass/homepage.scss";
-</style>

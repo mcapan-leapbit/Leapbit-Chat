@@ -1,9 +1,11 @@
 <template>
-  <AdminTopBar />
-  <div class="chat-body">
-    <AdminMessage />
+  <div class="mask-cbox">
+    <AdminTopBar />
+    <div class="chat-body">
+      <AdminMessage />
+    </div>
+    <AdminInput />
   </div>
-  <AdminInput />
 </template>
 
 <script>
@@ -19,7 +21,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-@import "/public/sass/homepage.scss";
-</style>

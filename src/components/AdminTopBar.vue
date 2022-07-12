@@ -27,7 +27,3 @@ export default {
   //destructure userData
 };
 </script>
-
-<style lang="scss">
-@import "/public/sass/homepage.scss";
-</style>
