@@ -6,18 +6,16 @@
         class="chat-entry-text"
         placeholder="Upišite svoju poruku..."
         id="chat-input-text"
+        ref="inputText"
       />
-      <!-- <input
+      <input
         type="image"
         name="submit"
-        src="../../public/assets/images/icon-send.svg"
+        :src="require('../../public/assets/images/icon-send.svg')"
         class="chat-send-icon"
         alt="send message"
-      /> -->
-      <img
-        src="../../public/assets/images/icon-send.svg"
-        alt="nema slike"
-        class="chat-send-icon"
+        @click="sendMessage"
+        ref="sendImage"
         id="admin-chat-icon"
       />
     </form>
@@ -32,19 +30,19 @@ export default {
       messageSent: null,
     };
   },
+  methods: {
+    sendMessage() {},
+  },
   mounted() {
     console.log("montirano");
-    const textForm = document.getElementById("chat-input-text");
-
-    const sendImg = document.querySelectorAll("admin-chat-icon");
-
+    const textForm = this.$refs.inputText;
+    const sendImg = this.$refs.sendImage;
     if (textForm.value) sendImg.classList.add("is-full");
-
     textForm.addEventListener("input", () => {
       if (textForm.value) {
-        sendImg.classList.add("is-full");
+        sendImg.style.opacity = 1;
       } else {
-        sendImg.classList.remove("is-full");
+        sendImg.style.opacity = 0.5;
       }
     });
   },
