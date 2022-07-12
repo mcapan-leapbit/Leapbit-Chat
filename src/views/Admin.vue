@@ -84,18 +84,16 @@
 </template>
 
 <style lang="scss">
-  @import "../../public/sass/index.scss";
+@import "../../public/sass/index.scss";
 </style>
 
 <script>
+import Sidebar from "../../src/components/Sidebar.vue";
 
-  import Sidebar from "../../src/components/Sidebar.vue";
-
-  export default {
-    name: "Admin",
-    components: {
-      Sidebar,
-    },
-  };
-
+export default {
+  name: "Admin",
+  components: {
+    Sidebar,
+  },
+};
 </script>
