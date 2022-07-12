@@ -101,7 +101,7 @@
         border-bottom-right-radius: 12px;
         align-items: center;
 
-        .chat-body {
+        .user-chat-body {
             width: 100%;
             overflow-y: auto;
             max-height: 40vh;
@@ -117,17 +117,17 @@
                 border-radius: 10px;
             }
 
-            .chat-body-client {
+            .user-chat-body-client {
                 flex-direction: row;
                 justify-content: left;
 
-                .chat-body-msg {
+                .user-chat-body-msg {
                     display: flex;
                     flex-direction: column;
                     margin: 0 0 0 10px;
                     max-width: 65%;
 
-                    .chat-body-rectangle {
+                    .user-chat-body-rectangle {
                         width: fit-content;
                         font-size: smaller;
 
@@ -141,22 +141,22 @@
                 }
             }
 
-            .chat-body-user {
+            .user-chat-body-user {
                 flex-direction: row-reverse;
                 justify-content: right;
 
-                .chat-body-msg {
+                .user-chat-body-msg {
                     display: flex;
                     flex-direction: column;
                     margin: 0 10px 0 0;
                     max-width: 65%;
 
-                    .chat-body-rectangle-user {
+                    .user-chat-body-rectangle-user {
                         width: fit-content;
                         font-size: smaller;
                     }
 
-                    .chat-body-timestamp {
+                    .user-chat-body-timestamp {
                         text-align: right;
                     }
                 }

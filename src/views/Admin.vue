@@ -1,56 +1,7 @@
 <template>
   <div class="dash">
     <div class="dashboard-left-menu">
-      <div class="sidebar">
-        <div class="admin">
-          <img
-            src="../../public/assets/images/avatar.png"
-            class="avatar-img"
-            alt="avatar"
-          />
-          <div class="username">username</div>
-          <div class="email">username@leapbit.com</div>
-        </div>
-        <div class="navigation">
-          <div class="nav-item">
-            <img
-              src="../../public/assets/images/icon-home.svg"
-              alt="icon-home"
-            />
-            <p>Dashboard</p>
-          </div>
-          <div class="nav-item">
-            <img
-              src="../../public/assets/images/icon-chat.svg"
-              alt="icon-chat"
-            />
-            <p>Chats</p>
-          </div>
-          <div class="nav-item">
-            <img
-              src="../../public/assets/images/icon-users.svg"
-              alt="icon-users"
-            />
-            <p>Users</p>
-          </div>
-          <div class="nav-item">
-            <img
-              src="../../public/assets/images/icon-settings.svg"
-              alt="icon-settings"
-            />
-            <p>Settings</p>
-          </div>
-        </div>
-        <div class="bottom-nav">
-          <div class="nav-item">
-            <img
-              src="../../public/assets/images/icon-logout.svg"
-              alt="icon-logout"
-            />
-            <p>Logout</p>
-          </div>
-        </div>
-      </div>
+      <Sidebar />
     </div>
     <div class="right-col">
       <div class="messages">
@@ -346,7 +297,7 @@
               <input
                 type="image"
                 name="submit"
-                src="..//public/assets/images/icon-send.svg"
+                src="../../public/assets/images/icon-send.svg"
                 class="chat-send-icon"
                 alt="send message"
               />
@@ -358,6 +309,19 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../../public/sass/index.scss";
 </style>
+
+<script>
+
+import Sidebar from "../../src/components/Sidebar.vue";
+
+export default {
+  name: "Admin",
+  components: {
+    Sidebar,
+  },
+};
+
+</script>
