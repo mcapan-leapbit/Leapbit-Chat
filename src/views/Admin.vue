@@ -346,7 +346,7 @@
               <input
                 type="image"
                 name="submit"
-                src="..//public/assets/images/icon-send.svg"
+                src="../../public/assets/images/icon-send.svg"
                 class="chat-send-icon"
                 alt="send message"
               />
@@ -358,6 +358,6 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../../public/sass/index.scss";
 </style>
