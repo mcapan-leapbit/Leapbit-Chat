@@ -31,14 +31,14 @@
   border-radius: 50%;
   overflow: hidden;
 
-  .chat-body-logo {
+  .user-chat-body-logo {
     width: 100%;
     height: 100%;
     object-fit: scale-down;
   }
 }
 
-.chat-body-timestamp {
+.user-chat-body-timestamp {
   padding-top: 3px;
   width: auto;
 
@@ -49,16 +49,16 @@
   color: $tertiary_text;
 }
 
-.chat-body {
+.user-chat-body {
   flex-grow: 1;
   height: fit-content;
   overflow: auto;
 
-  .chat-body-client {
+  .user-chat-body-client {
     display: flex;
     margin: 24px;
 
-    .chat-body-rectangle {
+    .user-chat-body-rectangle {
       position: relative;
       padding: 10px;
       border-radius: 12px;
@@ -70,13 +70,13 @@
 
   }
 
-  .chat-body-user {
+  .user-chat-body-user {
     display: flex;
     flex-direction: row-reverse;
     margin: 24px;
 
 
-    .chat-body-rectangle-user {
+    .user-chat-body-rectangle-user {
       padding: 10px;
       background: $my_message_grad;
       border-radius: 12px;
@@ -88,7 +88,7 @@
 }
 
 
-.chat-entry {
+.user-chat-entry {
   margin-left: 30px;
   border-radius: 12px;
   border: solid 1px rgb(230, 229, 229);
@@ -96,7 +96,7 @@
   display: flex;
   align-items: center;
 
-  .chat-entry-text {
+  .user-chat-entry-text {
     border: none;
     outline: none;
     height: 40px;

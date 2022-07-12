@@ -4,7 +4,7 @@
       <img
         src="../../public/assets/images/icon-close.svg"
         alt="x"
-        class="chat-body-logo"
+        class="user-chat-body-logo"
       />
     </div>
 
@@ -18,7 +18,7 @@
           <img
             src="../../public/assets/images/avatar.png"
             alt="Leapbit"
-            class="chat-body-logo"
+            class="user-chat-body-logo"
           />
         </div>
         <div class="status"></div>
@@ -50,60 +50,60 @@
     </form>
     <div id="messages_box" class="messages_box">
       <br />
-      <div class="chat-body">
-        <div class="chat-body-client">
+      <div class="user-chat-body">
+        <div class="user-chat-body-client">
           <div class="user-circle">
             <span class="initials"> AW </span>
           </div>
-          <div class="chat-body-msg">
-            <div class="chat-body-rectangle">
+          <div class="user-chat-body-msg">
+            <div class="user-chat-body-rectangle">
               Donec ultrices hendrerit orci, nec ultricies mauris. Phasellus
               tincidunt ac nunc et posuere.
             </div>
-            <span class="chat-body-timestamp">July 10, 2022 | 10:10</span>
+            <span class="user-chat-body-timestamp">July 10, 2022 | 10:10</span>
           </div>
         </div>
-        <div class="chat-body-user">
+        <div class="user-chat-body-user">
           <div class="bitmap">
             <img
               src="../../public/assets/images/avatar.png"
               alt="company logo"
-              class="chat-body-logo"
+              class="user-chat-body-logo"
             />
           </div>
-          <div class="chat-body-msg">
-            <div class="chat-body-rectangle-user">
+          <div class="user-chat-body-msg">
+            <div class="user-chat-body-rectangle-user">
               Ut vel odio sed dui tempor viverra eget in felis.
             </div>
-            <span class="chat-body-timestamp">July 10, 2022 | 10:10</span>
+            <span class="user-chat-body-timestamp">July 10, 2022 | 10:10</span>
           </div>
         </div>
         <!--GRANICA-->
-        <div class="chat-body-client">
+        <div class="user-chat-body-client">
           <div class="user-circle">
             <span class="initials"> AW </span>
           </div>
-          <div class="chat-body-msg">
-            <div class="chat-body-rectangle">
+          <div class="user-chat-body-msg">
+            <div class="user-chat-body-rectangle">
               Donec ultrices hendrerit orci, nec ultricies mauris. Phasellus
               tincidunt ac nunc et posuere.
             </div>
-            <span class="chat-body-timestamp">July 10, 2022 | 10:10</span>
+            <span class="user-chat-body-timestamp">July 10, 2022 | 10:10</span>
           </div>
         </div>
-        <div class="chat-body-user">
+        <div class="user-chat-body-user">
           <div class="bitmap">
             <img
               src="../../public/assets/images/avatar.png"
               alt="company logo"
-              class="chat-body-logo"
+              class="user-chat-body-logo"
             />
           </div>
-          <div class="chat-body-msg">
-            <div class="chat-body-rectangle-user">
+          <div class="user-chat-body-msg">
+            <div class="user-chat-body-rectangle-user">
               Ut vel odio sed dui tempor viverra eget in felis.
             </div>
-            <span class="chat-body-timestamp">July 10, 2022 | 10:10</span>
+            <span class="user-chat-body-timestamp">July 10, 2022 | 10:10</span>
           </div>
         </div>
       </div>
