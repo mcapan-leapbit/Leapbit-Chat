@@ -1,0 +1,92 @@
+{
+    "admin_messages": [
+      {
+        "id": 1,
+        "first_name": "Sara",
+        "last_name": "Gonzalez",
+        "full_name": "Sara Gonzalez",
+        "initials": "SG",
+        "email": "sara.gonzalez@leapbit.com",
+        "message": "Donec ultrices hendrerit orci, nec ultricies mauris. Phasellus tincidunt ac nunc et posuere. Sed malesuada quis massa non…",
+        "new_message": 2,
+        "timestamp": "July 10, 2022 | 09:45"
+      },
+      {
+        "id": 2,
+        "first_name": "Austin",
+        "last_name": "Wade",
+        "full_name": "Austin Wade",
+        "initials": "AW",
+        "email": "austin.wade@leapbit.com",
+        "message": "Vivamus vel gravida urna, in hendrerit est. Nunc suscipit lectus eget nibh convallis malesuada. Fusce ultrices ultricies pulvinar…",
+        "new_message": 0,
+        "timestamp": "July 10, 2022 | 08:50"
+      },
+      {
+        "id": 3,
+        "first_name": "Albert",
+        "last_name": "Dera",
+        "full_name": "Albert Dera",
+        "initals": "AD",
+        "email": "albert.dera@leapbit.com",
+        "message": "Vivamus vel gravida urna, in hendrerit est. Nunc suscipit lectus eget nibh convallis malesuada. Fusce ultrices ultricies pulvinar…",
+        "new_message": 0,
+        "timestamp": "July 9, 2022 | 18:45"
+      },
+      {
+        "id": 4,
+        "first_name": "Maria",
+        "last_name": "Liverani",
+        "full_name": "Maria Liverani",
+        "initials": "ML",
+        "email": "maria.liverani@leapbit.com",
+        "message": "Vivamus vel gravida urna, in hendrerit est. Nunc suscipit lectus eget nibh convallis malesuada. Fusce ultrices ultricies pulvinar…",
+        "new_message": 0,
+        "timestamp": "July 9, 2022 | 08:55"
+      },
+      {
+        "id": 5,
+        "first_name": "Marin",
+        "last_name": "Capan",
+        "full_name": "Marin Capan",
+        "initials": "MC",
+        "email": "marin.capan@leapbit.com",
+        "message": "Vivamus vel gravida urna, in hendrerit est. Nunc suscipit lectus eget nibh convallis malesuada. Fusce ultrices ultricies pulvinar…",
+        "new_message": 2,
+        "timestamp": "July 8, 2022 | 17:45"
+      },
+      {
+        "id": 6,
+        "first_name": "Fran",
+        "last_name": "Belac",
+        "full_name": "Fran Belac",
+        "initials": "FB",
+        "email": "fran.belac@leapbit.com",
+        "message": "Vivamus vel gravida urna, in hendrerit est. Nunc suscipit lectus eget nibh convallis malesuada. Fusce ultrices ultricies pulvinar…",
+        "new_message": 0,
+        "timestamp": "July 8, 2022 | 06:45"
+      },
+      {
+        "id": 7,
+        "first_name": "Josip",
+        "last_name": "Arelic",
+        "full_name": "Josip Arelic",
+        "initials": "JA",
+        "email": "josip.arelic@leapbit.com",
+        "message": "Vivamus vel gravida urna, in hendrerit est. Nunc suscipit lectus eget nibh convallis malesuada. Fusce ultrices ultricies pulvinar…",
+        "new_message": 0,
+        "timestamp": "July 7, 2022 | 23:45"
+      },
+      {
+        "id": 8,
+        "first_name": "Ivan",
+        "last_name": "Horvat",
+        "full_name": "Ivan Horvat",
+        "initials": "IH",
+        "email": "ivan.horvat@leapbit.com",
+        "message": "Vivamus vel gravida urna, in hendrerit est. Nunc suscipit lectus eget nibh convallis malesuada. Fusce ultrices ultricies pulvinar…",
+        "new_message": 20,
+        "timestamp": "July 7, 2022 | 08:35"
+      }
+    ]
+  }
