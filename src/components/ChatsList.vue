@@ -12,7 +12,7 @@
               <div class="status-box">
                 <span class="status-icon"></span>
                 <span class="status-placeholder">Active</span>
-                <!-- <img src="../../public/assets/images/icon-chevron.svg" class="status-chevron"></img> -->
+                <img src="../../public/assets/images/icon-chevron.svg" class="status-chevron" />
               </div>
             </div>
           </div>
