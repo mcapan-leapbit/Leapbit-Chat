@@ -1,7 +1,7 @@
 <template>
   <div class="mask-cbox">
     <AdminTopBar />
-    <div class="chat-body">
+    <div class="chat-body" ref="chatBody">
       <AdminMessage
         v-for="message in admin_chat"
         :key="message.id"
@@ -29,6 +29,9 @@ export default {
     return {
       admin_chat: admin_chat,
     };
+  },
+  mounted() {
+    this.$refs.chatBody.scrollTop = this.$refs.chatBody.scrollHeight;
   },
 };
 </script>

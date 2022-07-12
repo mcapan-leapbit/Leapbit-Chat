@@ -95,6 +95,7 @@
       .chat-body-rectangle {
         position: relative;
         max-width: 100%;
+        min-width: none;
 
         min-height: 20px;
         padding: 20px;
