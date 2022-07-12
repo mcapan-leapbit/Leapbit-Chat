@@ -45,9 +45,6 @@ import UserChatbox from "../../src/components/UserChatbox.vue";
 
 export default {
   name: "FloatingChat",
-  /*props: {
-    msg: String,
-  },*/
   components: {
     SignupBox,
     UserChatbox,
