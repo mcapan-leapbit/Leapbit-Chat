@@ -103,8 +103,6 @@
 }
 
 .status-placeholder {
-  width: .625rem;
-  height: .625rem;
   font-family: $std_font;
   font-size: .75rem;
   color: $primary_text;
@@ -131,7 +129,7 @@
 .message-timestamp {
   float: right;
   font-family: $std_font;
-  font-size: .5rem;
+  font-size: .625rem;
   text-align: left;
   color: $tertiary_text;
 }
