@@ -12,7 +12,7 @@
     <div class="floating_chatbox">
       <div id="closer" class="bitmap closer" onclick="close_user_chatbox()">
         <img
-          src="/public/assets/images/icon-close.svg"
+          src="../../public/assets/images/icon-close.svg"
           alt="x"
           class="chat-body-logo"
         />
@@ -26,7 +26,7 @@
         <div class="avatar">
           <div class="bitmap">
             <img
-              src="/public/assets/images/avatar.png"
+              src="../../public/assets/images/avatar.png"
               alt="Leapbit"
               class="chat-body-logo"
             />
@@ -76,7 +76,7 @@
           <div class="chat-body-user">
             <div class="bitmap">
               <img
-                src="/public/assets/images/avatar.png"
+                src="../../public/assets/images/avatar.png"
                 alt="company logo"
                 class="chat-body-logo"
               />
@@ -104,7 +104,7 @@
           <div class="chat-body-user">
             <div class="bitmap">
               <img
-                src="/public/assets/images/avatar.png"
+                src="../../public/assets/images/avatar.png"
                 alt="company logo"
                 class="chat-body-logo"
               />
@@ -128,7 +128,7 @@
             type="image"
             class="user_chat_entry_image"
             name="submit"
-            src="/public/assets/images/icon-send.svg"
+            src="../../public/assets/images/icon-send.svg"
             alt="send"
           />
         </form>
