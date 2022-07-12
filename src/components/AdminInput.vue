@@ -1,6 +1,6 @@
 <template>
   <div class="send-msg">
-    <form action="post" class="chat-entry">
+    <form @submit.prevent="handleSubmit" action="post" class="chat-entry">
       <input
         type="text"
         class="chat-entry-text"
@@ -14,9 +14,9 @@
         :src="require('../../public/assets/images/icon-send.svg')"
         class="chat-send-icon"
         alt="send message"
-        @click="sendMessage"
         ref="sendImage"
         id="admin-chat-icon"
+        v-model="messageSent"
       />
     </form>
   </div>
@@ -27,14 +27,19 @@ export default {
   name: "AdminInput",
   data() {
     return {
-      messageSent: null,
+      messageSent: "",
     };
   },
   methods: {
-    sendMessage() {},
+    handleSubmit() {
+      const textForm = this.$refs.inputText;
+      const sentMessage = textForm.value;
+      this.$emit("sendingMessage", sentMessage, new Date());
+      textForm.value = "";
+      this.$refs.sendImage.style.opacity = 0.5;
+    },
   },
   mounted() {
-    console.log("montirano");
     const textForm = this.$refs.inputText;
     const sendImg = this.$refs.sendImage;
     if (textForm.value) sendImg.classList.add("is-full");

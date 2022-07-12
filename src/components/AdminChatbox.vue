@@ -8,7 +8,7 @@
         :messageData="message"
       />
     </div>
-    <AdminInput />
+    <AdminInput @sendingMessage="sendingMessage" />
   </div>
 </template>
 
@@ -32,6 +32,11 @@ export default {
   },
   mounted() {
     this.$refs.chatBody.scrollTop = this.$refs.chatBody.scrollHeight;
+  },
+  methods: {
+    sendingMessage(messageText, timestamp) {
+      console.log(messageText, timestamp);
+    },
   },
 };
 </script>
