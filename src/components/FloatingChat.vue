@@ -1,6 +1,6 @@
 <template>
   <div class="floating_chatbox">
-    <div id="closer" class="bitmap closer" onclick="close_user_chatbox()">
+    <div v-if="isOpen" @click="closeChat()" class="bitmap closer">
       <img
         src="../../public/assets/images/icon-close.svg"
         alt="x"
@@ -25,12 +25,15 @@
       </div>
     </div>
 
-    <SignupBox />
+    <SignupBox
+      v-if="isOpen & !isSignedIn"
+      @submit.prevent="signIn(name, email)"
+    />
 
-    <MessagesBox />
+    <UserChatbox v-if="isOpen & isSignedIn" />
 
-    <hr v-if="!isOpen" id="line" class="line" />
-    <div v-if="!isOpen" id="open_button" class="open_button" >
+    <hr v-if="!isOpen" class="line" />
+    <div v-if="!isOpen" @click="openChat()" class="open_button">
       <b>CHAT NOW</b>
     </div>
   </div>
@@ -38,7 +41,7 @@
 
 <script>
 import SignupBox from "../../src/components/SignupBox.vue";
-import MessagesBox from "../../src/components/MessagesBox.vue";
+import UserChatbox from "../../src/components/UserChatbox.vue";
 
 export default {
   name: "FloatingChat",
@@ -47,7 +50,7 @@ export default {
   },*/
   components: {
     SignupBox,
-    MessagesBox,
+    UserChatbox,
   },
   data: function () {
     return {
@@ -55,6 +58,17 @@ export default {
       isSignedIn: false,
       isAdminActive: true,
     };
+  },
+  methods: {
+    openChat() {
+      this.isOpen = true;
+    },
+    closeChat() {
+      this.isOpen = false;
+    },
+    signIn() {
+      this.isSignedIn = true;
+    },
   },
 };
 </script>
