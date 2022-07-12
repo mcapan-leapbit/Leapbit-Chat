@@ -90,11 +90,13 @@
 <script>
 
   import Sidebar from "../../src/components/Sidebar.vue";
+  import ChatsList from "../../src/components/ChatsList.vue";
 
   export default {
     name: "Admin",
     components: {
       Sidebar,
+      ChatsList,
     },
   };
 
