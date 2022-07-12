@@ -53,6 +53,9 @@
   }
 
   .chat-header-info {
+    display: flex;
+    flex-direction: column;
+
     .chat-header-uname {
       width: 98px;
       height: 19px;
