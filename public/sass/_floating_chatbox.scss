@@ -16,7 +16,6 @@
     max-height: 40rem;
 
     .closer {
-        display: none;
         cursor: pointer;
 
         margin: 2px;
@@ -61,11 +60,12 @@
 
     .signup_box {
         background-color: $chatbox_secondary;
-        display: none;
         flex-direction: column;
-        align-items: center;
+        text-align: center;
+        align-self: center;
         border-bottom-left-radius: 12px;
         border-bottom-right-radius: 12px;
+        width: 100%;
 
         .input_box {
             padding: 3%;
@@ -87,14 +87,13 @@
             background-color: $brand_secondary;
             color: $primary_text;
             text-align: center;
-            width: 80%;
+            width: 87.5%;
             border-radius: 12px;
             border: none;
         }
     }
 
     .messages_box {
-        display: none;
         flex-direction: column;
         background-color: $chatbox_secondary;
         border-bottom-left-radius: 12px;
@@ -172,7 +171,8 @@
             margin-top: 5%;
             border-radius: 12px;
             border: solid 1px $chatbox_primary;
-            align-items: center;
+            align-self: center;
+            margin-inline: 2.5%;
 
             font-size: small;
             padding: 2%;

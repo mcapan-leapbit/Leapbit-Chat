@@ -69,7 +69,7 @@
         type="image"
         class="user_chat_entry_image"
         name="submit"
-        src="../../public/assets/images/icon-send.svg"
+        :src="require('../../public/assets/images/icon-send.svg')"
         alt="send"
       />
     </form>
@@ -80,6 +80,6 @@
 
 <script>
 export default {
-  name: "MessagesBox",
+  name: "UserChatbox",
 };
 </script>
