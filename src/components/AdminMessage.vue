@@ -1,5 +1,5 @@
 <template>
-  <div class="chat-body-user" v-if="admin">
+  <div class="chat-body-user" v-if="messageData.admin">
     <div class="chat-user-logo">
       <img
         src="../../public/assets/images/avatar.webp"
@@ -9,23 +9,25 @@
     </div>
     <div class="chat-body-msg-user">
       <p class="chat-body-rectangle-user remove-marg">
-        {{ message }}
+        {{ messageData.message }}
       </p>
-      <span class="chat-body-timestamp user-timestamp"> {{ timestamp }} </span>
+      <span class="chat-body-timestamp user-timestamp">
+        {{ messageData.timestamp }}
+      </span>
     </div>
   </div>
 
   <!-- client -->
 
-  <div class="chat-body-client" v-if="!admin">
+  <div class="chat-body-client" v-if="!messageData.admin">
     <div class="user-circle">
       <span class="user-initials"> {{ initials }} </span>
     </div>
     <div class="chat-body-msg">
       <p class="chat-body-rectangle remove-marg">
-        {{ message }}
+        {{ messageData.message }}
       </p>
-      <span class="chat-body-timestamp"> {{ timestamp }} </span>
+      <span class="chat-body-timestamp"> {{ messageData.timestamp }} </span>
     </div>
   </div>
 </template>
