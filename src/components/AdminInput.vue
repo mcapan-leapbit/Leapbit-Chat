@@ -32,8 +32,9 @@ export default {
   },
   methods: {
     handleSubmit() {
-      const textForm = this.$refs.inputText;
       const sentMessage = textForm.value;
+      if (!sentMessage) return;
+      const textForm = this.$refs.inputText;
       this.$emit("sendingMessage", sentMessage, new Date());
       textForm.value = "";
       this.$refs.sendImage.style.opacity = 0.5;
