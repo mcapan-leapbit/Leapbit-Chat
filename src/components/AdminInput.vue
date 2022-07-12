@@ -44,7 +44,7 @@ export default {
   mounted() {
     const textForm = this.$refs.inputText;
     const sendImg = this.$refs.sendImage;
-    if (textForm.value) sendImg.classList.add("is-full");
+
     textForm.addEventListener("input", () => {
       if (textForm.value) {
         sendImg.style.opacity = 1;

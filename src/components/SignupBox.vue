@@ -12,7 +12,7 @@
     <input
       v-model="email"
       class="input_box"
-      type="text"
+      type="email"
       placeholder="Your e-mail"
       name="email"
       required

@@ -1,6 +1,7 @@
 <template>
-  <form action="post" class="user_chat_entry">
+  <form @submit.prevent="sendMessage()" class="user_chat_entry">
     <input
+      v-model="message"
       type="text"
       class="user_chat_entry_text"
       placeholder="Enter you message..."
@@ -18,5 +19,17 @@
 <script>
 export default {
   name: "UserInput",
+  data() {
+    return {
+      message: "",
+    };
+  },
+  methods: {
+    sendMessage() {
+      if (!this.message) return;
+      this.$emit("submit-msg", this.message, new Date());
+      this.message = "";
+    },
+  },
 };
 </script>

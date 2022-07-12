@@ -9,7 +9,7 @@
       />
     </div>
 
-    <UserInput />
+    <UserInput @submit-msg="sendMessage" />
 
     <br />
   </div>
@@ -17,7 +17,7 @@
 
 <script>
 import UserInput from "../../src/components/UserInput.vue";
-import UserMessage from "../../src/components/UserMessage.vue"
+import UserMessage from "../../src/components/UserMessage.vue";
 import admin_chat from "../../src/assets/admin_chat.json";
 
 export default {
@@ -33,6 +33,11 @@ export default {
   },
   mounted() {
     this.$refs.scrollBody.scrollTop = this.$refs.scrollBody.scrollHeight;
+  },
+  methods: {
+    sendMessage(message, timestamp) {
+      alert(`Message sent.\n${message}\n${timestamp}`);
+    },
   },
 };
 </script>
