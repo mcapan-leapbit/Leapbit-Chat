@@ -1,62 +1,12 @@
 <template>
   <div class="messages_box">
     <br />
-    <div class="user-chat-body">
-      <div class="user-chat-body-client">
-        <div class="user-circle">
-          <span class="initials"> AW </span>
-        </div>
-        <div class="user-chat-body-msg">
-          <div class="user-chat-body-rectangle">
-            Donec ultrices hendrerit orci, nec ultricies mauris. Phasellus
-            tincidunt ac nunc et posuere.
-          </div>
-          <span class="user-chat-body-timestamp">July 10, 2022 | 10:10</span>
-        </div>
-      </div>
-      <div class="user-chat-body-user">
-        <div class="bitmap">
-          <img
-            src="../../public/assets/images/avatar.png"
-            alt="company logo"
-            class="user-chat-body-logo"
-          />
-        </div>
-        <div class="user-chat-body-msg">
-          <div class="user-chat-body-rectangle-user">
-            Ut vel odio sed dui tempor viverra eget in felis.
-          </div>
-          <span class="user-chat-body-timestamp">July 10, 2022 | 10:10</span>
-        </div>
-      </div>
-      <!--GRANICA-->
-      <div class="user-chat-body-client">
-        <div class="user-circle">
-          <span class="initials"> AW </span>
-        </div>
-        <div class="user-chat-body-msg">
-          <div class="user-chat-body-rectangle">
-            Donec ultrices hendrerit orci, nec ultricies mauris. Phasellus
-            tincidunt ac nunc et posuere.
-          </div>
-          <span class="user-chat-body-timestamp">July 10, 2022 | 10:10</span>
-        </div>
-      </div>
-      <div class="user-chat-body-user">
-        <div class="bitmap">
-          <img
-            src="../../public/assets/images/avatar.png"
-            alt="company logo"
-            class="user-chat-body-logo"
-          />
-        </div>
-        <div class="user-chat-body-msg">
-          <div class="user-chat-body-rectangle-user">
-            Ut vel odio sed dui tempor viverra eget in felis.
-          </div>
-          <span class="user-chat-body-timestamp">July 10, 2022 | 10:10</span>
-        </div>
-      </div>
+    <div class="user-chat-body" ref="scrollBody">
+      <UserMessage
+        v-for="message in admin_chat"
+        :key="message.id"
+        :messageData="message"
+      />
     </div>
 
     <UserInput />
@@ -67,11 +17,22 @@
 
 <script>
 import UserInput from "../../src/components/UserInput.vue";
+import UserMessage from "../../src/components/UserMessage.vue"
+import admin_chat from "../../src/assets/admin_chat.json";
 
 export default {
   name: "UserChatbox",
+  data() {
+    return {
+      admin_chat: admin_chat,
+    };
+  },
   components: {
+    UserMessage,
     UserInput,
+  },
+  mounted() {
+    this.$refs.scrollBody.scrollTop = this.$refs.scrollBody.scrollHeight;
   },
 };
 </script>

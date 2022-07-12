@@ -1,12 +1,14 @@
 [
     {
         "id": "1",
+        "name": "Austin Wade",
         "admin": false,
         "message":"  Lorem ipsum, dolor",
         "timestamp":"July 10, 2022 | 10:10"
     },
     {
         "id": "2",
+        "name": "Austin Wade",
         "admin": false,
         "message":"  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat aut perspiciatis placeat tempora natus eos modi delectus odio enim repellat eaque porro molestiae sint alias dicta, qui, consectetur esse. Obcaecati corporis officia, tempora ipsum quod odit accusamus, earum omnis quam alias adipisci nesciunt debitis optio ab magni, cumque non itaque?",
         "timestamp":"July 10, 2022 | 10:10"
@@ -19,6 +21,7 @@
     },
     {
         "id": "4",
+        "name": "Austin Wade",
         "admin": false,
         "message":"  Lorem ipsum, ",
         "timestamp":"July 10, 2022 | 10:10"
