@@ -357,3 +357,7 @@
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+@import "../../public/sass/index.scss";
+</style>
