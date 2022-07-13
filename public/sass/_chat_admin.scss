@@ -74,6 +74,16 @@
     }
   }
 
+  .chat-body::-webkit-scrollbar {
+    border-radius: 10px;
+    width: 7px;
+  }
+
+  .chat-body::-webkit-scrollbar-thumb {
+    background: #b8b8b8;
+    border-radius: 10px;
+  }
+
   .chat-body {
     flex-grow: 1;
     width: 100%;
