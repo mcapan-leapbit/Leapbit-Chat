@@ -16,8 +16,9 @@
 import AdminTopBar from "./AdminTopBar.vue";
 import AdminMessage from "./AdminMessage.vue";
 import AdminInput from "./AdminInput.vue";
-
 import admin_chat from "../../src/assets/admin_chat.json";
+import moment from "moment";
+
 export default {
   name: "AdminChatbox",
   components: {
@@ -30,12 +31,20 @@ export default {
       admin_chat: admin_chat,
     };
   },
+  // sockets: {
+  //   connect() {},
+  //   disconnect() {},
+  // },
   mounted() {
     this.$refs.chatBody.scrollTop = this.$refs.chatBody.scrollHeight;
   },
   methods: {
-    sendingMessage(messageText, timestamp) {
-      console.log(messageText, timestamp);
+    sendingMessage(messageText) {
+      this.$socket.client.emit("messageSent", {
+        admin: true,
+        text: messageText,
+        date: moment().format("MMMM Do YYYY, HH:mm:ss "),
+      });
     },
   },
 };

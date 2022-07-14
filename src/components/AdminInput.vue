@@ -36,7 +36,7 @@ export default {
       const sentMessage = textForm.value;
       if (!sentMessage) return;
 
-      this.$emit("sendingMessage", sentMessage, new Date());
+      this.$emit("sendingMessage", sentMessage);
       textForm.value = "";
       this.$refs.sendImage.style.opacity = 0.5;
     },
