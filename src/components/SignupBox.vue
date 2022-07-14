@@ -1,5 +1,5 @@
 <template>
-  <form class="signup_box">
+  <form class="signup_box" @submit.prevent="$emit('submit-user', name, email)">
     <br />
     <input
       v-model="name"
@@ -17,12 +17,7 @@
       name="email"
       required
     />
-    <input
-      @submit="$emit('submit', name, email)"
-      class="start_button"
-      type="submit"
-      value="START CHAT"
-    />
+    <input class="start_button" type="submit" value="START CHAT" />
     <br />
   </form>
 </template>

@@ -25,10 +25,7 @@
       </div>
     </div>
 
-    <SignupBox
-      v-if="isOpen & !isSignedIn"
-      @submit.prevent="acceptUser(name, email)"
-    />
+    <SignupBox v-if="isOpen & !isSignedIn" @submit-user="acceptUser" />
 
     <UserChatbox v-if="isOpen & isSignedIn" :name="name" :email="email" />
 
@@ -63,6 +60,9 @@ export default {
   methods: {
     openChat() {
       this.isOpen = true;
+      if (this.$cookies.isKey("conversation_id")) {
+        this.isSignedIn = true;
+      }
     },
     closeChat() {
       this.isOpen = false;
@@ -70,10 +70,8 @@ export default {
     acceptUser(name, email) {
       this.name = name;
       this.email = email;
+      alert("fg " + name + " " + email);
       this.isSignedIn = true;
-    },
-    mounted() {
-      // if (cookie id isNotEmpty) isSignedIn = true
     },
   },
 };

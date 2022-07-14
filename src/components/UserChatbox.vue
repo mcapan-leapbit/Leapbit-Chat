@@ -19,7 +19,7 @@
 import UserInput from "../../src/components/UserInput.vue";
 import UserMessage from "../../src/components/UserMessage.vue";
 import admin_chat from "../../src/assets/admin_chat.json";
-import uuid from "vue-uuid";
+import { uuid } from "vue-uuid";
 
 export default {
   name: "UserChatbox",
@@ -41,7 +41,8 @@ export default {
   },
   methods: {
     sendMessage(message, timestamp) {
-      this.$cookie.set("uuid", uuid.v4(), 1);
+      if (!this.$cookies.isKey("conversation_id"))
+        this.$cookies.set("conversation_id", uuid.v4());
       alert(`${this.name} sent message:\n${message}\n${timestamp}`);
     },
   },

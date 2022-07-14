@@ -22,10 +22,10 @@
     "moment": "^2.29.4",
     "socket.io-client": "^4.5.1",
     "vue": "^3.0.0",
-    "vue-cookie": "^1.1.4",
     "vue-router": "^4.0.0-0",
     "vue-socket.io-extended": "^5.0.0-alpha.5",
     "vue-uuid": "^3.0.0",
+    "vue3-cookies": "^1.0.6",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
