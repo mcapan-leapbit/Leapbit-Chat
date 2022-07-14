@@ -1,7 +1,7 @@
 <template>
   <div class="user-chat-body-client" v-if="!messageData.admin">
     <div class="user-circle">
-      <span class="initials"> {{ getInitials(messageData.name) }} </span>
+      <span class="initials"> {{ initials }} </span>
     </div>
     <div class="user-chat-body-msg">
       <div class="user-chat-body-rectangle">{{ messageData.message }}</div>
@@ -27,9 +27,9 @@
 export default {
   name: "UserMessage",
   props: ["messageData"],
-  methods: {
-    getInitials(name) {
-      let names = name.split(" "),
+  computed: {
+    initials() {
+      let names = this.messageData.name.split(" "),
         initials = names[0].substring(0, 1).toUpperCase();
 
       if (names.length > 1) {
