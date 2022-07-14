@@ -38,6 +38,9 @@ export default {
   },
   mounted() {
     this.$refs.scrollBody.scrollTop = this.$refs.scrollBody.scrollHeight;
+    if (this.$cookies.isKey("conversation_id"))
+      this.axios.get(`localhost:3000/conversation/${this.$cookies.get("conversation_id")}`)
+        .then(res => this.admin_chat = res); // edit this
   },
   methods: {
     sendMessage(message, timestamp) {

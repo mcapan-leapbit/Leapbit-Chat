@@ -17,11 +17,13 @@
   },
   "homepage": "https://github.com/mcapan-leapbit/Leapbit-Chat#readme",
   "dependencies": {
+    "axios": "^0.27.2",
     "casual": "^1.6.2",
     "core-js": "^2.6.12",
     "moment": "^2.29.4",
     "socket.io-client": "^4.5.1",
     "vue": "^3.0.0",
+    "vue-axios": "^3.4.1",
     "vue-router": "^4.0.0-0",
     "vue-socket.io-extended": "^5.0.0-alpha.5",
     "vue-uuid": "^3.0.0",
