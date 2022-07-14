@@ -29,7 +29,7 @@ export default {
   props: ["messageData"],
   methods: {
     getInitials(name) {
-      var names = name.split(" "),
+      let names = name.split(" "),
         initials = names[0].substring(0, 1).toUpperCase();
 
       if (names.length > 1) {

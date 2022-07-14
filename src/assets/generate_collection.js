@@ -1,7 +1,7 @@
-var casual = require('casual');
+const casual = require('casual');
 const fs = require('fs');
 
-var custom_timestamp = {
+const custom_timestamp = {
 	timestamp: function() {
 		return casual.month_name + ' ' + casual.day_of_month + ',' + ' 2022 | ' + casual.time(format = 'HH:mm');
 	},
@@ -25,8 +25,8 @@ casual.define('collection', function() {
 let collectionsjson = fs.readFileSync("collections.json","utf-8");
 let collections = JSON.parse(collectionsjson);
 
-for (var i = 0; i<10; ++i){
-	var collection = casual.collection;
+for (let i = 0; i<10; ++i){
+	let collection = casual.collection;
 	collections.push(collection);
 }
 

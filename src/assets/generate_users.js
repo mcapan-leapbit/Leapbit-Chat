@@ -1,4 +1,4 @@
-var casual = require('casual');
+const casual = require('casual');
 const fs = require('fs');
 
 casual.define('user', function() {
@@ -13,8 +13,8 @@ let usersjson = fs.readFileSync("users.json","utf-8");
 let users = JSON.parse(usersjson);
 let users_ids = []
 
-for (var i = 0; i<10; ++i){
-	var user = casual.user;
+for (let i = 0; i<10; ++i){
+	let user = casual.user;
 	
 	if (user["conversation_id"] in users_ids){
 		continue;

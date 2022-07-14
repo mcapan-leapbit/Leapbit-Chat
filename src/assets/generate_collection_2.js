@@ -1,16 +1,19 @@
-var casual = require('casual');
+const casual = require('casual');
+const moment = require('moment');
+
 const fs = require('fs');
 
-var custom_providers = {
+const custom_providers = {
 	timestamp: function() {
-		return casual.month_name + ' ' + casual.day_of_month + ',' + ' 2022 | ' + casual.time(format = 'HH:mm');
+        return moment().format('MMMM Do YYYY, HH:mm:ss');
+		//return casual.month_name + ' ' + casual.day_of_month + ',' + ' 2022 | ' + casual.time(format = 'HH:mm');
 	},
     message: function() {
-        return ([{
+        return {
             admin: casual.coin_flip,
             message: casual.description,
             timestamp: casual.timestamp
-        }]);
+        };
     },
 };
 
@@ -21,15 +24,18 @@ casual.define('collection', function() {
 		email: casual.email,
 		full_name: casual.full_name,
         conversation_id: casual.integer(from = 1, to = 1000),
-        messages: casual.message
+        messages: [casual.message]
 	};
 });
 
 let collectionsjson = fs.readFileSync("collections.json","utf-8");
 let collections = JSON.parse(collectionsjson);
 
-for (var i = 0; i<10; ++i){
-	var collection = casual.collection;
+for (let i=0; i<10; ++i){
+	let collection = casual.collection;
+    for (let j=1; j<5; ++j){
+        collection.messages.push(casual.message);
+    }
 	collections.push(collection);
 }
 

@@ -1,7 +1,7 @@
-var casual = require('casual');
+const casual = require('casual');
 const fs = require('fs');
 
-var custom_timestamp = {
+const custom_timestamp = {
 	timestamp: function() {
 		return casual.month_name + ' ' + casual.day_of_month + ',' + ' 2022 | ' + casual.time(format = 'HH:mm');
 	},
@@ -27,8 +27,8 @@ let users = JSON.parse(usersjson);
 for(let i = 0; i < usersjson.length; i++) {
     let obj = usersjson[i];
     let conversation_id = obj.conversation_id;
-    for (var j = 0; j<5; ++j){
-        var message = casual.message;
+    for (let j = 0; j<5; ++j){
+        let message = casual.message;
         message["conversation_id"] = conversation_id;
         messages.push(message);
     }
