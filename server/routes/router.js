@@ -9,12 +9,12 @@ let connection;
 })();
 
 router.get("*", async (req, res) => {
-  const users = await connection.db("leapbitChat").collection("users");
+  const users = await connection.db("leapbitChat").collection("messages");
   res.send(await users.find({}).toArray());
 });
 
 router.post("/add-user", async (req, res) => {
-  const users = await connection.db("leapbitChat").collection("users");
+  const users = await connection.db("leapbitChat").collection("messages");
   await users.insertOne({
     text: req.body.text,
   });

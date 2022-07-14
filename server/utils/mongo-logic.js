@@ -1,8 +1,10 @@
 const mongodb = require("mongodb");
+const dotenv = require("dotenv");
 
+dotenv.config();
 const connectToDB = async function () {
   const client = await mongodb.MongoClient.connect(
-    "mongodb+srv://test:test123@cluster0.hmdtdoi.mongodb.net/?retryWrites=true&w=majority",
+    process.env.MONGO_LINK,
     {
       useNewUrlParser: true,
     }
