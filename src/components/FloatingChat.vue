@@ -27,10 +27,10 @@
 
     <SignupBox
       v-if="isOpen & !isSignedIn"
-      @submit.prevent="signIn(name, email)"
+      @submit.prevent="acceptUser(name, email)"
     />
 
-    <UserChatbox v-if="isOpen & isSignedIn" />
+    <UserChatbox v-if="isOpen & isSignedIn" :name="name" :email="email" />
 
     <hr v-if="!isOpen" class="line" />
     <div v-if="!isOpen" @click="openChat()" class="open_button">
@@ -42,6 +42,8 @@
 <script>
 import SignupBox from "../../src/components/SignupBox.vue";
 import UserChatbox from "../../src/components/UserChatbox.vue";
+//import { uuid } from "vue-uuid";
+//import {}
 
 export default {
   name: "FloatingChat",
@@ -54,6 +56,8 @@ export default {
       isOpen: false,
       isSignedIn: false,
       isAdminActive: true,
+      name: "",
+      email: "",
     };
   },
   methods: {
@@ -63,8 +67,13 @@ export default {
     closeChat() {
       this.isOpen = false;
     },
-    signIn() {
+    acceptUser(name, email) {
+      this.name = name;
+      this.email = email;
       this.isSignedIn = true;
+    },
+    mounted() {
+      // if (cookie id isNotEmpty) isSignedIn = true
     },
   },
 };

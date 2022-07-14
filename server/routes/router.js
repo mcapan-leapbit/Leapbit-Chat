@@ -8,16 +8,15 @@ let connection;
   connection = await connectToDB();
 })();
 
-router.get("*", async (req, res) => {
-  const users = await connection.db("leapbitChat").collection("users");
-  res.send(await users.find({}).toArray());
+router.get("/conversation/:id", async (req, res) => {
+  let id = req.params.id;
+  const users = await connection.db("leapbitChat").collection("messages");
+  res.send(await users.find({ conversation_id: id }).toArray());
 });
 
-router.post("/add-user", async (req, res) => {
-  const users = await connection.db("leapbitChat").collection("users");
-  await users.insertOne({
-    text: req.body.text,
-  });
+router.post("/message", async (req, res) => {
+  const users = await connection.db("leapbitChat").collection("messages");
+  await users.updateOne({ text: req.body.text }, { upsert: true });
   res.status(201).send();
 });
 
