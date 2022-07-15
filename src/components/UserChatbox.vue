@@ -19,7 +19,7 @@
 <script>
 import UserInput from "../../src/components/UserInput.vue";
 import UserMessage from "../../src/components/UserMessage.vue";
-import { uuid } from "vue-uuid";
+import moment from "moment";
 
 export default {
   name: "UserChatbox",
@@ -44,13 +44,32 @@ export default {
           process.env.VUE_APP_SERVER +
             "conversation/9bc4866a-eabe-4992-aff9-f5d7ebdf6316"
         )
-        .then((res) => (this.admin_chat = res.data)); // edit this
+        .then((res) => (this.admin_chat = res.data));
   },
   methods: {
     sendMessage(message, timestamp) {
-      if (!this.$cookies.isKey("conversation_id"))
-        this.$cookies.set("conversation_id", uuid.v4());
-      alert(`${this.full_name} sent message:\n${message}\n${timestamp}`);
+      let msg = { admin: false, message: message, timestamp: timestamp };
+      let values = {
+        $setOnInsert: {
+          email: this.admin_chat.email,
+          full_name: this.admin_chat.full_name,
+          last_updated: moment().unix(),
+        },
+        $push: { messages: msg },
+      };
+      let packet = {
+        conversation_id: this.admin_chat.conversation_id,
+        values: values,
+      };
+
+      this.axios
+        .post(process.env.VUE_APP_SERVER + "message", packet)
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     },
   },
 };

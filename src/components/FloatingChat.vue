@@ -43,6 +43,7 @@
 <script>
 import SignupBox from "../../src/components/SignupBox.vue";
 import UserChatbox from "../../src/components/UserChatbox.vue";
+import { uuid } from "vue-uuid";
 //import { uuid } from "vue-uuid";
 //import {}
 
@@ -75,6 +76,8 @@ export default {
       this.full_name = name;
       this.email = email;
       alert("fg " + name + " " + email);
+      if (!this.$cookies.isKey("conversation_id"))
+        this.$cookies.set("conversation_id", uuid.v4());
       this.isSignedIn = true;
     },
   },
