@@ -12,10 +12,10 @@
         <div class="status-box">
           <span class="status-icon"></span>
           <span class="status-placeholder">Active</span>
-          <!-- <img
+          <img
             src="../../public/assets/images/icon-chevron.svg"
             class="status-chevron"
-          /> -->
+          />
         </div>
       </div>
     </div>
@@ -23,11 +23,12 @@
     <div class="scrollable-messages">
       <ChatsListMessage
         v-for="admin_message in admin_messages"
-        :key="admin_message.conversation_id"
+        :key="admin_message.id"
         :full_name="admin_message.full_name"
-        :timestamp="admin_message.admin_message.messages.at(-1).timestamp"
+        :timestamp="admin_message.timestamp"
         :email="admin_message.email"
-        :message="admin_message.messages.at(-1)"
+        :message="admin_message.message_text"
+        :notif_number="admin_message.new_message"
       />
     </div>
   </div>
@@ -35,6 +36,7 @@
 
 <script>
 import ChatsListMessage from "../../src/components/ChatsListMessage.vue";
+import admin_messages from "../../src/assets/admin_messages.json";
 
 export default {
   name: "ChatsList",
@@ -43,16 +45,8 @@ export default {
   },
   data() {
     return {
-      admin_messages: chats,
+      admin_messages: admin_messages,
     };
   },
-  mounted(){
-    this.axios
-        .get(
-          process.env.VUE_APP + 'conversations'
-        )
-        .then((res) => (this.chats = res.data));
-  },
-  
 };
 </script>

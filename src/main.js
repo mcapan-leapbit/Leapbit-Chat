@@ -12,7 +12,7 @@ import dotenv from "dotenv";
 
 dotenv.config({path:'../.env'});
 
-const socket = io(process.env.VUE_APP_SERVER);
+const socket = io(process.env.ORIGIN_LINK);
 const vue = createApp(App).use(store).use(router);
 
 vue.use(VueAxios, axios);

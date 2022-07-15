@@ -3,9 +3,9 @@
     <div class="">
       <div class="chat-sender">
         <span class="profile-bg">
-          <span class="profile-initials">
-            {{ initials }}
-            <!-- <span v-if="isValid" class="notif-bg">{{ notif_number }}</span> -->
+          <span class="profile-initials"
+            >{{ initials }}
+            <span v-if="isValid" class="notif-bg">{{ notif_number }}</span>
           </span>
         </span>
         <div class="sender-details">
@@ -28,8 +28,15 @@
 <script>
 export default {
   name: "ChatsListMessage",
-  props: ["key", "full_name", "timestamp", "email", "message"],
+  props: ["full_name", "timestamp", "email", "message", "notif_number"],
   computed: {
+    isValid() {
+      return (
+        this.notif_number !== null &&
+        this.notif_number !== "" &&
+        +this.notif_number > 0
+      );
+    },
     initials() {
       let names = this.full_name.split(" "),
         initials = names[0].substring(0, 1).toUpperCase();
