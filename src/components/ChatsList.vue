@@ -43,7 +43,7 @@ export default {
   },
   data() {
     return {
-      admin_messages: {},
+      admin_messages: chats,
     };
   },
   mounted(){
@@ -51,7 +51,7 @@ export default {
         .get(
           process.env.VUE_APP + 'conversations'
         )
-        .then((res) => (this.admin_messages = res.data));
+        .then((res) => (this.chats = res.data));
   },
   
 };
