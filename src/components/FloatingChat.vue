@@ -27,7 +27,11 @@
 
     <SignupBox v-if="isOpen & !isSignedIn" @submit-user="acceptUser" />
 
-    <UserChatbox v-if="isOpen & isSignedIn" :name="name" :email="email" />
+    <UserChatbox
+      v-if="isOpen & isSignedIn"
+      :full_name="full_name"
+      :email="email"
+    />
 
     <hr v-if="!isOpen" class="line" />
     <div v-if="!isOpen" @click="openChat()" class="open_button">
@@ -53,7 +57,7 @@ export default {
       isOpen: false,
       isSignedIn: false,
       isAdminActive: true,
-      name: "",
+      full_name: "",
       email: "",
     };
   },
@@ -68,7 +72,7 @@ export default {
       this.isOpen = false;
     },
     acceptUser(name, email) {
-      this.name = name;
+      this.full_name = name;
       this.email = email;
       alert("fg " + name + " " + email);
       this.isSignedIn = true;

@@ -6,6 +6,7 @@
         v-for="message in admin_chat"
         :key="message.id"
         :messageData="message"
+        :full_name="full_name"
       />
     </div>
 
@@ -24,7 +25,7 @@ import { uuid } from "vue-uuid";
 export default {
   name: "UserChatbox",
   props: {
-    name: String,
+    full_name: String,
     email: String,
   },
   data() {
@@ -46,7 +47,7 @@ export default {
     sendMessage(message, timestamp) {
       if (!this.$cookies.isKey("conversation_id"))
         this.$cookies.set("conversation_id", uuid.v4());
-      alert(`${this.name} sent message:\n${message}\n${timestamp}`);
+      alert(`${this.full_name} sent message:\n${message}\n${timestamp}`);
     },
   },
 };
