@@ -16,7 +16,7 @@ const socket = io(process.env.ORIGIN_LINK);
 const vue = createApp(App).use(store).use(router);
 
 vue.use(VueAxios, axios);
-vue.use(VueCookies, { expireTimes: "1d" });
+vue.use(VueCookies, { expireTimes: "30d" });
 vue.use(uuid);
 
 vue.use(VueSocketIOExt, socket);
