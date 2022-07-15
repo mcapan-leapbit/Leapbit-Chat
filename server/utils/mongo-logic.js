@@ -1,7 +1,8 @@
 const mongodb = require("mongodb");
 const dotenv = require("dotenv");
 
-dotenv.config();
+dotenv.config({path:'../.env'});
+
 const connectToDB = async function () {
   const client = await mongodb.MongoClient.connect(
     process.env.MONGO_LINK,
