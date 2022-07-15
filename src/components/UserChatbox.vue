@@ -40,7 +40,10 @@ export default {
     this.$refs.scrollBody.scrollTop = this.$refs.scrollBody.scrollHeight;
     if (this.$cookies.isKey("conversation_id"))
       this.axios
-        .get(process.env.VUE_APP_SERVER + "conversation/9bc4866a-eabe-4992-aff9-f5d7ebdf6316")
+        .get(
+          process.env.VUE_APP_SERVER +
+            "conversation/9bc4866a-eabe-4992-aff9-f5d7ebdf6316"
+        )
         .then((res) => (this.admin_chat = res.data)); // edit this
   },
   methods: {
