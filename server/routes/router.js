@@ -15,9 +15,22 @@ router.get("/conversation/:id", async (req, res) => {
 });
 
 router.get("/conversations", async (req, res) => {
-  const messages = await connection.db("leapbitChat").collection("messages");
+  const messages = await connection
+  .db("leapbitChat")
+  .collection("messages");
+
   res.send(await messages.find({}).toArray());
 });
+
+router.get("/first_conversations", async (req, res) => {
+  const messages = await connection
+  .db("leapbitChat")
+  .collection("messages")
+  .find({}, { sort: { timestamp: -1 }, limit: 1 })
+  .toArray();
+  res.send(await messages.find({}).toArray());
+});
+
 
 router.post("/message", async (req, res) => {
   const messages = await connection.db("leapbitChat").collection("messages");
