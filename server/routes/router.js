@@ -14,6 +14,11 @@ router.get("/conversation/:id", async (req, res) => {
   res.send(await users.find({ conversation_id: id }).toArray());
 });
 
+router.get("/conversations", async (req, res) => {
+  const users = await connection.db("leapbitChat").collection("messages");
+  res.send(await users.find({}).toArray());
+});
+
 router.post("/message", async (req, res) => {
   const users = await connection.db("leapbitChat").collection("messages");
   await users.updateOne({ text: req.body.text }, { upsert: true });

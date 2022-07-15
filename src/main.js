@@ -4,7 +4,7 @@ import router from "./router";
 import store from "./store";
 import VueSocketIOExt from "vue-socket.io-extended";
 import { io } from "socket.io-client";
-import VueCookies from 'vue3-cookies';
+import VueCookies from "vue3-cookies";
 import { uuid } from "vue-uuid";
 import axios from "axios";
 import VueAxios from "vue-axios";

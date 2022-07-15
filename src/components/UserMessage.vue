@@ -26,10 +26,10 @@
 <script>
 export default {
   name: "UserMessage",
-  props: ["messageData"],
+  props: ["full_name", "messageData"],
   computed: {
     initials() {
-      let names = this.messageData.name.split(" "),
+      let names = this.full_name.split(" "),
         initials = names[0].substring(0, 1).toUpperCase();
 
       if (names.length > 1) {
