@@ -3,10 +3,10 @@
     <br />
     <div class="user-chat-body" ref="scrollBody">
       <UserMessage
-        v-for="message in admin_chat"
-        :key="message.id"
+        v-for="message in admin_chat.messages"
+        :key="message.conversation_id"
         :messageData="message"
-        :full_name="full_name"
+        :full_name="admin_chat.full_name"
       />
     </div>
 
@@ -19,7 +19,6 @@
 <script>
 import UserInput from "../../src/components/UserInput.vue";
 import UserMessage from "../../src/components/UserMessage.vue";
-import admin_chat from "../../src/assets/admin_chat.json";
 import { uuid } from "vue-uuid";
 
 export default {
@@ -30,7 +29,7 @@ export default {
   },
   data() {
     return {
-      admin_chat: admin_chat,
+      admin_chat: {},
     };
   },
   components: {
@@ -41,10 +40,8 @@ export default {
     this.$refs.scrollBody.scrollTop = this.$refs.scrollBody.scrollHeight;
     if (this.$cookies.isKey("conversation_id"))
       this.axios
-        .get(
-          `http://localhost:3000/conversation/${this.$cookies.get("conversation_id")}`
-        )
-        .then((res) => (this.admin_chat = res)); // edit this
+        .get(process.env.VUE_APP_SERVER + "conversation/9bc4866a-eabe-4992-aff9-f5d7ebdf6316")
+        .then((res) => (this.admin_chat = res.data)); // edit this
   },
   methods: {
     sendMessage(message, timestamp) {

@@ -9,19 +9,19 @@ let connection;
 })();
 
 router.get("/conversation/:id", async (req, res) => {
-  let id = req.params.id;
-  const users = await connection.db("leapbitChat").collection("messages");
-  res.send(await users.find({ conversation_id: id }).toArray());
+  const conversation_id = req.params.id;
+  const messages = await connection.db("leapbitChat").collection("messages");
+  res.send(await messages.findOne({ conversation_id: conversation_id }));
 });
 
 router.get("/conversations", async (req, res) => {
-  const users = await connection.db("leapbitChat").collection("messages");
-  res.send(await users.find({}).toArray());
+  const messages = await connection.db("leapbitChat").collection("messages");
+  res.send(await messages.find({}).toArray());
 });
 
 router.post("/message", async (req, res) => {
-  const users = await connection.db("leapbitChat").collection("messages");
-  await users.updateOne({ text: req.body.text }, { upsert: true });
+  const messages = await connection.db("leapbitChat").collection("messages");
+  await messages.updateOne({ text: req.body.text }, { upsert: true });
   res.status(201).send();
 });
 

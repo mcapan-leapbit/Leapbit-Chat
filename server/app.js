@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
 const router = require("./routes/router");
-const dotenv = require("dotenv");
 const http = require("http");
 const server = http.createServer(app);
+const cors = require("cors");
 const io = require("socket.io")(server, {
   cors: {
     origins: "/",
@@ -11,6 +11,11 @@ const io = require("socket.io")(server, {
   },
 });
 
+app.use(
+  cors({
+    origin: "http://localhost:8080",
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
