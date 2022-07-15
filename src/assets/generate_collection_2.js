@@ -1,5 +1,6 @@
 const casual = require('casual');
 const moment = require('moment');
+const { v4: uuidv4 } = require('uuid');
 
 const fs = require('fs');
 
@@ -23,7 +24,8 @@ casual.define('collection', function() {
 	return {
 		email: casual.email,
 		full_name: casual.full_name,
-        conversation_id: casual.integer(from = 1, to = 1000),
+        conversation_id: uuidv4(),
+        last_updated: casual.unix_time,
         messages: [casual.message]
 	};
 });

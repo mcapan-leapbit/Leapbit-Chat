@@ -8,8 +8,11 @@ import VueCookies from "vue3-cookies";
 import { uuid } from "vue-uuid";
 import axios from "axios";
 import VueAxios from "vue-axios";
+import dotenv from "dotenv";
 
-const socket = io("http://localhost:3000");
+dotenv.config({path:'../.env'});
+
+const socket = io(process.env.ORIGIN_LINK);
 const vue = createApp(App).use(store).use(router);
 
 vue.use(VueAxios, axios);
