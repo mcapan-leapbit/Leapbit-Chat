@@ -3,9 +3,9 @@
     <div class="">
       <div class="chat-sender">
         <span class="profile-bg">
-          <span class="profile-initials"
-            >{{ initials }}
-            <span v-if="isValid" class="notif-bg">{{ notif_number }}</span>
+          <span class="profile-initials">
+            {{ initials }}
+            <!-- <span v-if="isValid" class="notif-bg">{{ notif_number }}</span> -->
           </span>
         </span>
         <div class="sender-details">
