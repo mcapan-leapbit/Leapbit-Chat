@@ -10,7 +10,7 @@ import axios from "axios";
 import VueAxios from "vue-axios";
 import dotenv from "dotenv";
 
-dotenv.config({path:'../.env'});
+dotenv.config({ path: "../.env" });
 
 const socket = io(process.env.VUE_APP_SERVER);
 const vue = createApp(App).use(store).use(router);

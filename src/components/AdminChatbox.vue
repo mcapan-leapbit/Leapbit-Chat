@@ -31,27 +31,43 @@ export default {
       admin_chat: {},
     };
   },
-  // sockets: {
-  //   connect() {},
-  //   disconnect() {},
-  // },
+  sockets: {
+    connect() {},
+  },
   mounted() {
-    this.$refs.chatBody.scrollTop = this.$refs.chatBody.scrollHeight;
     this.axios
       .get(
         process.env.VUE_APP_SERVER +
-          "conversation/9bc4866a-eabe-4992-aff9-f5d7ebdf6316"
+          "conversation/" +
+          this.$cookies.get("conversation_id")
       )
       .then((res) => (this.admin_chat = res.data));
-    console.log(this.admin_chat);
+  },
+  updated() {
+    this.$refs.chatBody.scrollTop = this.$refs.chatBody.scrollHeight;
   },
   methods: {
     sendingMessage(messageText) {
-      this.$socket.client.emit("messageSent", {
+      const msg = {
         admin: true,
-        text: messageText,
-        date: moment().format("MMMM Do YYYY, HH:mm:ss "),
-      });
+        message: messageText,
+        timestamp: moment().format("MMMM Do YYYY, HH:mm:ss "),
+      };
+      const values = {
+        $setOnInsert: {
+          last_updated: moment().unix(),
+        },
+        $push: {
+          messages: msg,
+        },
+      };
+
+      const packet = {
+        conversation_id: this.admin_chat.conversation_id,
+        values: values,
+      };
+
+      this.$socket.client.emit("messageSent", packet);
     },
   },
 };
