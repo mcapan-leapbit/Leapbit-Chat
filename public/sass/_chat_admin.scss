@@ -112,6 +112,7 @@
         background-image: $message_grad;
         border-top-left-radius: 0;
         font-family: $std_font;
+        word-break: break-all;
       }
     }
 
@@ -148,6 +149,7 @@
           background: $my_message_grad;
           border-top-right-radius: 0;
           font-family: $std_font;
+          word-break: break-all;
         }
         .user-timestamp {
           float: right;

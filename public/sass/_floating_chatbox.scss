@@ -127,6 +127,7 @@
                     max-width: 75%;
 
                     .user-chat-body-rectangle {
+                        word-break: break-all;
                         width: fit-content;
                         font-size: smaller;
 
@@ -152,6 +153,7 @@
                     align-items: flex-end;
 
                     .user-chat-body-rectangle-user {
+                        word-break: break-all;
                         width: fit-content;
                         font-size: smaller;
                     }
