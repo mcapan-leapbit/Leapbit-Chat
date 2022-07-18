@@ -37,7 +37,6 @@ export default {
     UserInput,
   },
   mounted() {
-    this.$refs.scrollBody.scrollTop = this.$refs.scrollBody.scrollHeight;
     if (this.$cookies.isKey("conversation_id"))
       this.axios
         .get(
@@ -46,29 +45,38 @@ export default {
             this.$cookies.get("conversation_id")
         )
         .then((res) => (this.admin_chat = res.data));
+
+    this.$socket.client.on("confirmToClient", (confirmedMsg) => {
+      console.log(confirmedMsg);
+      console.log(this.admin_chat);
+      this.admin_chat.messages.push(confirmedMsg.values.$push.messages);
+    });
+  },
+  updated() {
+    this.$refs.scrollBody.scrollTop = this.$refs.scrollBody.scrollHeight;
   },
   methods: {
-    sendMessage(message, timestamp) {
-      let msg = { admin: false, message: message, timestamp: timestamp };
-      let values = {
+    sendMessage(message) {
+      const msg = {
+        admin: false,
+        message: message,
+        timestamp: moment().format("MMMM Do YYYY, HH:mm:ss "),
+      };
+      const values = {
         $setOnInsert: {
           last_updated: moment().unix(),
         },
-        $push: { messages: msg },
+        $push: {
+          messages: msg,
+        },
       };
-      let packet = {
-        conversation_id: this.$cookies.get("conversation_id"),
+
+      const packet = {
+        conversation_id: this.admin_chat.conversation_id,
         values: values,
       };
 
-      this.axios
-        .post(process.env.VUE_APP_SERVER + "message", packet)
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+      this.$socket.client.emit("messageSent", packet);
     },
   },
 };

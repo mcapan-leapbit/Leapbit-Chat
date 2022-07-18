@@ -27,7 +27,7 @@ export default {
   methods: {
     sendMessage() {
       if (!this.message) return;
-      this.$emit("submit-msg", this.message, new Date());
+      this.$emit("submit-msg", this.message);
       this.message = "";
     },
   },
