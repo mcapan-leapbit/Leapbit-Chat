@@ -25,9 +25,13 @@
         v-for="admin_message in chats"
         :key="admin_message.id"
         :full_name="admin_message.full_name"
-        :timestamp="admin_message.messages[admin_message.messages.length-1].timestamp"
+        :timestamp="
+          admin_message.messages[admin_message.messages.length - 1].timestamp
+        "
         :email="admin_message.email"
-        :message="admin_message.messages[admin_message.messages.length-1].message"
+        :message="
+          admin_message.messages[admin_message.messages.length - 1].message
+        "
         :conversation_id="admin_message.conversation_id"
       />
     </div>
@@ -49,11 +53,8 @@ export default {
   },
   mounted() {
     this.axios
-        .get(
-          process.env.VUE_APP_SERVER +
-            "conversations"
-        )
-        .then((res) => (this.chats = res.data));
-  }
+      .get(process.env.VUE_APP_SERVER + "conversations")
+      .then((res) => (this.chats = res.data));
+  },
 };
 </script>
