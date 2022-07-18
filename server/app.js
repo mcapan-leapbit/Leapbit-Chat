@@ -5,8 +5,9 @@ const http = require("http");
 const server = http.createServer(app);
 const cors = require("cors");
 const dotenv = require("dotenv");
+const { connectToDB } = require("./utils/mongo-logic");
 
-dotenv.config({path:'../.env'});
+dotenv.config({ path: "../.env" });
 
 const io = require("socket.io")(server, {
   cors: {
@@ -14,6 +15,14 @@ const io = require("socket.io")(server, {
     credentials: false,
   },
 });
+
+let connection;
+let messages;
+
+(async () => {
+  connection = await connectToDB();
+  messages = await connection.db("leapbitChat").collection("messages");
+})();
 
 app.use(
   cors({
@@ -24,7 +33,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 io.on("connection", function (socket) {
-  console.log("User connected");
+  socket.on("fetchMyChat", async function (objectFromClient) {
+    const response = await messages.findOne({
+      conversation_id: objectFromClient.convo_id,
+    });
+    console.log(response);
+    socket.emit("receiveChat", response);
+  });
   socket.on("messageSent", function (message) {
     console.log(message);
   });
