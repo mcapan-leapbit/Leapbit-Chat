@@ -26,6 +26,7 @@ casual.define('collection', function() {
 		full_name: casual.full_name,
         conversation_id: uuidv4(),
         last_updated: casual.unix_time,
+        last_updated: casual.integer(from = 0, to = 4),
         messages: [casual.message]
 	};
 });
