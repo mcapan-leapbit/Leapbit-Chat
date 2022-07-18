@@ -5,7 +5,7 @@
         <span class="profile-bg">
           <span class="profile-initials">
             {{ initials }}
-            <!-- <span v-if="isValid" class="notif-bg">{{ notif_number }}</span> -->
+            <span v-if="isValid" class="notif-bg">{{ notif_number }}</span>
           </span>
         </span>
         <div class="sender-details">
@@ -26,9 +26,15 @@
 </template>
 
 <script>
+
 export default {
   name: "ChatsListMessage",
-  props: ["full_name", "timestamp", "email", "message", "conversation_id"],
+  props: ["full_name", "timestamp", "email", "message", "conversation_id", "last_message_index", "messages_length"],
+  data() {
+    return {
+      notif_number: this.messages_length - this.last_index,
+    };
+  },
   computed: {
     isValid() {
       return (
