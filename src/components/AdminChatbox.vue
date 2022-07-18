@@ -38,7 +38,8 @@ export default {
     this.axios
       .get(
         process.env.VUE_APP_SERVER +
-          "conversation/fd2d1f8c-1fb6-48b2-aad4-042470f0d2f2"
+          "conversation/" +
+          this.$cookies.get("conversation_id")
       )
       .then((res) => (this.admin_chat = res.data));
   },
