@@ -19,6 +19,12 @@ router.get("/conversations", async (req, res) => {
   res.send(await messages.find({}).toArray());
 });
 
+router.post("/conversation", async (req, res) => {
+  const messages = await connection.db("leapbitChat").collection("messages");
+  await messages.insertOne(req.body);
+  res.status(201).send();
+});
+
 router.post("/message", async (req, res) => {
   const messages = await connection.db("leapbitChat").collection("messages");
   await messages.updateOne(

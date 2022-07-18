@@ -44,6 +44,7 @@
 import SignupBox from "../../src/components/SignupBox.vue";
 import UserChatbox from "../../src/components/UserChatbox.vue";
 import { uuid } from "vue-uuid";
+import moment from "moment";
 //import { uuid } from "vue-uuid";
 //import {}
 
@@ -72,12 +73,26 @@ export default {
     closeChat() {
       this.isOpen = false;
     },
-    acceptUser(name, email) {
-      this.full_name = name;
-      this.email = email;
-      alert("fg " + name + " " + email);
-      if (!this.$cookies.isKey("conversation_id"))
+    acceptUser(full_name, email) {
+      if (!this.$cookies.isKey("conversation_id")) {
         this.$cookies.set("conversation_id", uuid.v4());
+        let values = {
+          email: email,
+          full_name: full_name,
+          conversation_id: this.$cookies.get("conversation_id"),
+          last_updated: moment().unix(),
+          messages: [],
+        };
+
+        this.axios
+          .post(process.env.VUE_APP_SERVER + "conversation", values)
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
       this.isSignedIn = true;
     },
   },
