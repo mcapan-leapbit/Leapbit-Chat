@@ -30,7 +30,7 @@
         :message="admin_message.messages[admin_message.messages.length - 1].message"
         :messages_length="admin_message.messages.length"
         :conversation_id="admin_message.conversation_id"
-        :last_message_index="admin_message.last_updated"
+        :last_message_index="admin_message.last_index"
       />
     </div>
   </div>

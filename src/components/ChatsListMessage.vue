@@ -1,11 +1,11 @@
 <template>
-  <div class="message-box">
+  <div class="message-box" @click="updateNotif()">
     <div class="">
       <div class="chat-sender">
         <span class="profile-bg">
           <span class="profile-initials">
             {{ initials }}
-            <span v-if="isValid" class="notif-bg">{{ notif_number }}</span>
+            <span v-if="isValid" class="notif-bg" :notif_number="notif_number" >{{ notif_number }}</span>
           </span>
         </span>
         <div class="sender-details">
@@ -32,7 +32,8 @@ export default {
   props: ["full_name", "timestamp", "email", "message", "conversation_id", "last_message_index", "messages_length"],
   data() {
     return {
-      notif_number: this.messages_length - this.last_index,
+      notif_number: this.messages_length - this.last_message_index,
+      data: {}
     };
   },
   computed: {
@@ -53,5 +54,15 @@ export default {
       return initials;
     },
   },
+  methods: {
+    updateNotif(){
+      this.axios
+      .get(process.env.VUE_APP_SERVER + "conversation/" + this.conversation_id)
+      .then((res) => (this.data = res.data));
+      console.log(this.data);
+      this.notif_number = this.data.messages.length - this.data.last_index;
+    }
+  }
+ 
 };
 </script>

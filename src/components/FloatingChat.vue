@@ -81,6 +81,7 @@ export default {
           full_name: full_name,
           conversation_id: this.$cookies.get("conversation_id"),
           last_updated: moment().unix(),
+          last_index: 0,
           messages: [],
         };
 
