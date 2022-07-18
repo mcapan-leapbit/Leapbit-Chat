@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { connectToDB } = require("../utils/mongo-logic");
+const connectToDB = require("../utils/mongo-logic");
 
 let connection;
 
