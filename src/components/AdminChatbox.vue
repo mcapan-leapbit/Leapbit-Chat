@@ -34,7 +34,7 @@ export default {
   sockets: {
     connect() {},
   },
-  mounted() {
+  beforeMount() {
     this.axios
       .get(
         process.env.VUE_APP_SERVER +
@@ -42,6 +42,13 @@ export default {
           this.$cookies.get("conversation_id")
       )
       .then((res) => (this.admin_chat = res.data));
+  },
+  mounted() {
+    this.$socket.client.on("confirmToClient", (confirmedMsg) => {
+      console.log(confirmedMsg);
+      console.log(this.admin_chat);
+      this.admin_chat.messages.push(confirmedMsg.values.$push.messages);
+    });
   },
   updated() {
     this.$refs.chatBody.scrollTop = this.$refs.chatBody.scrollHeight;

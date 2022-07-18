@@ -41,6 +41,7 @@ io.on("connection", function (socket) {
       packetFromClient.values,
       { upsert: true }
     );
+    io.emit("confirmToClient", packetFromClient);
   });
 });
 
