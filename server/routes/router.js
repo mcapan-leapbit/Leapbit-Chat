@@ -25,14 +25,4 @@ router.post("/conversation", async (req, res) => {
   res.status(201).send();
 });
 
-router.post("/message", async (req, res) => {
-  const messages = await connection.db("leapbitChat").collection("messages");
-  await messages.updateOne(
-    { conversation_id: req.body.conversation_id },
-    req.body.values,
-    { upsert: true }
-  );
-  res.status(201).send();
-});
-
 module.exports = router;
