@@ -42,7 +42,8 @@ export default {
       this.axios
         .get(
           process.env.VUE_APP_SERVER +
-            "conversation/9bc4866a-eabe-4992-aff9-f5d7ebdf6316"
+            "conversation/" +
+            this.$cookies.get("conversation_id")
         )
         .then((res) => (this.admin_chat = res.data));
   },
@@ -58,7 +59,7 @@ export default {
         $push: { messages: msg },
       };
       let packet = {
-        conversation_id: this.admin_chat.conversation_id,
+        conversation_id: this.$cookies.get("conversation_id"),
         values: values,
       };
 

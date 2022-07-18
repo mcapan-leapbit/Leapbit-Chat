@@ -35,11 +35,11 @@
 <script>
 export default {
   name: "AdminMessage",
-  props: ["messageData"],
+  props: [ "full_name", "messageData"],
   computed: {
     initials() {
-      let names = this.messageData.name.split(" "),
-        initials = names[0].substring(0, 1).toUpperCase();
+      let names = this.full_name.split(" ");
+      let initials = names[0].substring(0, 1).toUpperCase();
 
       if (names.length > 1) {
         initials += names[names.length - 1].substring(0, 1).toUpperCase();

@@ -22,13 +22,17 @@
     <div class="status-divider"></div>
     <div class="scrollable-messages">
       <ChatsListMessage
-        v-for="admin_message in admin_messages"
+        v-for="admin_message in chats"
         :key="admin_message.id"
         :full_name="admin_message.full_name"
-        :timestamp="admin_message.timestamp"
+        :timestamp="
+          admin_message.messages[admin_message.messages.length - 1].timestamp
+        "
         :email="admin_message.email"
-        :message="admin_message.message_text"
-        :notif_number="admin_message.new_message"
+        :message="
+          admin_message.messages[admin_message.messages.length - 1].message
+        "
+        :conversation_id="admin_message.conversation_id"
       />
     </div>
   </div>
@@ -36,7 +40,6 @@
 
 <script>
 import ChatsListMessage from "../../src/components/ChatsListMessage.vue";
-import admin_messages from "../../src/assets/admin_messages.json";
 
 export default {
   name: "ChatsList",
@@ -45,8 +48,13 @@ export default {
   },
   data() {
     return {
-      admin_messages: admin_messages,
+      chats: {},
     };
+  },
+  mounted() {
+    this.axios
+      .get(process.env.VUE_APP_SERVER + "conversations")
+      .then((res) => (this.chats = res.data));
   },
 };
 </script>

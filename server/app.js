@@ -33,15 +33,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 io.on("connection", function (socket) {
-  socket.on("fetchMyChat", async function (objectFromClient) {
-    const response = await messages.findOne({
-      conversation_id: objectFromClient.convo_id,
-    });
-    console.log(response);
-    socket.emit("receiveChat", response);
-  });
-  socket.on("messageSent", function (message) {
-    console.log(message);
+  socket.on("messageSent", async function (packetFromClient) {
+    await messages.updateOne(
+      {
+        conversation_id: packetFromClient.conversation_id,
+      },
+      packetFromClient.values,
+      { upsert: true }
+    );
   });
 });
 
