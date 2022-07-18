@@ -28,7 +28,7 @@
 <script>
 export default {
   name: "ChatsListMessage",
-  props: ["full_name", "timestamp", "email", "message", "notif_number"],
+  props: ["full_name", "timestamp", "email", "message", "conversation_id"],
   computed: {
     isValid() {
       return (
