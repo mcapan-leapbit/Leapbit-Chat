@@ -50,22 +50,13 @@ export default {
   },
   data() {
     return {
-      chats: [],
+      chats: {},
     };
   },
   mounted() {
     this.axios.get(process.env.VUE_APP_SERVER + "conversations").then((res) => {
-      this.chats = res.data;
-      console.log(this.chats);
-      this.chats = this.chats.filter((c) => c.messages.length != 0);
+      this.chats = res.data.filter((c) => c.messages.length != 0);
     });
-    // this.$socket.client.on("confirmToClient", () => {
-    //   this.axios
-    //     .get(process.env.VUE_APP_SERVER + "conversations")
-    //     .then((res) => {
-    //       this.chats = res.data;
-    //     });
-    // });
   },
 };
 </script>
