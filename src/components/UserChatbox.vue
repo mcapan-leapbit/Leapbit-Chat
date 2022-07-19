@@ -36,8 +36,8 @@ export default {
     UserMessage,
     UserInput,
   },
-  mounted() {
-    if (this.$cookies.isKey("conversation_id"))
+  beforeMount() {
+    if (this.$cookies.get("conversation_id"))
       this.axios
         .get(
           process.env.VUE_APP_SERVER +
@@ -45,6 +45,9 @@ export default {
             this.$cookies.get("conversation_id")
         )
         .then((res) => (this.admin_chat = res.data));
+  },
+  mounted() {
+    this.$socket.client.emit("login", this.$cookies.get("conversation_id"));
 
     this.$socket.client.on("confirmToClient", (confirmedMsg) => {
       console.log(confirmedMsg);
@@ -72,7 +75,7 @@ export default {
       };
 
       const packet = {
-        conversation_id: this.admin_chat.conversation_id,
+        conversation_id: this.$cookies.get("conversation_id"),
         values: values,
       };
 

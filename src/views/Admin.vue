@@ -33,5 +33,10 @@ export default {
     ChatsList,
     AdminChatbox,
   },
+  sockets: {
+    connect() {
+      this.$socket.client.emit("login", process.env.VUE_APP_ADMIN_ID);
+    },
+  },
 };
 </script>

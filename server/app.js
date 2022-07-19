@@ -41,7 +41,21 @@ io.on("connection", function (socket) {
       packetFromClient.values,
       { upsert: true }
     );
-    io.emit("confirmToClient", packetFromClient);
+    io.to(process.env.VUE_APP_ADMIN_ID)
+      .to(packetFromClient.conversation_id)
+      .emit("confirmToClient", packetFromClient);
+
+    console.log(
+      "message sent to rooms " +
+        process.env.VUE_APP_ADMIN_ID +
+        " " +
+        packetFromClient.conversation_id
+    );
+  });
+
+  socket.on("login", async function (id) {
+    socket.join(id);
+    console.log("logged in rooom " + id);
   });
 });
 

@@ -29,18 +29,13 @@ export default {
   data() {
     return {
       admin_chat: {},
+      conversationId: "0b1f646f-6628-4509-bdf2-e13fdba8be1f",
     };
   },
-  sockets: {
-    connect() {},
-  },
+
   beforeMount() {
     this.axios
-      .get(
-        process.env.VUE_APP_SERVER +
-          "conversation/" +
-          this.$cookies.get("conversation_id")
-      )
+      .get(process.env.VUE_APP_SERVER + "conversation/" + this.conversationId)
       .then((res) => (this.admin_chat = res.data));
   },
   mounted() {

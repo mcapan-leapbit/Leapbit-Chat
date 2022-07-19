@@ -5,7 +5,12 @@
         <span class="profile-bg">
           <span class="profile-initials">
             {{ initials }}
-            <span v-if="isValid" class="notif-bg" :notif_number="notif_number" >{{ notif_number }}</span>
+            <span
+              v-if="isValid"
+              class="notif-bg"
+              :notif_number="notif_number"
+              >{{ notif_number }}</span
+            >
           </span>
         </span>
         <div class="sender-details">
@@ -26,14 +31,21 @@
 </template>
 
 <script>
-
 export default {
   name: "ChatsListMessage",
-  props: ["full_name", "timestamp", "email", "message", "conversation_id", "last_message_index", "messages_length"],
+  props: [
+    "full_name",
+    "timestamp",
+    "email",
+    "message",
+    "conversation_id",
+    "last_message_index",
+    "messages_length",
+  ],
   data() {
     return {
       notif_number: this.messages_length - this.last_message_index,
-      data: {}
+      data: {},
     };
   },
   computed: {
@@ -55,14 +67,15 @@ export default {
     },
   },
   methods: {
-    updateNotif(){
+    updateNotif() {
       this.axios
-      .get(process.env.VUE_APP_SERVER + "conversation/" + this.conversation_id)
-      .then((res) => (this.data = res.data));
+        .get(
+          process.env.VUE_APP_SERVER + "conversation/" + this.conversation_id
+        )
+        .then((res) => (this.data = res.data));
       console.log(this.data);
       this.notif_number = this.data.messages.length - this.data.last_index;
-    }
-  }
- 
+    },
+  },
 };
 </script>

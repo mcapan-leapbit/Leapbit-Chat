@@ -63,10 +63,15 @@ export default {
       email: "",
     };
   },
+  mounted() {
+    if (!this.$cookies.isKey("conversation_id")) {
+      this.$cookies.set("conversation_id", "");
+    }
+  },
   methods: {
     openChat() {
       this.isOpen = true;
-      if (this.$cookies.isKey("conversation_id")) {
+      if (this.$cookies.get("conversation_id")) {
         this.isSignedIn = true;
       }
     },
@@ -74,7 +79,7 @@ export default {
       this.isOpen = false;
     },
     acceptUser(full_name, email) {
-      if (!this.$cookies.isKey("conversation_id")) {
+      if (!this.$cookies.get("conversation_id")) {
         this.$cookies.set("conversation_id", uuid.v4());
         let values = {
           email: email,
@@ -90,11 +95,13 @@ export default {
           .then(function (response) {
             console.log(response);
           })
+          .then(() => {
+            this.isSignedIn = true;
+          })
           .catch(function (error) {
             console.log(error);
           });
       }
-      this.isSignedIn = true;
     },
   },
 };
