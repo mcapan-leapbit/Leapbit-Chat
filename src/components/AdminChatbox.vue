@@ -42,8 +42,6 @@ export default {
   },
   mounted() {
     this.$socket.client.on("confirmToClient", (confirmedMsg) => {
-      console.log(confirmedMsg);
-      console.log(this.admin_chat);
       this.admin_chat.messages.push(confirmedMsg.values.$push.messages);
     });
   },

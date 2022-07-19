@@ -50,8 +50,6 @@ export default {
     this.$socket.client.emit("login", this.$cookies.get("conversation_id"));
 
     this.$socket.client.on("confirmToClient", (confirmedMsg) => {
-      console.log(confirmedMsg);
-      console.log(this.admin_chat);
       this.admin_chat.messages.push(confirmedMsg.values.$push.messages);
     });
   },
