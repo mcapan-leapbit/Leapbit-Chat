@@ -8,8 +8,8 @@
         Messages <span class="rectangle"><span class="-new">2 new</span></span>
       </div>
       <div class="msg-row">
-        <ChatsList />
-        <AdminChatbox />
+        <ChatsList @conv_selected="setConversation" />
+        <AdminChatbox :conv_id="conv_id" />
       </div>
     </div>
   </div>
@@ -28,6 +28,11 @@ import AdminChatbox from "../components/AdminChatbox.vue";
 
 export default {
   name: "Admin",
+  data: function () {
+    return {
+      conv_id: "",
+    };
+  },
   components: {
     Sidebar,
     ChatsList,
@@ -36,6 +41,11 @@ export default {
   sockets: {
     connect() {
       this.$socket.client.emit("login", process.env.VUE_APP_ADMIN_ID);
+    },
+  },
+  methods: {
+    setConversation(conversation_id) {
+      this.conv_id = conversation_id;
     },
   },
 };

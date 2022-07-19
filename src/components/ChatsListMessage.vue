@@ -1,5 +1,5 @@
 <template>
-  <div class="message-box" @click="updateNotif()">
+  <div class="message-box" @click="$emit('clicked', this.conversation_id)">
     <div class="">
       <div class="chat-sender">
         <span class="profile-bg">
@@ -72,9 +72,10 @@ export default {
         .get(
           process.env.VUE_APP_SERVER + "conversation/" + this.conversation_id
         )
-        .then((res) => (this.data = res.data));
-      console.log(this.data);
-      this.notif_number = this.data.messages.length - this.data.last_index;
+        .then((res) => {
+          this.data = res.data;
+          this.notif_number = this.data.messages.length - this.data.last_index;
+        });
     },
   },
 };

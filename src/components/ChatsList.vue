@@ -35,6 +35,7 @@
         :messages_length="admin_message.messages.length"
         :conversation_id="admin_message.conversation_id"
         :last_message_index="admin_message.last_index"
+        @clicked="conv_selected"
       />
     </div>
   </div>
@@ -57,6 +58,11 @@ export default {
     this.axios.get(process.env.VUE_APP_SERVER + "conversations").then((res) => {
       this.chats = res.data.filter((c) => c.messages.length != 0);
     });
+  },
+  methods: {
+    conv_selected(conv_id){
+      this.$emit("conv_selected", conv_id);
+    },
   },
 };
 </script>

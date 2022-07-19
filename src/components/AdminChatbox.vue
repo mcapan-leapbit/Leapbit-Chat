@@ -21,6 +21,7 @@ import moment from "moment";
 
 export default {
   name: "AdminChatbox",
+  props: ["conv_id"],
   components: {
     AdminTopBar,
     AdminMessage,
@@ -32,11 +33,12 @@ export default {
       conversationId: "0b1f646f-6628-4509-bdf2-e13fdba8be1f",
     };
   },
-
-  beforeMount() {
-    this.axios
-      .get(process.env.VUE_APP_SERVER + "conversation/" + this.conversationId)
-      .then((res) => (this.admin_chat = res.data));
+  watch: {
+    conv_id(newConv_id) {
+      this.axios
+        .get(process.env.VUE_APP_SERVER + "conversation/" + newConv_id)
+        .then((res) => (this.admin_chat = res.data));
+    },
   },
   mounted() {
     this.$socket.client.on("confirmToClient", (confirmedMsg) => {
@@ -65,7 +67,7 @@ export default {
       };
 
       const packet = {
-        conversation_id: this.admin_chat.conversation_id,
+        conversation_id: this.conv_id,
         values: values,
       };
 
