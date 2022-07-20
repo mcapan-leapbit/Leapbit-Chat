@@ -12,6 +12,7 @@
       name="submit"
       :src="require('../../public/assets/images/icon-send.svg')"
       alt="send"
+      :style="sendBtnOpacity"
     />
   </form>
 </template>
@@ -29,6 +30,12 @@ export default {
       if (!this.message) return;
       this.$emit("submit-msg", this.message);
       this.message = "";
+    },
+  },
+  computed: {
+    sendBtnOpacity() {
+      if (this.message) return "opacity: 1";
+      else return "opacity: 0.5";
     },
   },
 };
