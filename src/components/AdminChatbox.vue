@@ -1,6 +1,6 @@
 <template>
   <div class="mask-cbox">
-    <AdminTopBar />
+    <AdminTopBar :fullName="fullName" :email="email" :initials="initials" />
     <div class="chat-body" ref="chatBody">
       <AdminMessage
         v-for="message in admin_chat.messages"
@@ -31,13 +31,21 @@ export default {
     return {
       admin_chat: {},
       conversationId: "0b1f646f-6628-4509-bdf2-e13fdba8be1f",
+      fullName: "",
+      email: "",
+      initials: "",
     };
   },
   watch: {
     conv_id(newConv_id) {
       this.axios
         .get(process.env.VUE_APP_SERVER + "conversation/" + newConv_id)
-        .then((res) => (this.admin_chat = res.data));
+        .then((res) => {
+          this.admin_chat = res.data;
+          this.fullName = res.data.full_name;
+          this.email = res.data.email;
+          this.initials = this.makeInitials();
+        });
     },
   },
   mounted() {
@@ -50,6 +58,7 @@ export default {
   },
   methods: {
     sendingMessage(messageText) {
+      if (!this.conv_id) return;
       const msg = {
         admin: true,
         message: messageText,
@@ -70,6 +79,15 @@ export default {
       };
 
       this.$socket.client.emit("messageSent", packet);
+    },
+    makeInitials() {
+      let names = this.fullName.split(" "),
+        initials = names[0].substring(0, 1).toUpperCase();
+
+      if (names.length > 1) {
+        initials += names[names.length - 1].substring(0, 1).toUpperCase();
+      }
+      return initials;
     },
   },
 };

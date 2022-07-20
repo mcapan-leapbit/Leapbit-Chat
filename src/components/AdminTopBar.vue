@@ -6,7 +6,7 @@
       </div>
       <div class="chat-header-info">
         <span class="chat-header-uname"> {{ fullName }} </span>
-        <span class="header-usermail"> {{ mail }} </span>
+        <span class="header-usermail"> {{ email }} </span>
       </div>
     </div>
   </div>
@@ -15,15 +15,7 @@
 <script>
 export default {
   name: "AdminTopBar",
-  props: ["userData"],
-  data() {
-    return {
-      initials: "AW",
-      fullName: "Austin Wade",
-      mail: "austin.wade@leapbit.com",
-      //dummy data
-    };
-  },
-  mounted() {},
+  props: ["fullName", "email", "initials"],
 };
 </script>
+
