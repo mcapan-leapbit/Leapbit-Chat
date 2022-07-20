@@ -58,6 +58,24 @@ export default {
   },
   methods: {
     sendMessage(message) {
+      if (
+        !this.$cookies.get("conversation_id").trim() ||
+        !this.admin_chat.full_name.trim() ||
+        !this.admin_chat.email.trim()
+      ) {
+        alert(
+          "There has been an error while signing in. Please refresh page and try again." +
+            "\ncookie: " +
+            this.$cookies.get("conversation_id").trim() +
+            "\nfull_name: " +
+            this.admin_chat.full_name +
+            "\nemail: " +
+            this.admin_chat.email
+        );
+        this.$cookies.remove("conversation_id");
+        window.location.reload();
+        return false;
+      }
       const msg = {
         admin: false,
         message: message,

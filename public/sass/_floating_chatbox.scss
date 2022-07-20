@@ -135,9 +135,8 @@
                     }
                 }
 
-                .bitmap {
+                .user-circle {
                     min-width: 32px;
-                    min-height: 32px;
                 }
             }
 
@@ -163,9 +162,11 @@
                     }
                 }
 
-                .user-circle {
+                .bitmap {
                     min-width: 32px;
+                    min-height: 32px;
                 }
+                
             }
         }
 
