@@ -9,7 +9,7 @@ import uuid from "vue-uuid";
 import axios from "axios";
 import VueAxios from "vue-axios";
 
-const socket = io(process.env.VUE_APP_SERVER);
+const socket = io(process.env.VUE_APP_BASE_URL);
 const vue = createApp(App).use(store).use(router);
 
 axios.defaults.baseURL = process.env.VUE_APP_BASE_URL;
