@@ -4,10 +4,7 @@ const router = require("./routes/router");
 const http = require("http");
 const server = http.createServer(app);
 const cors = require("cors");
-const dotenv = require("dotenv");
 const { connectToDB } = require("./utils/mongo-logic");
-
-dotenv.config({ path: "/.env" });
 
 const io = require("socket.io")(server, {
   cors: {
