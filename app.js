@@ -24,7 +24,7 @@ let messages;
 
 app.use(
   cors({
-    origin: process.env.ORIGIN_LINK,
+    origin: "*",
   })
 );
 app.use(express.json());
