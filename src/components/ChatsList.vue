@@ -55,7 +55,7 @@ export default {
     };
   },
   mounted() {
-    this.axios.get(process.env.VUE_APP_SERVER + "conversations").then((res) => {
+    this.axios.get("conversations").then((res) => {
       this.chats = res.data.filter((c) => c.messages.length != 0);
     });
   },

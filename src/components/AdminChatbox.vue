@@ -38,14 +38,12 @@ export default {
   },
   watch: {
     conv_id(newConv_id) {
-      this.axios
-        .get(process.env.VUE_APP_SERVER + "conversation/" + newConv_id)
-        .then((res) => {
-          this.admin_chat = res.data;
-          this.fullName = res.data.full_name;
-          this.email = res.data.email;
-          this.initials = this.makeInitials();
-        });
+      this.axios.get("conversation/" + newConv_id).then((res) => {
+        this.admin_chat = res.data;
+        this.fullName = res.data.full_name;
+        this.email = res.data.email;
+        this.initials = this.makeInitials();
+      });
     },
   },
   mounted() {

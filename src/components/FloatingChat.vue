@@ -45,6 +45,7 @@ import SignupBox from "../../src/components/SignupBox.vue";
 import UserChatbox from "../../src/components/UserChatbox.vue";
 import { uuid } from "vue-uuid";
 import moment from "moment";
+
 //import { uuid } from "vue-uuid";
 //import {}
 
@@ -91,7 +92,7 @@ export default {
         };
 
         this.axios
-          .post(process.env.VUE_APP_SERVER + "conversation", values)
+          .post("conversation", values)
           .then(function (response) {
             console.log(response);
           })

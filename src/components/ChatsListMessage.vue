@@ -73,7 +73,7 @@ export default {
     updateNotif() {
       this.axios
         .get(
-          process.env.VUE_APP_SERVER + "conversation/" + this.conversation_id
+          "conversation/" + this.conversation_id
         )
         .then((res) => {
           this.data = res.data;

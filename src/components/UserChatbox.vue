@@ -39,11 +39,7 @@ export default {
   beforeMount() {
     if (this.$cookies.get("conversation_id"))
       this.axios
-        .get(
-          process.env.VUE_APP_SERVER +
-            "conversation/" +
-            this.$cookies.get("conversation_id")
-        )
+        .get("conversation/" + this.$cookies.get("conversation_id"))
         .then((res) => (this.admin_chat = res.data));
   },
   mounted() {
