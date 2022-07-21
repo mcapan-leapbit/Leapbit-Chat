@@ -55,16 +55,19 @@ export default {
     };
   },
   mounted() {
-    this.axios.get(process.env.VUE_APP_SERVER + "conversations").then((res) => {
-      this.chats = res.data.filter((c) => c.messages.length != 0);
-    });
+    this.axios
+      .get(process.env.VUE_APP_SERVER + "conversations")
+      .then((res) => {
+        this.chats = res.data.filter((c) => c.messages.length != 0);
+      })
+      .catch((err) => console.log(err));
   },
   methods: {
-    conv_selected(conv_id, msg_length){
+    conv_selected(conv_id, msg_length) {
       this.$emit("conv_selected", conv_id);
-      document.querySelectorAll('[active="true"]').forEach(elem =>
-        elem.setAttribute("active",false)
-      );
+      document
+        .querySelectorAll('[active="true"]')
+        .forEach((elem) => elem.setAttribute("active", false));
       this.$socket.client.emit("ChatOpened", conv_id, msg_length);
     },
   },

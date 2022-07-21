@@ -45,7 +45,8 @@ export default {
           this.fullName = res.data.full_name;
           this.email = res.data.email;
           this.initials = this.makeInitials();
-        });
+        })
+        .catch((err) => console.log(err));
     },
   },
   mounted() {

@@ -49,7 +49,7 @@ export default {
       isActive: false,
     };
   },
-  mounted(){
+  mounted() {
     this.$socket.client.on("ChangedNotifNumber", this.updateNotif);
     this.$socket.client.on("confirmToClient", this.updateNotif);
   },
@@ -83,12 +83,13 @@ export default {
         .then((res) => {
           this.data = res.data;
           this.notif_number = this.data.messages.length - this.data.last_index;
-        });
+        })
+        .catch((err) => console.log(err));
     },
-    conversation_selected(){
-      this.$emit('clicked', this.conversation_id, this.messages_length);
+    conversation_selected() {
+      this.$emit("clicked", this.conversation_id, this.messages_length);
       this.isActive = true;
-    }
+    },
   },
 };
 </script>
