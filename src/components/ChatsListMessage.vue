@@ -49,6 +49,10 @@ export default {
       isActive: false,
     };
   },
+  mounted(){
+    this.$socket.client.on("ChangedNotifNumber", this.updateNotif);
+    this.$socket.client.on("confirmToClient", this.updateNotif);
+  },
   computed: {
     isValid() {
       return (
@@ -82,7 +86,7 @@ export default {
         });
     },
     conversation_selected(){
-      this.$emit('clicked', this.conversation_id);
+      this.$emit('clicked', this.conversation_id, this.messages_length);
       this.isActive = true;
     }
   },

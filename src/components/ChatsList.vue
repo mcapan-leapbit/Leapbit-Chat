@@ -60,11 +60,12 @@ export default {
     });
   },
   methods: {
-    conv_selected(conv_id){
+    conv_selected(conv_id, msg_length){
       this.$emit("conv_selected", conv_id);
       document.querySelectorAll('[active="true"]').forEach(elem =>
         elem.setAttribute("active",false)
       );
+      this.$socket.client.emit("ChatOpened", conv_id, msg_length);
     },
   },
 };

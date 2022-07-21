@@ -16,7 +16,7 @@ router.get("/conversation/:id", async (req, res) => {
 });
 
 router.get("/conversations", async (req, res) => {
-  res.send(await messages.find({}).toArray());
+  res.send(await messages.find().sort({ last_updated: -1 }).toArray());
 });
 
 router.post("/conversation", async (req, res) => {

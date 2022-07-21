@@ -57,6 +57,19 @@ io.on("connection", function (socket) {
     socket.join(id);
     console.log("logged in rooom " + id);
   });
+
+  socket.on("ChatOpened", async function (conv_id, msg_length) {
+    await messages.updateOne(
+      {
+        conversation_id: conv_id,
+      },
+      {
+        "$set": {"last_index": msg_length}
+      }
+    );
+    io.to(process.env.VUE_APP_ADMIN_ID)
+      .emit("ChangedNotifNumber");
+  });
 });
 
 app.use("/", router);
