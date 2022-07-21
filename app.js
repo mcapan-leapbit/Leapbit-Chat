@@ -5,6 +5,7 @@ const http = require("http");
 const server = http.createServer(app);
 const cors = require("cors");
 const { connectToDB } = require("./utils/mongo-logic");
+const PORT = process.env.PORT || 3000;
 
 const io = require("socket.io")(server, {
   cors: {
@@ -58,6 +59,6 @@ io.on("connection", function (socket) {
 
 app.use("/", router);
 
-server.listen(3000, () => {
-  console.log("Server running on port 3000...");
+server.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}...`);
 });
