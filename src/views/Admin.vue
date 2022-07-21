@@ -16,7 +16,7 @@
 </template>
 
 <style lang="scss">
-@import "../../public/sass/index.scss";
+@import "../../src/assets/sass/index.scss";
 </style>
 
 <script>

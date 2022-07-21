@@ -3,5 +3,5 @@
 </template>
 
 <style lang="scss">
-@import "/public/sass/body.scss";
+@import "/src/assets/sass/body.scss";
 </style>

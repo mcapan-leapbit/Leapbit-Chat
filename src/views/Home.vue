@@ -25,5 +25,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "/public/sass/homepage.scss";
+@import "/src/assets/sass/homepage.scss";
 </style>
