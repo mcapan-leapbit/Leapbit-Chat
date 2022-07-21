@@ -1,24 +1,36 @@
 # vue-leapbit-chat
 
-## Project setup
+## Clone repository and position yourself in project root
 ```
-npm install
+git clone https://github.com/mcapan-leapbit/leapbit-chat.git
+cd leapbit-chat
 ```
 
-### Compiles and hot-reloads for development
+## Project setup
+In root directory:
+```
+npm install
+cd server
+npm install
+cd ..
+```
+
+## Environment variables setup
+Rename .env.example file to .env file and edit variable values.
+
+### Compiles and hot-reloads Vue-app for development
+In root directory:
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
+### Compiles and hot-reloads Vue-app for development
+In root directory:
+```
+npm run serve
+```
+​
+### Compiles and minifies Vue-app for production
+In root directory:
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
