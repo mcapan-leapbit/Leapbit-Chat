@@ -1,5 +1,5 @@
 <template>
-  <div class="message-box" @click="$emit('clicked', this.conversation_id)">
+  <div class="message-box" @click="conversation_selected" :active="isActive">
     <div class="">
       <div class="chat-sender">
         <span class="profile-bg">
@@ -46,6 +46,7 @@ export default {
     return {
       notif_number: this.messages_length - this.last_message_index,
       data: {},
+      isActive: false,
     };
   },
   computed: {
@@ -80,6 +81,10 @@ export default {
           this.notif_number = this.data.messages.length - this.data.last_index;
         });
     },
+    conversation_selected(){
+      this.$emit('clicked', this.conversation_id);
+      this.isActive = true;
+    }
   },
 };
 </script>

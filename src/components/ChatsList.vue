@@ -62,6 +62,9 @@ export default {
   methods: {
     conv_selected(conv_id){
       this.$emit("conv_selected", conv_id);
+      document.querySelectorAll('[active="true"]').forEach(elem =>
+        elem.setAttribute("active",false)
+      );
     },
   },
 };
