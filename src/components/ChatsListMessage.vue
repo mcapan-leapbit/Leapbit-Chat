@@ -54,7 +54,7 @@ export default {
     };
   },
   mounted() {
-    this.$socket.client.on("confirmToClient", this.updateNotif);
+    this.$socket.client.on("chatOpened", this.updateNotif);
   },
   watch: {
     notif_number() {

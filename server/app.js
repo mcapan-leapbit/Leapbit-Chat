@@ -67,7 +67,7 @@ io.on("connection", function (socket) {
         $set: { last_index: msg_length, last_updated: last_updated },
       }
     );
-    io.to(process.env.VUE_APP_ADMIN_ID).emit("confirmToClient");
+    io.to(process.env.VUE_APP_ADMIN_ID).emit("chatOpened");
   });
 });
 
