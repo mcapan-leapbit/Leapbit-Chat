@@ -51,7 +51,9 @@ export default {
   },
   mounted() {
     this.$socket.client.on("confirmToClient", (confirmedMsg) => {
-      this.admin_chat.messages.push(confirmedMsg.values.$push.messages);
+      if (confirmedMsg.conversation_id == this.conv_id) {
+        this.admin_chat.messages.push(confirmedMsg.values.$push.messages);
+      }
     });
   },
   updated() {
