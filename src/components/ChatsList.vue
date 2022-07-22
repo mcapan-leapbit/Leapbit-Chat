@@ -61,14 +61,17 @@ export default {
         this.chats = res.data.filter((c) => c.messages.length != 0);
       })
       .catch((err) => console.log(err));
+
+    this.$socket.client.on("ChangedNotifNumber", this.updateNotif);
+    this.$socket.client.on("confirmToClient", this.updateNotif);
   },
   methods: {
-    conv_selected(conv_id, msg_length) {
+    conv_selected(conv_id, msg_length, last_updated) {
       this.$emit("conv_selected", conv_id);
       document
         .querySelectorAll('[active="true"]')
         .forEach((elem) => elem.setAttribute("active", false));
-      this.$socket.client.emit("ChatOpened", conv_id, msg_length);
+      this.$socket.client.emit("ChatOpened", conv_id, msg_length, last_updated);
     },
   },
 };

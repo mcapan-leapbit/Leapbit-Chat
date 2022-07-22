@@ -23,17 +23,20 @@
       </div>
     </div>
     <div class="chat-bottom">
-      <p class="message-text">
-        {{ message }}
+      <p class="message-text" :new_message="new_message">
+        {{ new_message }}
       </p>
     </div>
   </div>
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
   name: "ChatsListMessage",
   props: [
+    "key",
     "full_name",
     "timestamp",
     "email",
@@ -47,11 +50,8 @@ export default {
       notif_number: this.messages_length - this.last_message_index,
       data: {},
       isActive: false,
+      new_message: this.messages,
     };
-  },
-  mounted() {
-    this.$socket.client.on("ChangedNotifNumber", this.updateNotif);
-    this.$socket.client.on("confirmToClient", this.updateNotif);
   },
   computed: {
     isValid() {
@@ -83,11 +83,18 @@ export default {
         .then((res) => {
           this.data = res.data;
           this.notif_number = this.data.messages.length - this.data.last_index;
+          this.new_message =
+            this.data.messages[this.data.messages.length - 1].message;
         })
         .catch((err) => console.log(err));
     },
     conversation_selected() {
-      this.$emit("clicked", this.conversation_id, this.messages_length);
+      this.$emit(
+        "clicked",
+        this.conversation_id,
+        this.messages_length,
+        moment().unix()
+      );
       this.isActive = true;
     },
   },

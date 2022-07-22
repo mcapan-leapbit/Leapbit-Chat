@@ -58,17 +58,16 @@ io.on("connection", function (socket) {
     console.log("logged in rooom " + id);
   });
 
-  socket.on("ChatOpened", async function (conv_id, msg_length) {
+  socket.on("ChatOpened", async function (conv_id, msg_length, last_updated) {
     await messages.updateOne(
       {
         conversation_id: conv_id,
       },
       {
-        "$set": {"last_index": msg_length}
+        $set: { last_index: msg_length, last_updated: last_updated },
       }
     );
-    io.to(process.env.VUE_APP_ADMIN_ID)
-      .emit("ChangedNotifNumber");
+    io.to(process.env.VUE_APP_ADMIN_ID).emit("ChangedNotifNumber");
   });
 });
 
