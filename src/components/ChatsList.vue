@@ -61,8 +61,6 @@ export default {
         this.chats = res.data.filter((c) => c.messages.length != 0);
       })
       .catch((err) => console.log(err));
-
-    this.$socket.client.on("confirmToClient");
   },
   methods: {
     conv_selected(conv_id, msg_length, last_updated) {
