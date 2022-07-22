@@ -18,4 +18,3 @@ export default {
   props: ["fullName", "email", "initials"],
 };
 </script>
-

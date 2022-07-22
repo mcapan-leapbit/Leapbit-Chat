@@ -43,24 +43,23 @@ export default {
     "message",
     "conversation_id",
     "last_message_index",
-    "messages_length"
+    "messages_length",
   ],
   data() {
     return {
       notif_number: this.messages_length - this.last_message_index,
       data: {},
       isActive: false,
-      new_message: this.messages
+      new_message: this.messages,
     };
   },
   mounted() {
     this.$socket.client.on("confirmToClient", this.updateNotif);
-    this.emitInterface();
   },
   watch: {
     notif_number() {
       this.updateNotif;
-    }
+    },
   },
   computed: {
     isValid() {
@@ -81,7 +80,7 @@ export default {
         return initials;
       }
       return "";
-    }
+    },
   },
   methods: {
     updateNotif() {
@@ -106,11 +105,6 @@ export default {
       );
       this.isActive = true;
     },
-    emitInterface() {
-      this.$emit("interface", {
-        updateNotif: () => this.updateNotif()
-      });
-    }
-  }
+  },
 };
 </script>

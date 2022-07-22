@@ -22,7 +22,6 @@
     <div class="status-divider"></div>
     <div class="scrollable-messages">
       <ChatsListMessage
-        ref="childComponentRef"
         v-for="admin_message in chats"
         :key="admin_message.id"
         :full_name="admin_message.full_name"
@@ -37,15 +36,13 @@
         :conversation_id="admin_message.conversation_id"
         :last_message_index="admin_message.last_index"
         @clicked="conv_selected"
-        @interface="getChildInterface"
-      />
+      ></ChatsListMessage>
     </div>
   </div>
 </template>
 
 <script>
 import ChatsListMessage from "../../src/components/ChatsListMessage.vue";
-// import { ref, onMounted } from "vue";
 
 export default {
   name: "ChatsList",
@@ -57,12 +54,6 @@ export default {
       chats: {},
     };
   },
-  // setup() {
-  //   const childComponentRef = ref();
-  //   onMounted(() => {
-  //     childComponentRef.value.doSomething();
-  //   });
-  // },
   mounted() {
     this.axios
       .get(process.env.VUE_APP_SERVER + "conversations")
@@ -71,13 +62,7 @@ export default {
       })
       .catch((err) => console.log(err));
 
-    this.$socket.client.on(
-      "confirmToClient",
-      this.$options.childInterface.updateNotif()
-    );
-  },
-  childInterface: {
-    updatENotif: () => {},
+    this.$socket.client.on("confirmToClient");
   },
   methods: {
     conv_selected(conv_id, msg_length, last_updated) {
@@ -86,9 +71,6 @@ export default {
         .querySelectorAll('[active="true"]')
         .forEach((elem) => elem.setAttribute("active", false));
       this.$socket.client.emit("ChatOpened", conv_id, msg_length, last_updated);
-    },
-    getChildInterface(childInterface) {
-      this.$options.childInterface = childInterface;
     },
   },
 };
