@@ -34,9 +34,9 @@ export default {
     handleSubmit() {
       const textForm = this.$refs.inputText;
       const sentMessage = textForm.value;
-      if (!sentMessage) return;
+      if (!sentMessage.trim()) return;
 
-      this.$emit("sendingMessage", sentMessage);
+      this.$emit("sendingMessage", sentMessage.trim());
       textForm.value = "";
       this.$refs.sendImage.style.opacity = 0.5;
     },
@@ -46,7 +46,7 @@ export default {
     const sendImg = this.$refs.sendImage;
 
     textForm.addEventListener("input", () => {
-      if (textForm.value) {
+      if (textForm.value.trim()) {
         sendImg.style.opacity = 1;
       } else {
         sendImg.style.opacity = 0.5;
