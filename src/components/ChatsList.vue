@@ -23,7 +23,7 @@
     <div class="scrollable-messages">
       <ChatsListMessage
         v-for="admin_message in chats"
-        :key="admin_message.id"
+        :key="admin_message.last_updated"
         :full_name="admin_message.full_name"
         :timestamp="
           admin_message.messages[admin_message.messages.length - 1].timestamp
@@ -58,6 +58,7 @@ export default {
   watch: {
     chats() {
       this.update_chats();
+      this.sort_chats();
     },
   },
   mounted() {
@@ -123,6 +124,9 @@ export default {
           );
         }
       }
+      this.chats.find(
+        (conversation) => conversation.conversation_id == packet.conversation_id
+      ).last_updated = packet.values.$set.last_updated;
       this.update_chats();
     });
   },
@@ -196,6 +200,28 @@ export default {
       this.chats.forEach((chat) => (sum += chat.notif_number));
       this.notif_sum = sum;
       this.$emit("sum_changed", this.notif_sum);
+      this.sort_chats();
+    },
+    sort_chats: function () {
+      this.chats
+        .sort(function (x, y) {
+          return x.last_updated - y.last_updated;
+        })
+        .reverse();
+      this.chats.push({
+        email: "lb@test",
+        full_name: "Leapbit",
+        conversation_id: "1d322ec1-3549-499b-9f8b-8ec91fg45fbe",
+        last_updated: 1658502449,
+        last_index: 9,
+        messages: [
+          {
+            admin: false,
+            message: "message",
+            timestamp: "July 22nd 2022, 16:52:12 ",
+          },
+        ],
+      });
     },
   },
 };
