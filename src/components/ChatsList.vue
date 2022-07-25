@@ -86,20 +86,27 @@ export default {
         packet.conversation_id != this.selected_conversation &&
         this.chats.length != 0
       ) {
-        this.chats.find(
-          (conversation) =>
-            conversation.conversation_id == packet.conversation_id
-        ).notif_number =
-          this.chats
-            .find(
-              (conversation) =>
-                conversation.conversation_id == packet.conversation_id
-            )
-            .messages.filter((message) => message.admin == false).length -
+        if (
           this.chats.find(
             (conversation) =>
               conversation.conversation_id == packet.conversation_id
-          ).last_index;
+          )
+        ) {
+          this.chats.find(
+            (conversation) =>
+              conversation.conversation_id == packet.conversation_id
+          ).notif_number =
+            this.chats
+              .find(
+                (conversation) =>
+                  conversation.conversation_id == packet.conversation_id
+              )
+              .messages.filter((message) => message.admin == false).length -
+            this.chats.find(
+              (conversation) =>
+                conversation.conversation_id == packet.conversation_id
+            ).last_index;
+        }
       } else {
         if (this.chats.length != 0) {
           this.chats.find(
@@ -124,10 +131,17 @@ export default {
           );
         }
       }
-      this.chats.find(
-        (conversation) => conversation.conversation_id == packet.conversation_id
-      ).last_updated = packet.values.$set.last_updated;
-      this.update_chats();
+      if (
+        this.chats.find(
+          (conversation) =>
+            conversation.conversation_id == packet.conversation_id
+        )
+      ) {
+        this.chats.find(
+          (conversation) => conversation.conversation_id == packet.conversation_id
+        ).last_updated = packet.values.$set.last_updated;
+        this.update_chats();
+      }
     });
   },
   methods: {
