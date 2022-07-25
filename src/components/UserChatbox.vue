@@ -83,7 +83,7 @@ export default {
         timestamp: moment().format("MMMM Do YYYY, HH:mm:ss "),
       };
       const values = {
-        $setOnInsert: {
+        $set: {
           last_updated: moment().unix(),
         },
         $push: {

@@ -119,7 +119,7 @@ export default {
                   conversation.conversation_id == packet.conversation_id
               )
               .messages.filter((message) => message.admin == false).length,
-            packet.values.$setOnInsert.last_updated
+            packet.values.$set.last_updated
           );
         }
       }
