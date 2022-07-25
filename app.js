@@ -55,18 +55,6 @@ io.on("connection", function (socket) {
     socket.join(id);
     console.log("logged in rooom " + id);
   });
-  
-  socket.on("chatOpened", async function (conv_id, msg_length, last_updated) {
-    await messages.updateOne(
-      {
-        conversation_id: conv_id,
-      },
-      {
-        $set: { last_index: msg_length, last_updated: last_updated },
-      }
-    );
-    io.to(process.env.VUE_APP_ADMIN_ID).emit("chatUpdated", conv_id);
-  });
 });
 
 socket.on("chatOpened", async function (conv_id, msg_length, last_updated) {
