@@ -32,12 +32,13 @@
 
 <script>
 import moment from "moment";
+import InitialsMixin from "../mixins/initials";
 
 export default {
   name: "ChatsListMessage",
+  mixins: [InitialsMixin],
   props: [
     "key",
-    "full_name",
     "timestamp",
     "email",
     "message",
@@ -56,18 +57,6 @@ export default {
         this.notif_number !== "" &&
         +this.notif_number > 0
       );
-    },
-    initials() {
-      if (this.full_name) {
-        let names = this.full_name.split(" "),
-          initials = names[0].substring(0, 1).toUpperCase();
-
-        if (names.length > 1) {
-          initials += names[names.length - 1].substring(0, 1).toUpperCase();
-        }
-        return initials;
-      }
-      return "";
     },
   },
   methods: {

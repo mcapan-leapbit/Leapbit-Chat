@@ -24,22 +24,11 @@
 </template>
 
 <script>
+import InitialsMixin from "../mixins/initials";
+
 export default {
   name: "UserMessage",
-  props: ["full_name", "messageData"],
-  computed: {
-    initials() {
-      if (this.full_name) {
-        let names = this.full_name.split(" "),
-          initials = names[0].substring(0, 1).toUpperCase();
-
-        if (names.length > 1) {
-          initials += names[names.length - 1].substring(0, 1).toUpperCase();
-        }
-        return initials;
-      }
-      return "";
-    },
-  },
+  mixins: [InitialsMixin],
+  props: ["messageData"],
 };
 </script>
