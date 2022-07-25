@@ -4,7 +4,12 @@
       <div class="search-pack">
         <div class="search-pack-left">
           <span class="search-label">Search for chat</span>
-          <input class="search-box" type="text" placeholder="Search" />
+          <input
+            class="search-box"
+            type="text"
+            placeholder="Search"
+            v-model="search_text"
+          />
         </div>
       </div>
       <div class="active-box">
@@ -22,7 +27,7 @@
     <div class="status-divider"></div>
     <div class="scrollable-messages">
       <ChatsListMessage
-        v-for="admin_message in chats"
+        v-for="admin_message in filtered_chats"
         :key="admin_message.last_updated"
         :full_name="admin_message.full_name"
         :timestamp="
@@ -53,12 +58,26 @@ export default {
       chats: [],
       selected_conversation: "",
       notif_sum: 0,
+      search_text: "",
     };
   },
   watch: {
     chats() {
       this.update_chats();
       this.sort_chats();
+    },
+  },
+  computed: {
+    filtered_chats() {
+      if (!this.search_text.trim()) return this.chats;
+      let filtered = this.chats.filter((conv) => {
+        return conv.full_name
+          .toLowerCase()
+          .indexOf(this.search_text.toLowerCase()) < 0
+          ? false
+          : true;
+      });
+      return filtered;
     },
   },
   mounted() {
@@ -138,7 +157,8 @@ export default {
         )
       ) {
         this.chats.find(
-          (conversation) => conversation.conversation_id == packet.conversation_id
+          (conversation) =>
+            conversation.conversation_id == packet.conversation_id
         ).last_updated = packet.values.$set.last_updated;
         this.update_chats();
       }
