@@ -57,6 +57,18 @@ io.on("connection", function (socket) {
   });
 });
 
+socket.on("chatOpened", async function (conv_id, msg_length, last_updated) {
+  await messages.updateOne(
+    {
+      conversation_id: conv_id,
+    },
+    {
+      $set: { last_index: msg_length, last_updated: last_updated },
+    }
+  );
+  io.to(process.env.VUE_APP_ADMIN_ID).emit("chatUpdated", conv_id);
+});
+
 app.use("/", router);
 
 server.listen(PORT, () => {
