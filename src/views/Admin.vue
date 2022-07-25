@@ -5,10 +5,18 @@
     </div>
     <div class="right-col">
       <div class="messages">
-        Messages <span class="rectangle"><span class="-new">2 new</span></span>
+        Messages
+        <span class="rectangle" v-if="notif_sum > 0">
+          <span class="-new" :notif_sum="notif_sum"
+            >{{ notif_sum }} &nbsp;new</span
+          ></span
+        >
       </div>
       <div class="msg-row">
-        <ChatsList @conv_selected="setConversation" />
+        <ChatsList
+          @conv_selected="setConversation"
+          @sum_changed="sum_changed"
+        />
         <AdminChatbox :conv_id="conv_id" />
       </div>
     </div>
@@ -16,7 +24,7 @@
 </template>
 
 <style lang="scss">
-@import "../../public/sass/index.scss";
+@import "../../src/assets/sass/index.scss";
 </style>
 
 <script>
@@ -31,6 +39,7 @@ export default {
   data: function () {
     return {
       conv_id: "",
+      notif_sum: 0,
     };
   },
   components: {
@@ -46,6 +55,9 @@ export default {
   methods: {
     setConversation(conversation_id) {
       this.conv_id = conversation_id;
+    },
+    sum_changed(notif_sum) {
+      this.notif_sum = notif_sum;
     },
   },
 };

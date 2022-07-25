@@ -16,6 +16,10 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "admin" */ "../views/Admin.vue"),
   },
+  {
+    path: "/:catchAll(.*)",
+    redirect: "/",
+  },
 ];
 
 const router = createRouter({

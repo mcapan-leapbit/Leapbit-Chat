@@ -35,7 +35,7 @@
 <script>
 export default {
   name: "AdminMessage",
-  props: [ "full_name", "messageData"],
+  props: ["full_name", "messageData"],
   computed: {
     initials() {
       if (this.full_name) {

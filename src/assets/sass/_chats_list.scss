@@ -124,6 +124,10 @@
     background-color: $background-message;
   }
 
+  &[active="true"] {
+    background-color: $background-message;
+  }
+
 }
 
 .message-timestamp {

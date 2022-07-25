@@ -40,7 +40,8 @@ export default {
     if (this.$cookies.get("conversation_id"))
       this.axios
         .get("conversation/" + this.$cookies.get("conversation_id"))
-        .then((res) => (this.admin_chat = res.data));
+        .then((res) => (this.admin_chat = res.data))
+        .catch((err) => console.log(err));
   },
   mounted() {
     this.$socket.client.emit("login", this.$cookies.get("conversation_id"));
@@ -78,7 +79,7 @@ export default {
         timestamp: moment().format("MMMM Do YYYY, HH:mm:ss "),
       };
       const values = {
-        $setOnInsert: {
+        $set: {
           last_updated: moment().unix(),
         },
         $push: {

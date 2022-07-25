@@ -93,9 +93,6 @@ export default {
 
         this.axios
           .post("conversation", values)
-          .then(function (response) {
-            console.log(response);
-          })
           .then(() => {
             this.isSignedIn = true;
           })

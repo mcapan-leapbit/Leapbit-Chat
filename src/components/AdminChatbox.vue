@@ -38,17 +38,31 @@ export default {
   },
   watch: {
     conv_id(newConv_id) {
+<<<<<<< HEAD
       this.axios.get("conversation/" + newConv_id).then((res) => {
         this.admin_chat = res.data;
         this.fullName = res.data.full_name;
         this.email = res.data.email;
         this.initials = this.makeInitials();
       });
+=======
+      this.axios
+        .get(process.env.VUE_APP_SERVER + "conversation/" + newConv_id)
+        .then((res) => {
+          this.admin_chat = res.data;
+          this.fullName = res.data.full_name;
+          this.email = res.data.email;
+          this.initials = this.makeInitials();
+        })
+        .catch((err) => console.log(err));
+>>>>>>> main
     },
   },
   mounted() {
     this.$socket.client.on("confirmToClient", (confirmedMsg) => {
-      this.admin_chat.messages.push(confirmedMsg.values.$push.messages);
+      if (confirmedMsg.conversation_id == this.conv_id) {
+        this.admin_chat.messages.push(confirmedMsg.values.$push.messages);
+      }
     });
   },
   updated() {
@@ -63,7 +77,7 @@ export default {
         timestamp: moment().format("MMMM Do YYYY, HH:mm:ss "),
       };
       const values = {
-        $setOnInsert: {
+        $set: {
           last_updated: moment().unix(),
         },
         $push: {

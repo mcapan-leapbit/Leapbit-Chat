@@ -1,5 +1,5 @@
 <template>
-  <div class="message-box" @click="$emit('clicked', this.conversation_id)">
+  <div class="message-box" @click="conversation_selected" :active="isActive">
     <div class="">
       <div class="chat-sender">
         <span class="profile-bg">
@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="chat-bottom">
-      <p class="message-text">
+      <p class="message-text" :message="message">
         {{ message }}
       </p>
     </div>
@@ -31,21 +31,22 @@
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
   name: "ChatsListMessage",
   props: [
+    "key",
     "full_name",
     "timestamp",
     "email",
     "message",
     "conversation_id",
-    "last_message_index",
-    "messages_length",
+    "notif_number",
   ],
   data() {
     return {
-      notif_number: this.messages_length - this.last_message_index,
-      data: {},
+      isActive: false,
     };
   },
   computed: {
@@ -70,15 +71,9 @@ export default {
     },
   },
   methods: {
-    updateNotif() {
-      this.axios
-        .get(
-          "conversation/" + this.conversation_id
-        )
-        .then((res) => {
-          this.data = res.data;
-          this.notif_number = this.data.messages.length - this.data.last_index;
-        });
+    conversation_selected() {
+      this.$emit("clicked", this.conversation_id, moment().unix());
+      this.isActive = true;
     },
   },
 };
