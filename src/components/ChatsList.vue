@@ -163,6 +163,25 @@ export default {
       }
     },
     updateNewMessage(packet) {
+      if (
+        !this.chats.find(
+          (conversation) =>
+            conversation.conversation_id == packet.conversation_id
+        )
+      ) {
+        this.axios
+          .get(process.env.VUE_APP_SERVER + "conversations")
+          .then((res) => {
+            this.chats = res.data.filter((c) => c.messages.length != 0);
+            this.chats.forEach(
+              (element) =>
+                (element.notif_number =
+                  element.messages.filter((msg) => msg.admin == false).length -
+                  element.last_index)
+            );
+          });
+        return;
+      }
       if (this.chats.length != 0) {
         this.chats
           .find(
