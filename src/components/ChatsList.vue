@@ -99,8 +99,6 @@ export default {
     });
     this.$socket.client.on("confirmToClient", (packet) => {
       this.updateNewMessage(packet);
-      console.log(this.selected_conversation);
-      console.log(packet.conversation_id);
       if (
         packet.conversation_id != this.selected_conversation &&
         this.chats.length != 0
@@ -242,20 +240,6 @@ export default {
           return x.last_updated - y.last_updated;
         })
         .reverse();
-      this.chats.push({
-        email: "lb@test",
-        full_name: "Leapbit",
-        conversation_id: "1d322ec1-3549-499b-9f8b-8ec91fg45fbe",
-        last_updated: 1658502449,
-        last_index: 9,
-        messages: [
-          {
-            admin: false,
-            message: "message",
-            timestamp: "July 22nd 2022, 16:52:12 ",
-          },
-        ],
-      });
     },
   },
 };

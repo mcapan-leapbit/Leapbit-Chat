@@ -92,9 +92,6 @@ export default {
 
         this.axios
           .post(process.env.VUE_APP_SERVER + "conversation", values)
-          .then(function (response) {
-            console.log(response);
-          })
           .then(() => {
             this.isSignedIn = true;
           })
