@@ -107,7 +107,7 @@
 
       .chat-body-rectangle {
         position: relative;
-
+        line-height: 150%;
         max-width: 100%;
         min-height: 20px;
         padding: 20px;
@@ -153,6 +153,7 @@
           border-top-right-radius: 0;
           font-family: $std_font;
           overflow-wrap: anywhere;
+          line-height: 150%;
         }
         .user-timestamp {
           float: right;
