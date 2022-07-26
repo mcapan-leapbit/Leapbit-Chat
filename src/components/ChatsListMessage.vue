@@ -28,6 +28,7 @@
       </p>
     </div>
   </div>
+  <div class="status-divider"></div>
 </template>
 
 <script>
