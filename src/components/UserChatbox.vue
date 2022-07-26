@@ -92,9 +92,9 @@ export default {
         !this.admin_chat.email
       ) {
         alert(
-          "There has been an error while signing in. Please refresh page and try again." +
+          "There has been an error while signing in. \nPlease refresh page and try again." +
             "\ncookie: " +
-            this.$cookies.get("conversation_id").trim() +
+            this.$cookies.get("conversation_id") +
             "\nfull_name: " +
             this.admin_chat.full_name +
             "\nemail: " +
