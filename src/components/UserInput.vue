@@ -4,7 +4,7 @@
       v-model="message"
       type="text"
       class="user_chat_entry_text"
-      placeholder="Enter you message..."
+      placeholder="Enter your message..."
     />
     <input
       type="image"
