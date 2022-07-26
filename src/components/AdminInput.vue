@@ -2,6 +2,7 @@
   <div class="send-msg">
     <form @submit.prevent="handleSubmit" action="post" class="chat-entry">
       <input
+        v-model="messageSent"
         type="text"
         class="chat-entry-text"
         placeholder="Upišite svoju poruku..."
@@ -16,7 +17,7 @@
         alt="send message"
         ref="sendImage"
         id="admin-chat-icon"
-        v-model="messageSent"
+        :style="sendBtnOpacity"
       />
     </form>
   </div>
@@ -32,26 +33,17 @@ export default {
   },
   methods: {
     handleSubmit() {
-      const textForm = this.$refs.inputText;
-      const sentMessage = textForm.value;
-      if (!sentMessage.trim()) return;
+      if (!this.messageSent.trim()) return;
 
-      this.$emit("sendingMessage", sentMessage.trim());
-      textForm.value = "";
-      this.$refs.sendImage.style.opacity = 0.5;
+      this.$emit("sendingMessage", this.messageSent.trim());
+      this.messageSent = "";
     },
   },
-  mounted() {
-    const textForm = this.$refs.inputText;
-    const sendImg = this.$refs.sendImage;
-
-    textForm.addEventListener("input", () => {
-      if (textForm.value.trim()) {
-        sendImg.style.opacity = 1;
-      } else {
-        sendImg.style.opacity = 0.5;
-      }
-    });
+  computed: {
+    sendBtnOpacity() {
+      if (this.messageSent.trim()) return "opacity : 1";
+      else return "opacity: 0.5";
+    },
   },
 };
 </script>
