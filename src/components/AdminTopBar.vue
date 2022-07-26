@@ -5,7 +5,7 @@
         <span class="user-initials"> {{ initials }} </span>
       </div>
       <div class="chat-header-info">
-        <span class="chat-header-uname"> {{ fullName }} </span>
+        <span class="chat-header-uname"> {{ full_name }} </span>
         <span class="header-usermail"> {{ email }} </span>
       </div>
     </div>
@@ -13,8 +13,11 @@
 </template>
 
 <script>
+import InitialsMixin from "../mixins/initials";
+
 export default {
   name: "AdminTopBar",
-  props: ["fullName", "email", "initials"],
+  mixins: [InitialsMixin],
+  props: ["email"],
 };
 </script>

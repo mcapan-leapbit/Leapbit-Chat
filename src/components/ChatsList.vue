@@ -35,7 +35,9 @@
         "
         :email="admin_message.email"
         :message="
-          admin_message.messages[admin_message.messages.length - 1].message
+          trimLastMsg(
+            admin_message.messages[admin_message.messages.length - 1].message
+          )
         "
         :conversation_id="admin_message.conversation_id"
         :notif_number="admin_message.notif_number"
@@ -238,6 +240,10 @@ export default {
           return x.last_updated - y.last_updated;
         })
         .reverse();
+    },
+    trimLastMsg: (message) => {
+      if (message.length > 70) return message.slice(0, 70) + "...";
+      else return message;
     },
   },
 };
