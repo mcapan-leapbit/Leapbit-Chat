@@ -10,6 +10,20 @@
   position: relative;
   align-items: center;
 
+  .empty-msg {
+    height: 100%;
+    width: 100%;
+    opacity: 16%;
+    font-family: $std_font;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+
   .chat-header {
     display: flex;
     flex-grow: 0;

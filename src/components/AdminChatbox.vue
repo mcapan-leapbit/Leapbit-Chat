@@ -1,6 +1,7 @@
 <template>
   <div class="mask-cbox">
-    <AdminTopBar :full_name="full_name" :email="email" />
+    <div class="empty-msg" v-if="!conv_id">Open a chat to start.</div>
+    <AdminTopBar :full_name="full_name" :email="email" v-if="conv_id" />
     <div class="chat-body" ref="chatBody">
       <AdminMessage
         v-for="message in admin_chat.messages"
@@ -9,7 +10,7 @@
         :full_name="admin_chat.full_name"
       />
     </div>
-    <AdminInput @sendingMessage="sendingMessage" />
+    <AdminInput @sendingMessage="sendingMessage" v-if="conv_id" />
   </div>
 </template>
 
@@ -30,7 +31,6 @@ export default {
   data() {
     return {
       admin_chat: {},
-      conversationId: "0b1f646f-6628-4509-bdf2-e13fdba8be1f",
       full_name: "",
       email: "",
     };
