@@ -239,7 +239,8 @@ export default {
     sort_chats: function () {
       this.chats
         .sort(function (x, y) {
-          return x.last_updated - y.last_updated;
+          let time_diff = x.last_updated - y.last_updated;
+          return time_diff ? time_diff : x.full_name.localeCompare(y.full_name);
         })
         .reverse();
     },
