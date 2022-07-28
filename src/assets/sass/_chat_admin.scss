@@ -10,6 +10,20 @@
   position: relative;
   align-items: center;
 
+  .empty-msg {
+    height: 100%;
+    width: 100%;
+    opacity: 16%;
+    font-family: $std_font;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+
   .chat-header {
     display: flex;
     flex-grow: 0;
@@ -107,7 +121,7 @@
 
       .chat-body-rectangle {
         position: relative;
-
+        line-height: 150%;
         max-width: 100%;
         min-height: 20px;
         padding: 20px;
@@ -153,6 +167,7 @@
           border-top-right-radius: 0;
           font-family: $std_font;
           overflow-wrap: anywhere;
+          line-height: 150%;
         }
         .user-timestamp {
           float: right;

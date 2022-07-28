@@ -4,7 +4,7 @@
       v-model="message"
       type="text"
       class="user_chat_entry_text"
-      placeholder="Enter you message..."
+      placeholder="Enter your message..."
     />
     <input
       type="image"
@@ -27,14 +27,14 @@ export default {
   },
   methods: {
     sendMessage() {
-      if (!this.message) return;
-      this.$emit("submit-msg", this.message);
+      if (!this.message.trim()) return;
+      this.$emit("submit-msg", this.message.trim());
       this.message = "";
     },
   },
   computed: {
     sendBtnOpacity() {
-      if (this.message) return "opacity: 1";
+      if (this.message.trim()) return "opacity: 1";
       else return "opacity: 0.5";
     },
   },
