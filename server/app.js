@@ -6,6 +6,11 @@ const server = http.createServer(app);
 const cors = require("cors");
 const dotenv = require("dotenv");
 const { connectToDB } = require("./utils/mongo-logic");
+const { Kafka } = require("kafkajs");
+const brokers = ["localhost:9092"];
+const topic = "chat-messages";
+const kafka = new Kafka({ brokers });
+const producer = kafka.producer();
 
 dotenv.config({ path: "../.env" });
 
@@ -51,6 +56,17 @@ io.on("connection", function (socket) {
         " " +
         packetFromClient.conversation_id
     );
+
+    await producer.connect();
+    await producer.send({
+      topic: topic,
+      messages: [
+        {
+          key: "message",
+          value: JSON.stringify(packetFromClient),
+        },
+      ],
+    });
   });
 
   socket.on("login", async function (id) {

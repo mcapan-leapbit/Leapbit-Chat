@@ -1,6 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const { connectToDB } = require("../utils/mongo-logic");
+const { Kafka } = require("kafkajs");
+const brokers = ["localhost:9092"];
+const topic = "chat-messages";
+const kafka = new Kafka({ brokers });
+const producer = kafka.producer();
+
 
 let connection;
 let messages;
@@ -21,6 +27,18 @@ router.get("/conversations", async (req, res) => {
 
 router.post("/conversation", async (req, res) => {
   await messages.insertOne(req.body);
+
+  await producer.connect();
+  await producer.send({
+    topic: topic,
+    messages: [
+      {
+        key: "user",
+        value: JSON.stringify(req.body),
+      },
+    ],
+  });
+
   res.status(201).send();
 });
 
